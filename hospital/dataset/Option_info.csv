@@ -1,0 +1,677 @@
+chargeID,tName,tType
+T0501,Pus or Discharge,Microscopic examination
+T0539,Analysis of total cell count and differntiation in BAL fluid,Microscopic examination
+T0974,Stool Occult Blood(EIA/LIA),Microscopic examination
+T0808,Influenza B RNA Detection,Microscopic examination
+T0672,FilmArray Meningitis/ Encephalitis Panel (ME),Microscopic examination
+T0558,Influenza B Ag,Microscopic examination
+T0739,Occult blood (N-G) test,Microscopic examination
+T0053,Semen analysis,Microscopic examination
+T0628,Stool Occult Blood(EIA/LIA),Microscopic examination
+T0259,Ascitic fluid,Microscopic examination
+T0414,Pleural fluid,Microscopic examination
+T0507,Influenza A Ag,Microscopic examination
+T0366,FilmArray Pneumonia Panel (PN),Microscopic examination
+T0440,Synovial fluid analysis,Microscopic examination
+T0835,Helicobactor pylori stool antigen (HpSA) test,Microscopic examination
+T0227,Urine RBC morphology,Microscopic examination
+T0791,Electrocardiography(E.K.G.),Microscopic examination
+T0841,Starch stain,Microscopic examination
+T0669,Reducing substances,Microscopic examination
+T0466,Pregnancy test EIA,Microscopic examination
+T0817,Urine routine examination,Microscopic examination
+T0685,Adenovirus Ag test,Microscopic examination
+T0391,Occult blood (Stool) test,Microscopic examination
+T0441,Influenza A RNA Detection,Microscopic examination
+T0956,CSF Routine,Microscopic examination
+T0497,Stool routine,Microscopic examination
+T0757,Neutral fat stain,Microscopic examination
+T0677,RSV RNA,Microscopic examination
+T0662,Group A Streptococcus DNA,Microscopic examination
+T0212,Fatty acid stain,Microscopic examination
+T0567,Parasite ova direct smear,Microscopic examination
+T0606,PH,Microscopic examination
+T0055,Parasite ova onc.,Microscopic examination
+T0950,Perianal swab for pinwarm,Microscopic examination
+T0779,Hematocrit-Pleural,Microscopic examination
+T0269,APT test,Microscopic examination
+T0304,RSV screening test,Microscopic examination
+T0531,Pneumococcus Ag (urine),Microscopic examination
+T0878,FilmArray Respiratory Panel (RP),Microscopic examination
+T0298,FilmArray Gastrointestinal (GI),Microscopic examination
+T0093,Urine biochemistry examination,Microscopic examination
+T0092,Enterovirus 71 IgM antibody,Microscopic examination
+T0803,Legionella pneumophila Ag(urine),Microscopic examination
+T0589,Amoeba (direct smear),Microscopic examination
+T0525,Blood culture (for TB),Mycobacteria
+T0499,Acid-fast stain and Mycobacteria culture (unuse anti-TB drug),Mycobacteria
+T0661,NTM molecular ID,Mycobacteria
+T0564,MTB PCR/RIF(抗藥基因),Mycobacteria
+T0219,Acid-fast stain and Mycobacteria culture (Treatment),Mycobacteria
+T0335,Susceptibility of TB(4 drugs),Mycobacteria
+T0090,"Blood culture (for resin , Aer & Anaerobic,Fungus)大人使用",bacteria
+T0361,Pleural effusion culture (Aer & Anaerobic),bacteria
+T0382,"Blood culture (Aer,Anaerobic,Fungus)",bacteria
+T0733,Group B Streptococcus culture,bacteria
+T0359,BAL culture(Aerobic),bacteria
+T0412,MIC method,bacteria
+T0224,Fungus culture,bacteria
+T0601,Anaerobic culture (only),bacteria
+T0615,Acid fast stain(Slide use only),bacteria
+T0146,Group B Streptococcus culture,bacteria
+T0340,Sputum Culture + Sputum Routine aerobic culture,bacteria
+T0144,India ink stain,bacteria
+T0659,Aerobic culture (only),bacteria
+T0147,Clostridium difficile culture(Stool),bacteria
+T0225,Campylobacter species culture(Stool),bacteria
+T0727,"Salmonella,Shigella or other Pathogens culture",bacteria
+T0722,Pus aerobic & anaerobic culture,bacteria
+T0681,Fungus stain,bacteria
+T0890,Discharge aerobic culture,bacteria
+T0641,Susceptibility of yeast,bacteria
+T0949,"Blood culture (for resin , Aer & Anaerobic,Fungus)小孩使用",bacteria
+T0267,Cryptococcus antigen test(Blood),bacteria
+T0367,Cryptococcus antigen test(CSF),bacteria
+T0438,Helicobacter pylori antibody test,bacteria
+T0116,Urine aerobic culture,bacteria
+T0377,Throat swab culture(Aerobic),bacteria
+T0496,Gram's stain,bacteria
+T0345,Ascites (for Aer & Anaerobic),bacteria
+T0984,Vibrio cholerae culture,bacteria
+T0115,Staphylococcus aureus culture(Stool),bacteria
+T0770,Bile culture (Aer & Anaerobic),bacteria
+T0079,Quantiferon-TB(QFT),bacteria
+T0292,Stool for screen,bacteria
+T0155,Clostridium difficle toxin test (RT-PCR),bacteria
+T0933,CSF culture (Aer & Anaerobic),bacteria
+T0726,Pericardial fluid culture (Aer & Anaerobic),bacteria
+T0374,Synovial fluid culture (Aer & Anaerobic),bacteria
+T0167,Lead (Pb),poison
+T0086,Opiates screen test,poison
+T0636,Opiates screen test,poison
+T0936,Amphetamines screen test,poison
+T0811,Cannabis (THCA)  confirmation test,poison
+T0760,Cannabinoids screen test,poison
+T0925,MDMA confirmation test,poison
+T0311,Ketamine confirmation test,poison
+T0529,Amphetamines screen test,poison
+T0459,hair-drug test I (Amphetamines /Opiates/MDMA /Ketamine),poison
+T0220,Amphetamines confirmation test,poison
+T0520,Ketamine screen test,poison
+T0549,MDMA screen test,poison
+T0284,Opiates confirmation test,poison
+T0665,Anti-ENA(Sm/RNP Ab),immunity
+T0308,Anti-ENA(Scl-70 Ab),immunity
+T0700,Anti-dsDNA (ELISA法),immunity
+T0588,Anti-nuclear antibody (ANA) IFA法,immunity
+T0411,Anti-Cardiolipin-IgG,immunity
+T0305,ANCA,immunity
+T0990,Anti-ENA (SSA/SSB),immunity
+T0316,ANCA(PR3)(ELISA),immunity
+T0838,ANCA(MPO)(ELISA),immunity
+T0542,Anti-ENA(Jo-1 Ab),immunity
+T0943,Anti-CCP antibody,immunity
+T0405,Anti HCV,serum
+T0380,HIV Ag/Ab Combo Test,serum
+T0769,T3,serum
+T0787,Free-T4 (E.I.A),serum
+T0503,T4,serum
+T0401,Folic acid(EIA/LIA),serum
+T0747,Insulin-like Growth Factor 1 (IGF-1),serum
+T0631,Chlamydia Pneumoniae Antibody IgM (快速法),serum
+T0006,Mycoplasma pneumonia IgM (快速法),serum
+T0342,Growth Hormone (GH),serum
+T0910,Estradiol (E2) EIA/LIA,serum
+T0463,Thyroglobulin,serum
+T0866,α-fetoprotein(AFP)(Blood),serum
+T0637,Homocysteine,serum
+T0484,HIV 快速測定(婦產科用),serum
+T0128,Intact parathyroid hormone,serum
+T0625,HBsAg EIA  (Qualitative),serum
+T0942,Anti HAV,serum
+T0940,Anti HBs,serum
+T0468,TPPA/TPHA test,serum
+T0682,Aspergillus (Galactomannan)Ag-(BAL),serum
+T0004,Chlamydia trachomatis Ab,serum
+T0596,RPR/VDRL test(Blood),serum
+T0679,Adrenocorticotropic Hormone (ACTH),serum
+T0427,LH(EIL/LIA),serum
+T0893,登革熱病毒抗體IgG檢查,serum
+T0206,登革熱病毒抗體IgM檢查,serum
+T0914,Glycosylated Hb (HbA1c),serum
+T0493,Dengue NS1 Ag,serum
+T0467,Dengue NS1 Ag,serum
+T0461,Rota virus Ag,serum
+T0465,Adenovirus Antigen (Fecal),serum
+T0786,Progesterone (EIA/LIA),serum
+T0436,TSH(EIA/LIA),serum
+T0063,"Prolactin (PRL),EIA/LIA",serum
+T0209,Carbohydrate Antigen 72-4,serum
+T0690,FSH(EIA/LIA),serum
+T0105,"ASLO,anti-streptolysin-O test",serum
+T0193,Vitamin B12,serum
+T0983,Cold hemogglutinin,serum
+T0913,Protein induced by Vitamin K absence or antagonists-II,serum
+T0237,Neuron Specific Enolase (NSE),serum
+T0523,SCC,serum
+T0195,Cryoglobulin,serum
+T0062,Cyfra 21-1,serum
+T0297,25-OH Vitamin D,serum
+T0782,Anti-HBc (EIA法),serum
+T0566,Mycoplasma pneumonia IgM (ELISA),serum
+T0328,Testosterone(EIA/LIA),serum
+T0069,IgA Nephelometry,serum
+T0413,prostate specific antigen(PSA),serum
+T0751,CA19-9,serum
+T0052,CA15-3,serum
+T0056,CA12-5 EIA法,serum
+12068,Thyroglobulin antibody (TA),serum
+12050,Ceruloplasmin,serum
+12038,C'4 Nephelometry,serum
+12116,Ferritin (EIA/LIA),serum
+12029,IgM Nephelometry,serum
+12189,Chlamydia Pneumoniae Antibody IgM(ELISA),serum
+12179,Aspergillus (Galactomannan)Ag,serum
+12025,IgG Nephelometry,serum
+12197,Everolimus (Certican),serum
+12022,β-HCG (EIA法),serum
+12021,CEA(Blood),serum
+12020,Mycoplasma ab (Total Ab),serum
+8129,Insulin,serum
+12002,Widal & Weil-Felix test,serum
+12034,C'3 (包括C3c) Nephelometry,serum
+14038,Anti-HBc IgM (EIA法),serum
+1403203,HBsAg EIA Division of Gastroenterology (Quantitative),serum
+14048,CMv Ab-IgM,serum
+14045,Anti-rubella IgM (EIA法),serum
+14039,Anti-HAV IgM（EIA法）,serum
+14035,HBeAg EIA,serum
+14004,CMv Ab-IgG,serum
+1200701,α-fetoprotein(AFP)(羊水),serum
+12011,Rheumatoid factor test Nephelometry,serum
+14036,Anti-HBe (EIA法),serum
+14044,Anti-rubella IgG (EIA法),serum
+1202101,CEA(體液),serum
+12134,Anti-TPO Ab,serum
+8042,Iron stain(B.M.),blood
+8013,WBC differential count,blood
+8005,E.S.R.,blood
+8029,Hb H preparation,blood
+8059,Factor VII assay,blood
+8044,LAP stain,blood
+8010,Eosinophil count,blood
+8082,"CBC–III(包含WBC ,RBC ,Hb ,Hct ,MCV)",blood
+8047,Peroxidase stain(B.M.),blood
+8051,PAS stain(B.M.),blood
+8128,B.M. DC,blood
+8060,Factor 8 assay,blood
+RETHE,Reticulocyte hemoglobin equivalent(RET-He),blood
+8006,Platelet count,blood
+8004,Hct,blood
+8027,B.M.,blood
+8008,Reticulocyte count,blood
+8092,Mixing APTT,blood
+8011,"CBC–I(包含WBC ,RBC ,Hb ,Hct ,MCV ,MCH ,MCHC ,Platelet)",blood
+8081,Factor 12 assay,blood
+8061,Factor 9 assay,blood
+8002,W.B.C,blood
+8007,Parasite(malaria or filaria),blood
+HPC,Hematopoietic progenitor cell count (HPC#),blood
+8001,R.B.C,blood
+8067,Factor 8 inhibitor test,blood
+8088,Mixing PT,blood
+8072,AT Ⅲ (antithrombin),blood
+8122,Protein S,blood
+8077,Protein C,blood
+800901,RBC morphology,blood
+8003,Hb,blood
+8018,Bleeding time (Duke method),blood
+811101,vWF: activity (GP1b-R),blood
+806001,Factor 8 assay(Chromogenic),blood
+8023,Fibrinogen (quantitative),blood
+8079,D- dimer,blood
+8026,PT,blood
+8036,APTT,blood
+8080,Factor 11 assay,blood
+8118,vWF：Ag,blood
+8103,Factor 9 inhibitor,blood
+12097,Coombs' polyspecific test Direct,blood bank
+1100801,Special blood group studies － Lewis antigen,blood bank
+1100501,Antibody identification,blood bank
+11002,Cross matching,blood bank
+12100,Coombs ( D ) C3d monospecific test,blood bank
+12099,Coombs IgG monospecific test,blood bank
+LAB011,ABO  antibody titration,blood bank
+12098,Coombs' polyspecific test Indirect,blood bank
+11003,RH(D) Typing(tube method),blood bank
+11001,A.B.AB.O grouping(tube method),blood bank
+11004,Antibody screening,blood bank
+1100802,Mn Typing,blood bank
+11010,Special blood group studies_ 特殊血型三大群以上,blood bank
+11011,Investigation transfusion reaction,blood bank
+11009,Special blood group studies ╴D.E.C.e.c,blood bank
+9002,Blood urea nitrogen (BUN),Biochemistry
+2400902,"O.G.T.T (75gm,二次,ac,2hr)",Biochemistry
+2400901,"O.G.T.T.(100gm,四次,ac,1hr,2hr,3hr,OBS)",Biochemistry
+905101,Glucose-6-phosphate-dehydrogenase (G-6-P-D),Biochemistry
+900505,Glucose (Ascites),Biochemistry
+902305,Chloride (Cl) (urine) Random,Biochemistry
+902304,Chloride (Cl) (Pleural),Biochemistry
+902303,Chloride  (Cl) (Ascities),Biochemistry
+902302,Chloride (Cl) (C.S.F),Biochemistry
+902102,Sodium (Na) (urine) Random,Biochemistry
+901601,Creatinine (urine) Random,Biochemistry
+901301,Uric Acid (urine) Random,Biochemistry
+901202,Phosphoras (P) (urine) Random,Biochemistry
+901101,Calcium(Ca) (urine) Random,Biochemistry
+900301,Urea-N (urine) Random,Biochemistry
+900506,Glucose (Pleural),Biochemistry
+903303,LDH (Pleural),Biochemistry
+900504,Glucose (C.S.F.),Biochemistry
+803051,Hb electrophoresis,Biochemistry
+12158,Immunoelectrophoresis (Urine),Biochemistry
+12157,Immunoelectrophoresis (CSF),Biochemistry
+12103,Immunoelectrophoresis (serum),Biochemistry
+10804,Carboxylhemoglobin,Biochemistry
+10803,Acetaminophen,Biochemistry
+10527,Benzodiazepine,Biochemistry
+10508,Salicylate,Biochemistry
+9093,ICG,Biochemistry
+900507,Glucose (urine) Random,Biochemistry
+901302,Uric Acid (urine) 24hr,Biochemistry
+901503,Creatinine 透析液,Biochemistry
+900510,Glucose 透析液,Biochemistry
+900201,Urea-N 透析液,Biochemistry
+10807,Ethyl alcohol,Biochemistry
+9138,Bilirubin- D /Bilirubin-T Ratio,Biochemistry
+9039,Globulin,Biochemistry
+9004,Triglyceride (TG),Biochemistry
+6510,Paraquet test,Biochemistry
+904602,Magnesium(Mg) (Urine) Random,Biochemistry
+902306,Chloride (Cl) (urine) 24hr,Biochemistry
+903301,LDH (C.S.F.),Biochemistry
+901602,Creatinine (urine) 24hr,Biochemistry
+903302,LDH (Ascites),Biochemistry
+901203,Phosphoras (P)  (urine) 24hr,Biochemistry
+901102,Calcium(Ca) (urine) 24hr,Biochemistry
+900508,Glucose (urine) 24hr,Biochemistry
+904103,Blood gas analysis,Biochemistry
+904102,Blood gas analysis,Biochemistry
+904003,Total-Protein (Pleural),Biochemistry
+904002,Total-Protein (Ascites),Biochemistry
+903802,Albumin(Ascites),Biochemistry
+903801,Albumin(Pleural),Biochemistry
+902001,Fe (Iron –bound),Biochemistry
+902203,Potassium (K) (urine) 24hr,Biochemistry
+9065,Protein electrophoresis(Serum),Biochemistry
+9030,Bilirubin direct,Biochemistry
+12048,Transferrin & TIBC,Biochemistry
+904006,Total protein(TP),Biochemistry
+902201,Potassium (K),Biochemistry
+902101,Sodium(Na),Biochemistry
+901501,Creatinine (CRE),Biochemistry
+8075,Blood osmolarity test,Biochemistry
+901103,Calcium (Ca),Biochemistry
+9140,Glucose(PC),Biochemistry
+12110,Prealbumin,Biochemistry
+902202,Potassium (K) (urine) Random,Biochemistry
+904001,Total-Protein (C.S.F.),Biochemistry
+904004,Total-Protein (urine) Random,Biochemistry
+900302,Urea-N (urine) 24hr,Biochemistry
+902103,Sodium (Na) (urine)  24hr,Biochemistry
+904005,Total-Protein (urine) 24hr,Biochemistry
+901303,Uric Acid(UA),Biochemistry
+1052202,Cyclosporine-A,Biochemistry
+9038,Albumin(ALB),Biochemistry
+OGTT75,"O.G.T.T (75gm,三次,ac,1hr,2hr)",Biochemistry
+10511,Digoxin,Biochemistry
+1219301,NT-proBNP,Biochemistry
+12192,PCT,Biochemistry
+12111,Microalbumin (Nephelometry),Biochemistry
+6503,Urine-osmolarity test,Biochemistry
+901704,Amylase-Pleural,Biochemistry
+1201501,HS C.R.P,Biochemistry
+1052201,Cyclosporine-A,Biochemistry
+9100,Urine Protein electrophoresis,Biochemistry
+906501,Protein electrophoresis(CSF),Biochemistry
+900401,Triglyceride-Pleural,Biochemistry
+900101,Cholesterol-Pleural,Biochemistry
+9071,Creatine kinase-MB (CK-MB ),Biochemistry
+10504,Methotrexate (MTX),Biochemistry
+9098,HS Troponin T,Biochemistry
+900501,Glucose(AC),Biochemistry
+9031,γ-glutamyl transferase(γ-GT),Biochemistry
+901701,Amylase (AMY),Biochemistry
+1053101,Vancomycin(trough),Biochemistry
+904601,Magnesium (Mg ),Biochemistry
+901201,Phosphoras (P),Biochemistry
+9001,Cholesterol (CHO),Biochemistry
+10816,Cholinesterase(ChE),Biochemistry
+9025,Aspartate Aminotransferase (AST),Biochemistry
+9026,Alanine Aminotransferase (ALT),Biochemistry
+1050902,Theophylline(peak),Biochemistry
+9033,Lactic dehydrogenase (LDH),Biochemistry
+10537,Sirolimus,Biochemistry
+902301,Chloride (Cl),Biochemistry
+9029,Bilirubin total,Biochemistry
+9032,Creatine-kinase (CK),Biochemistry
+904603,Magnesium(Mg) (Urine) 24hr,Biochemistry
+10536,Tacrolimus(FK 506),Biochemistry
+10525,Phenobarbital,Biochemistry
+9027,Alkaline phosphatase(ALP),Biochemistry
+10520,Lithium(Li),Biochemistry
+10510,Valproic acid(Depakin),Biochemistry
+10502,Phenytoin(Dilantin),Biochemistry
+10501,Carbamazepine,Biochemistry
+1050901,Theophylline(trough),Biochemistry
+9059,Lactic Acid (lactate),Biochemistry
+9037,Ammonia(NH3),Biochemistry
+900503,"O.G.T.T(50gm,pc,一次,OBS)",Biochemistry
+1211201,CSF-Albumin,Biochemistry
+9064,Lipase,Biochemistry
+1053102,Vancomycin(peak),Biochemistry
+10810,Amphetamines screen test,Biochemistry
+9044,L.D.L.cholesterol,Biochemistry
+9043,H.D.L.cholesterol (HDL-C),Biochemistry
+10811,Opiates screen test,Biochemistry
+107601,Urinary Inorganic Arsenic Speciation Test，Inorganic Arsenic,Outbound inspection
+9054,17 OHCS,Outbound inspection
+DSA,"Anti-HLA specificantibodies, class I and classII (Donor specificantibodies)",Outbound inspection
+LAB07,Vitamin B1,Outbound inspection
+9061,CPK isoenzyme,Outbound inspection
+8058,Factor 5 assay,Outbound inspection
+9078,Stone analysis,Outbound inspection
+9062,Isoenzyme-LDH,Outbound inspection
+12067,Anti-Intercellular Substance Antibodies,Outbound inspection
+LAB09,Vitamin B6,Outbound inspection
+8130,Bone-alkaline phosphatase,Outbound inspection
+P001,Fructosamine,Outbound inspection
+LAB08,Vitamin B2,Outbound inspection
+1205201,β2-microglobulin(urine),Outbound inspection
+1000502,Cadmium (Cd),Outbound inspection
+1000501,Cadmium (Cd),Outbound inspection
+1001002,Nickel (Ni),Outbound inspection
+1201601,Chlamydia trachomatis Ag EIA (Urine)(外送),Outbound inspection
+1000302,Arsenic (As),Outbound inspection
+904902,Lead (Pb)(urine),Outbound inspection
+1201602,Chlamydia trachomatis Ag EIA (Swab)(外送),Outbound inspection
+1000303,Arsenic (As),Outbound inspection
+12210,Aquaporin-4 Ab,Outbound inspection
+9053,17 KS,Outbound inspection
+LAB06,Vitamin E,Outbound inspection
+8133,Cystatin C,Outbound inspection
+30013,C1 esterase inhibitor,Outbound inspection
+6010,Bence Jones protein,Outbound inspection
+ACGH31,Array CGH Test(血液),Outbound inspection
+F9001,A型血友病(第9凝血因子)全基因篩檢,Outbound inspection
+F8002,A型血友病(第8凝血因子)全基因定序篩檢,Outbound inspection
+F8001,A型血友病(第8凝血因子-INV1及INV22),Outbound inspection
+30019,Anti-histone,Outbound inspection
+6512,Coproporphyrin,Outbound inspection
+1000702,Chromium(Cr),Outbound inspection
+10806,Methy alcohol,Outbound inspection
+RDS001,Fabry male screening test (>7 years old),Outbound inspection
+27057,17α-Hydroxy Progesterone(17α-OHP),Outbound inspection
+1220901,Tryptase,Outbound inspection
+RDS003,Fabry Patient biomarker test,Outbound inspection
+RDS004,Fabry family screening test,Outbound inspection
+RDS012,Pompe Patient biomarker test,Outbound inspection
+RDS013,Pompe family screening test,Outbound inspection
+LAB010,C-Terminal Telopeptide(CTx)，β-CrossLaps,Outbound inspection
+RDS023,Gaucher family screening test,Outbound inspection
+SU002,Prostate Health Index,Outbound inspection
+12118,Legionella antibody,Outbound inspection
+901702,Amylase (urine) Random,Outbound inspection
+RDS002,Fabry female test,Outbound inspection
+RDS011,Pompe screening test (>1y ars old),Outbound inspection
+1000602,Cobalt (Co),Outbound inspection
+RDS022,Gaucher Patient biomarker test,Outbound inspection
+RDS021,Gaucher screening test,Outbound inspection
+GAD01,Glutamic acid decarboxylase autoantibody (GAD Ab),Outbound inspection
+12056,Anti-mitochontrial antibody(AMA),Outbound inspection
+12057,Anti-smooth muscle antibody(ASMA),Outbound inspection
+F9001S,(採檢費)B型血友病(第9凝血因子)全基因篩檢,Outbound inspection
+12202,HCV Genotype,Outbound inspection
+LAB04,Se(Selenium),Outbound inspection
+1000801,HG(MERCURY)(Urine),Outbound inspection
+LAB013,Interleukin-6 (IL-6),Outbound inspection
+1100701,Anti platelet factor 4 antibody,Outbound inspection
+13002,Amoebic Antibody,Outbound inspection
+10801,Acetone,Outbound inspection
+LAB012,Test for inborn errors of metabolism,Outbound inspection
+9089,Urinary organic acid analysis,Outbound inspection
+1200103,RPR/VDRL test(CSF),Outbound inspection
+12194,Tandem Mass Analysis of Metabolites,Outbound inspection
+901703,Amylase (urine) 24hr,Outbound inspection
+12133,Anti-β2-glycoprotein-I Ab,Outbound inspection
+12066,Basement Memb. Zone Ab,Outbound inspection
+910201,Adenosine deaminase (ADA)(體液),Outbound inspection
+12160,Immunoglobulin κ/λ,Outbound inspection
+9102,Adenosine deaminase (ADA) (Blood),Outbound inspection
+9107,Free T3 (EIA/LIA),Outbound inspection
+9066,Lipoprotein electrophoresis,Outbound inspection
+9113,free cortisol(24 hours urine),Outbound inspection
+LAB05,Vitamin A,Outbound inspection
+12150,Amino acids analysis,Outbound inspection
+LA001,Anti-Phospholipase-A2-Receptor (PLA2R) autoantibody,Outbound inspection
+9132,Gastrin,Outbound inspection
+1207503,Paroxysmal Nocturnal Hemoglobinuria (PNH),Outbound inspection
+1207502,Acute Leukemia Screen(B.M.),Outbound inspection
+12156,Anti-Ribosomal-P,Outbound inspection
+1207501,Acute Leukemia Screen(Blood),Outbound inspection
+904702,Copper(urine) 24hr,Outbound inspection
+9056,5-HIAA,Outbound inspection
+10012,Zinc (Zn),Outbound inspection
+9139,Glycated Albumin (GA),Outbound inspection
+9077,Catecholamine,Outbound inspection
+9052,VMA-Urine,Outbound inspection
+CGA,Chromogranin A (CGA),Outbound inspection
+9047,Copper(Cu),Outbound inspection
+1220401,Atypical lymphocyte/lymphoma Screen(Blood),Outbound inspection
+FTESTO01,Free Testosterone,Outbound inspection
+AMH01,Anti-Mullerian Hormone (AMH),Outbound inspection
+12182_1,DNA qualitative amplification test,Outbound inspection
+12146,IgG1,Outbound inspection
+2708001,dehydroepiandrosterone sulfate(DHEA-S),Outbound inspection
+2703201,Plasma Renin Activity(PRA),Outbound inspection
+2703101,Aldosterone (Blood),Outbound inspection
+1218306,BCR-ABL1,Outbound inspection
+1212001,Tissue polypeptide antigen (TPA),Outbound inspection
+1220512,T-cell Chronic LymphoProliferative (B.M.),Outbound inspection
+12148,IgG3,Outbound inspection
+904701,Copper(Cu)(Urine)Random,Outbound inspection
+107801,Indium (In),Outbound inspection
+1220408,Myeloma MRD (B.M.),Outbound inspection
+1220511,T-cell Chronic LymphoProliferative (Blood),Outbound inspection
+1220510,B ALL MRD (B.M.),Outbound inspection
+1220601,Acute Megakaryoblastic Leukemia (Blood),Outbound inspection
+1220602,Acute Megakaryoblastic Leukemia (B.M.),Outbound inspection
+1220509,B ALL MRD (Blood),Outbound inspection
+1220508,Precursor T-Lymphoblastic Leukemia (B.M.),Outbound inspection
+1220507,Precursor T-Lymphoblastic Leukemia (Blood),Outbound inspection
+1220506,Precursor B-Lymphoblastic Leukemia (B.M.),Outbound inspection
+1220505,Precursor B-Lymphoblastic Leukemia (Blood),Outbound inspection
+1220504,MyeloDysplastic Syndrome (B.M.),Outbound inspection
+1220503,MyeloDysplastic Syndrome (Blood),Outbound inspection
+14041,Anti-HDV,Outbound inspection
+1220501,Acute Myeloid Leukemia characterizatiom(Blood),Outbound inspection
+12207,Quantitative PCR of BCR-ABL1,Outbound inspection
+1220407,Plasma Cell Dyscrasia(B.M.),Outbound inspection
+1220406,Myeloma MRD (Blood),Outbound inspection
+1220405,Plasma Cell Dyscrasia(Blood),Outbound inspection
+1220603,Acute Leukemia of Ambiguous Lineage (Blood),Outbound inspection
+1220604,Acute Leukemia of Ambiguous Lineage (B.M.),Outbound inspection
+1220605,Chronic Lymphoid Leukemia (Blood),Outbound inspection
+1220606,Chronic Lymphoid Leukemia (B.M.),Outbound inspection
+1220607,B-cell Chronic LymphoProliferative Disorders(Blood),Outbound inspection
+1220608,B-cell Chronic LymphoProliferative Disorders (B.M.),Outbound inspection
+1220404,NK-cell Chronic LymphoProliferative Disorders(B.M.),Outbound inspection
+1220403,NK-cell Chronic LymphoProliferative(Blood),Outbound inspection
+1220402,Atypical lymphocyte/lymphoma Screen(B.M.),Outbound inspection
+1220502,Acute Myeloid Leukemia characterizatiom (B.M.),Outbound inspection
+8126,Lupus anticoagulant test,Outbound inspection
+12061,Myoglobin(Blood),Outbound inspection
+P1NP,Procollagen type 1 amino-terminal propeptide，total P1NP，P1NP,Outbound inspection
+12149,IgG4,Outbound inspection
+12019,FTA-ABS,Outbound inspection
+12147,IgG2,Outbound inspection
+12041,α1-antitrypsin,Outbound inspection
+DR-70,DR-70,Outbound inspection
+12046,Haptoglobin Nephelometry,Outbound inspection
+1206101,Myoglobin(Urine),Outbound inspection
+PGD,Sensorineural Hearing Loss,Outbound inspection
+12052,β2-microglobulin(Blood),Outbound inspection
+LAB014,抗黴菌藥物Voriconazole檢測,Outbound inspection
+F8002S,(採檢費)A型血友病(第8凝血因子)全基因定序篩檢,Outbound inspection
+906701,ALK-isoenzyme-EP,Outbound inspection
+GENEC01,SOFIVA Baby Scan,Outbound inspection
+SCLERO,"Systemic Sclerosis Abs,screening",Outbound inspection
+DERMATO,Myositis specific Ab,Outbound inspection
+MJ001,Autoimmune Liver disease antibodies,Outbound inspection
+27077,Erythropoietin(EPO),Outbound inspection
+24007,Plasma free Ca++,Outbound inspection
+12181,Acetylcholine Receptor Ab,Outbound inspection
+12163,HTLV-1 antibody,Outbound inspection
+12138,Anti-Glomerular Basement Membrane Antibodies (Anti-GBM Ab),Outbound inspection
+12114,Apolipoprotein A1 (Nephelometry),Outbound inspection
+12113,Apolipoprotein B (Nephelometry),Outbound inspection
+1202501,IgG Nephelometry (CSF),Outbound inspection
+30512,13C-urea breath test for helicobacter pylori infection,Outbound inspection
+9131,Estriol (E3),Outbound inspection
+9128,C-peptide,Outbound inspection
+9115,Calcitonin,Outbound inspection
+1051802,Gentamicin(peak),Outbound inspection
+TEPT02,Platinum(Pt),Outbound inspection
+30027,Anti-phospholipid antibody－IgG,Outbound inspection
+30029,Anti-phospholipid antibody－IgM,Outbound inspection
+1208701,HLA-AB-high resolution,Outbound inspection
+1217601,HLA-C-high resolution,Outbound inspection
+1217701,HLA-DQB1-high resolution,Outbound inspection
+1217702,HLA-DRB1-high resolution,Outbound inspection
+F8001S,(採檢費)A型血友病(第8凝血因子-INV1及INV22),Outbound inspection
+IMR01,IMR AD(Immuno Magnetic Reduction Alzheimer's Disease),Outbound inspection
+COTIN,Cotinine,Outbound inspection
+10002,Aluminum(Al),Outbound inspection
+1051801,Gentamicin(trough),Outbound inspection
+1051202,Amikacin(peak),Outbound inspection
+IMR02,APOE genotyping,Outbound inspection
+1051201,Amikacin(trough),Outbound inspection
+10008,Mercury(Hg),Outbound inspection
+PORP,ALA/ PBG,Outbound inspection
+10812,Cocaine,Outbound inspection
+9137,Serum ketone body (quantitative),Outbound inspection
+10814,Phencyclidine (PCP),Outbound inspection
+N10801,inhibin B,Outbound inspection
+HE4/ ROMA01/ROMA02,Human Epididymis Protein 4,Outbound inspection
+1400501,HSV I IgG,Molecular testing
+HPV-27,HPV-27 CHIP,Molecular testing
+1400502,HSV II (IgG),Molecular testing
+1218206,Neisseria gonorrhoeae DNA test(尿液),Molecular testing
+1218207,Chlamydia trachomatis test(Swab),Molecular testing
+1218205,Chlamydia trachomatis test(Urine),Molecular testing
+1218209,MucorGenius DNA test,Molecular testing
+1218211,Mycoplasma pneumonia DNA detection,Molecular testing
+1218208,Neisseria gonorrhoeae DNA test(Swab),Molecular testing
+12184,HBV-DNA 定量 PCR,Molecular testing
+12200,Human Leukocyte Panel Reactive Antibodies Percentage screening test,Molecular testing
+1218401,EBV-DNA 定量 PCR,Molecular testing
+14052,HSV 1+2 IgM,Molecular testing
+1218404,BK virus定量PCR (Blood),Molecular testing
+1218402,CMV定量PCR檢測(Blood),Molecular testing
+12214,Lymphocytotoxic test,Molecular testing
+12088,Tissue typing HLA (HLA-DR/DQ),Molecular testing
+12072,Lymphocyte surface marker Tumor/cancer,Molecular testing
+12086,HLA-B27,Molecular testing
+1218405,BK virus定量PCR (Urine),Molecular testing
+12185,HCV-RNA (PCR),Molecular testing
+12215,SARS-CoV-2 RNA,Molecular testing
+CD-1,Immunological Disease Marker檢測,Molecular testing
+1407401,HIV-1 viral load Test (STAT),Molecular testing
+HBV-Y1,HBV YMDD,Molecular testing
+PJP,Pneumocystis jiroveci DNA Detection,Molecular testing
+14083,HIV-1/2 Confirmatory Assay (Immunochromatography),Molecular testing
+12087,Tissue typing HLA (HLA-ABC),Molecular testing
+14047,EB NA IgG,Molecular testing
+1218204,HSV PCR(CSF),Molecular testing
+1404601,EB VCA IgM (檢驗科),Molecular testing
+1404602,EB VCA IgA (檢驗科),Molecular testing
+1404603,EB VCA IgG (檢驗科),Molecular testing
+HBV-Y,HBV YMDD與DNA病毒量檢測,Molecular testing
+14074,HIV viral load test,Molecular testing
+14071,Toxoplasma IgM,Molecular testing
+12073,Lymphocyte surface markerInfectious disease,Molecular testing
+14054,Mumps virus 1gM,Molecular testing
+1218203,HSV PCR(Blood),Molecular testing
+14042,Toxoplasma IgG,Molecular testing
+14009,Mumps virus IgG,Molecular testing
+14007,Measles virus IgM,Molecular testing
+12196,HLA-B1502,Molecular testing
+14068,Varicella-Zoster virus IgG,Molecular testing
+14013,Varicella-Zoster virus IgM,Molecular testing
+1218406,CMV定量PCR檢測(Urine),Molecular testing
+14070,Measles virus IgG,Molecular testing
+3002252,Egg white,"Pediatric Immunization	"
+3002272,Penicillium notatum,"Pediatric Immunization	"
+3002258,Peanut,"Pediatric Immunization	"
+3002257,Wheat,"Pediatric Immunization	"
+3002256,Shrimp,"Pediatric Immunization	"
+3002255,Crab,"Pediatric Immunization	"
+3002260,Yeast,"Pediatric Immunization	"
+3002253,Milk,"Pediatric Immunization	"
+3002261,Melons,"Pediatric Immunization	"
+3002251,Seminal fluid,"Pediatric Immunization	"
+3002250,Common silver brich,"Pediatric Immunization	"
+3002239,Watermelon,"Pediatric Immunization	"
+3002238,Goat milk,"Pediatric Immunization	"
+3002237,Oyster,"Pediatric Immunization	"
+3002235,Clam,"Pediatric Immunization	"
+3002254,Fish,"Pediatric Immunization	"
+3002268,Dog dander,"Pediatric Immunization	"
+3002275,Gluten,"Pediatric Immunization	"
+1203103,Total-IgE,"Pediatric Immunization	"
+3002276,Aspergillus-Specific IgG,"Pediatric Immunization	"
+3002273,Mix allergens-Panel 5,"Pediatric Immunization	"
+3002271,Candida albicans,"Pediatric Immunization	"
+3002259,Soya bean,"Pediatric Immunization	"
+3002269,Cladosporium herbarum,"Pediatric Immunization	"
+3002232,Mosquito,"Pediatric Immunization	"
+3002267,Cat dander,"Pediatric Immunization	"
+3002266,"Blaella germanica, Cockroach","Pediatric Immunization	"
+3002265,Dermatophagoides microceras,"Pediatric Immunization	"
+3002264,Dermatophagoides farinae,"Pediatric Immunization	"
+3002263,Dermatophagoides pteronyssinus,"Pediatric Immunization	"
+3002262,Blomia tropicalis,"Pediatric Immunization	"
+3002270,Aspergillus fumigatus,"Pediatric Immunization	"
+3002208,Japaness cedar,"Pediatric Immunization	"
+3002215,Staphylococcal enterotoxin B,"Pediatric Immunization	"
+3002214,Staphylococcal enterotoxin A,"Pediatric Immunization	"
+3002213,Common pigweed,"Pediatric Immunization	"
+3002212,Common ragweed,"Pediatric Immunization	"
+3002211,Bermuda grass,"Pediatric Immunization	"
+3002234,Acacia,"Pediatric Immunization	"
+3002209,Eucalyptus,"Pediatric Immunization	"
+3002218,Pork,"Pediatric Immunization	"
+3002205,5 alternative common & 2 special allergens -Panel 4,"Pediatric Immunization	"
+3002204,10 alternative common allergens-Panel3,"Pediatric Immunization	"
+3002203,Food allergens - Panel 2,"Pediatric Immunization	"
+3002202,Air allergens - Panel 1,"Pediatric Immunization	"
+3002129,Air Screen,"Pediatric Immunization	"
+3002102,Food Screen,"Pediatric Immunization	"
+3002210,Australian pine,"Pediatric Immunization	"
+3002224,Apple,"Pediatric Immunization	"
+30023,ECP,"Pediatric Immunization	"
+3002231,Latex,"Pediatric Immunization	"
+3002230,Amoxicilloyl,"Pediatric Immunization	"
+3002229,Penicillyl G,"Pediatric Immunization	"
+3002228,Banana,"Pediatric Immunization	"
+3002227,Mango,"Pediatric Immunization	"
+3002216,Corn,"Pediatric Immunization	"
+3002225,Egg yolk,"Pediatric Immunization	"
+3002217,Tomato,"Pediatric Immunization	"
+3002223,Onion,"Pediatric Immunization	"
+3002222,Strawberry,"Pediatric Immunization	"
+3002221,Orange,"Pediatric Immunization	"
+3002220,Carrot,"Pediatric Immunization	"
+3002219,Beef,"Pediatric Immunization	"
+3002233,Cotton,"Pediatric Immunization	"
+3002226,Kiwi,"Pediatric Immunization	"
