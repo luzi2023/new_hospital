@@ -60,10 +60,16 @@
                 <br>
                 <input type="submit" class="eliminate-unaligned-margin">
             </form>
-            <form action="delete_doctor.php" method="post">
+            <form action="delete_doctor.php" method="post" onsubmit="return confirmDelete()">
                 <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
                 <input type="submit" value="Delete">
             </form>
+            <script>
+            function confirmDelete() {
+                return confirm("Are you sure you want to delete doctor ID: <?php echo $doctor_id?>?");
+            }
+            </script>
+
             <?php
                     } else {
                         echo "error:" . mysqli_error($link);

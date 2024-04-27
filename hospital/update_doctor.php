@@ -44,6 +44,10 @@
 
                     if (mysqli_query($link, $query)) {
                         echo "Doctor information updated successfully.";
+                        ?>
+            <br>
+            <a href="doctor.php">Back to Doctors</a>
+            <?php
                     } else {
                         echo "ERROR: Could not able to execute $query." . mysqli_error($link);
                     }
