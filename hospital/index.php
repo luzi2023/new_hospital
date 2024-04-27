@@ -25,23 +25,23 @@
     session_start();
 
     // Check if the user is already logged in, if yes then redirect him to welcome page
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         header("location: welcome.php");
         exit;  //記得要跳出來，不然會重複轉址過多次
     }
     ?>
 
     <div class="container-fluid">
-         <div id="login">
-             <form method="post" action="login.php">User:
-             <input type="text" name="username">Password:
-             <input type="text" name="password">
-             <input type="submit" value="login" name="submit">
-             <a href="register.html">register now</a>
-             </form>
-         </div>
+        <div id="login">
+            <form method="post" action="login.php">User:
+                <input type="text" name="username">Password:
+                <input type="text" name="password">
+                <input type="submit" value="login" name="submit">
+                <a href="register.html">register now</a>
+            </form>
+        </div>
         <div id="side-nav" class="sidenav">
-            <a href="index.html" id="home">Home</a>
+            <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
@@ -59,16 +59,16 @@
             {% endif %}
         </div>
         {% endblock %} -->
-        <div>
-        <h1><strong>Hospital Homepage</strong></h1>
-        <br>
-        <h2>Dynamic content</h2>
-        <p>The hospital has the following details:</p>
-        <ul>
-        <li><strong>Doctors:</strong> {{ num_doc }}</li>
-        <li><strong>Medications:</strong> {{ num_medication }}</li>
-        <li><strong>In-use Equipment:</strong> {{ num_equipment }}</li>
-</div>
+        <div id="body">
+            <h1><strong>Hospital Homepage</strong></h1>
+            <br>
+            <h2>Dynamic content</h2>
+            <p>The hospital has the following details:</p>
+            <ul>
+                <li><strong>Doctors:</strong> {{ num_doc }}</li>
+                <li><strong>Medications:</strong> {{ num_medication }}</li>
+                <li><strong>In-use Equipment:</strong> {{ num_equipment }}</li>
+        </div>
     </div>
 
 </body>

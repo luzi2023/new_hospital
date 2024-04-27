@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,6 +8,10 @@
     <link rel="stylesheet" href="styles.css" />
 
     <title>Local hospital</title>
+
+    <?php
+    include('config.php');
+    ?>
 </head>
 
 <body>
@@ -22,43 +25,32 @@
             </form>
         </div>
         <div id="side-nav" class="sidenav">
-            <a href="index.php" id="home">Home</a>
+            <a href="index.html" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
         </div>
 
         <div id="body">
-            <h1>Doctor List</h1>
-            <div class="doctor_menu">
-                <a href="add_doctor.php">Add doctor</a>
-            </div>
-
             <?php
-            include('config.php');
+            if (isset($_POST['doctor_id'])) {
+                $doctor_id = $_POST['doctor_id'];
 
-            $query = "SELECT * FROM Doctor";
-            $query_run =mysqli_query($link, $query);
+                $query = "DELETE FROM Doctor WHERE dID = '$doctor_id'";
 
-            ?>
-            <div class="print_doc">
-                <?php
-                if (mysqli_num_rows($query_run) > 0) {
-                    foreach ($query_run as $row) {
-                        ?>
-                <a href="edit_doctor.php?dID=<?php echo $row['dID']?>">
-                    <div class="current_list">
-                        <img src="default.jpg" alt="Dr.<?php $row['first_name']?>'s head shot">
-                        <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
-                        <p> <?php echo $row['speciality'] ?> </p>
-                    </div>
-                </a>
-                <?php
-                    }
+                $delete_success = mysqli_query($link, $query);
+
+                if ($delete_success) {
+                    echo "Doctor information deleted sucessfully!";
+                } else {
+                    echo "Seems there's a problem when deleting...";
                 }
-                ?>
-            </div>
+            } else {
+                echo "There's no existed doctor";
+            }
+            ?>
         </div>
+
     </div>
 </body>
 

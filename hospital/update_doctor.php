@@ -1,19 +1,22 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="styles.css" />
 
     <title>Local hospital</title>
+
+    <?php
+    include('config.php');
+    ?> -->
 </head>
 
 <body>
     <div class="container-fluid">
-        <div id="login">
+        <!-- <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
@@ -22,42 +25,35 @@
             </form>
         </div>
         <div id="side-nav" class="sidenav">
-            <a href="index.php" id="home">Home</a>
+            <a href="index.html" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
-        </div>
+        </div> -->
 
         <div id="body">
-            <h1>Doctor List</h1>
-            <div class="doctor_menu">
-                <a href="add_doctor.php">Add doctor</a>
-            </div>
-
             <?php
-            include('config.php');
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST['first_name'], $_POST['last_name'], $_POST['speciality'])) {
+                    $doctor_id = $_POST['doctor_id'];
+                    $first_name = $_POST['first_name'];
+                    $last_name = $_POST['last_name'];
+                    $speciality = $_POST['speciality'];
 
-            $query = "SELECT * FROM Doctor";
-            $query_run =mysqli_query($link, $query);
+                    $query = "UPDATE Doctor SET first_name='$first_name', last_name='$last_name', speciality='$speciality' WHERE dID='$doctor_id' ";
 
-            ?>
-            <div class="print_doc">
-                <?php
-                if (mysqli_num_rows($query_run) > 0) {
-                    foreach ($query_run as $row) {
-                        ?>
-                <a href="edit_doctor.php?dID=<?php echo $row['dID']?>">
-                    <div class="current_list">
-                        <img src="default.jpg" alt="Dr.<?php $row['first_name']?>'s head shot">
-                        <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
-                        <p> <?php echo $row['speciality'] ?> </p>
-                    </div>
-                </a>
-                <?php
+                    if (mysqli_query($link, $query)) {
+                        echo "Doctor information updated successfully.";
+                    } else {
+                        echo "ERROR: Could not able to execute $query." . mysqli_error($link);
                     }
+
+                    mysqli_close($link);
+                } else {
+                    echo "ERROR: Incomplete date received.";
                 }
-                ?>
-            </div>
+            }
+            ?>
         </div>
     </div>
 </body>

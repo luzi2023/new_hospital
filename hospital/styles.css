@@ -3,7 +3,7 @@ body {
 }
 
 .container-fluid {
-    margin-left: 28vw;
+    margin-left: 13vw;
 }
 
 /* Style the links inside the sidenav */
@@ -32,6 +32,10 @@ body {
 #side-nav a:hover {
     left: 0;
     /* On mouse-over, make the elements appear as they should */
+}
+
+#body {
+    margin-left: 13vw;
 }
 
 /* The about link: 20px from the top with a green background */
@@ -65,7 +69,7 @@ body {
 #login {
     position: absolute;
     left: 5vw;
-    width: 10vw;
+    width: 15vw;
 }
 
 #login input {
@@ -99,13 +103,25 @@ input {
 
 .print_doc {
     margin-top: 4vw;
-    width: 75vw;
+    width: 65vw;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+.print_doc a {
+    /* outline: none; */
+    text-decoration: none;
+    color: black;
+}
+
 
 img {
     width: 150px;
+}
+
+.current_list {
+    width: 18vw;
 }
 
 .current_list img {
@@ -128,4 +144,13 @@ img {
     height: 45vw;
     padding: 3vw;
     border-radius: 50px;
+}
+
+.eliminate-uneven-space {
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+}
+
+.eliminate-unaligned-margin {
+    margin-left: 0;
 }
