@@ -32,7 +32,7 @@
         </div>
 
         <div id="body">
-            <h2>Update Doctor</h2>
+
             <?php
             if (isset($_GET['dID'])) {
                 $doctor_id = $_GET['dID'];
@@ -44,7 +44,14 @@
                     if (mysqli_num_rows($result) > 0) {
                         $doctor = mysqli_fetch_assoc($result);
                         ?>
-            <form action="update_doctor.php" method="post">
+            <h2 id="inline-delete">Update Doctor</h2>
+
+            <form action="delete_doctor.php" method="post" onsubmit="return confirmDelete()" id="inline-delete">
+                <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
+                <input type="submit" value="Delete">
+            </form>
+
+            <form action="update_doctor.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
                 <p class="eliminate-uneven-space">Doctor ID:
                     <?php echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $doctor['dID'] ?>
@@ -57,13 +64,22 @@
                 <br>
                 Speciality:
                 <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
+                <br><br>
+                Image:
+                <img src="<?php echo $doctor['dImage'] ?>" alt="Dr. <?php echo $doctor['first_name'] ?>'s photo">
+                <input type="file" name="image">
+                <?php
+                        if (isset($_FILES['image'])) {
+                            $file_tmp = $_FILES['image']['tmp_name'];
+                            $upload_dir = "uploads/";
+                            move_uploaded_file($file_tmp, $upload_dir . $doctor_id);
+                            $image_url = "uploads/" . $doctor_id;
+                        }
+                        ?>
                 <br>
                 <input type="submit" class="eliminate-unaligned-margin">
             </form>
-            <form action="delete_doctor.php" method="post" onsubmit="return confirmDelete()">
-                <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
-                <input type="submit" value="Delete">
-            </form>
+
             <script>
             function confirmDelete() {
                 return confirm("Are you sure you want to delete doctor ID: <?php echo $doctor_id?>?");

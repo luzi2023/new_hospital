@@ -48,13 +48,15 @@
                         ?>
                 <a href="edit_doctor.php?dID=<?php echo $row['dID']?>">
                     <div class="current_list">
-                        <img src="default.jpg" alt="Dr.<?php $row['first_name']?>'s head shot">
+                        <img src="<?php echo $row['dImage']; ?>" alt="Dr.<?php $row['first_name']?>'s head shot">
                         <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
                         <p> <?php echo $row['speciality'] ?> </p>
                     </div>
                 </a>
                 <?php
                     }
+                } else {
+                    echo "Sorry, there is no existed doctor.";
                 }
                 ?>
             </div>

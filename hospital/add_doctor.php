@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="styles.css" />
 
@@ -11,7 +12,7 @@
 
     <?php
     include('config.php');
-    ?> -->
+    ?>
 </head>
 
 <body>
@@ -32,36 +33,51 @@
         </div> -->
 
         <div id="body">
+            <h1>Add New Doctor</h1>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_POST['first_name'], $_POST['last_name'], $_POST['speciality'], $_FILES['image'])) {
+                if (isset($_POST['doctor_id'], $_POST['first_name'], $_POST['last_name'], $_POST['speciality'])) {
                     $doctor_id = $_POST['doctor_id'];
                     $first_name = $_POST['first_name'];
                     $last_name = $_POST['last_name'];
                     $speciality = $_POST['speciality'];
-                    $file_tmp = $_FILES['image']['tmp_name'];
+                    if (!empty($_POST['image'])) {
+                        $image_path = $_POST['image'];
+                    } else {
+                        $image_path = 'default.jpg';
+                    }
 
-                    $upload_dir = "uploads/";
-
-                    move_uploaded_file($file_tmp, $upload_dir . $doctor_id);
-
-                    $image_url = "uploads/" . $doctor_id;
-
-                    $query = "UPDATE Doctor SET first_name='$first_name', last_name='$last_name', speciality='$speciality', dImage='$image_url' WHERE dID='$doctor_id' ";
+                    $query = "INSERT INTO Doctor (dID, first_name, last_name, speciality, dImage) VALUES ('$doctor_id', '$first_name', '$last_name', '$speciality', '$image_path')";
 
                     if (mysqli_query($link, $query)) {
-                        echo "Doctor information updated successfully.";
+                        echo "Doctor information inserted successfully.";
                         ?>
-            <br><br>
+            <br>
             <a href="doctor.php">Back to Doctors</a>
             <?php
                     } else {
                         echo "ERROR: Could not able to execute $query." . mysqli_error($link);
                     }
-                }
 
+                    mysqli_close($link);
+                } else {
+                    echo "ERROR: Incomplete data received.";
+                }
             }
             ?>
+            <form method="post" action="add_doctor.php">
+                <label for="doctor_id">Doctor ID:</label><br>
+                <input type="text" id="doctor_id" name="doctor_id" required><br>
+                <label for="first_name">First Name:</label><br>
+                <input type="text" id="first_name" name="first_name" required><br>
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" id="last_name" name="last_name" required><br>
+                <label for="speciality">Speciality:</label><br>
+                <input type="text" id="speciality" name="speciality" required><br>
+                <label for="photo">Image</label><br>
+                <input type="file" name="image"><br><br>
+                <input type="submit" value="Add Doctor">
+            </form>
         </div>
     </div>
 </body>

@@ -147,10 +147,14 @@ img {
 }
 
 .eliminate-uneven-space {
-    margin-top: 3vw;
-    margin-bottom: 1vw;
+    margin-top: 1.5vw;
+    margin-bottom: 0.5vw;
 }
 
 .eliminate-unaligned-margin {
     margin-left: 0;
+}
+
+#inline-delete {
+    display: inline;
 }

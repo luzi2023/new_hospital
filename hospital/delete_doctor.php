@@ -42,12 +42,17 @@
 
                 if ($delete_success) {
                     echo "Doctor information deleted sucessfully!";
+                    ?>
+            <br><br>
+            <a href="doctor.php">Back to Doctors</a>
+            <?php
                 } else {
                     echo "Seems there's a problem when deleting...";
                 }
             } else {
                 echo "There's no existed doctor";
             }
+            mysqli_close($link);
             ?>
         </div>
 
