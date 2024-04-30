@@ -1,0 +1,26 @@
+pNo,mhID,treatment,diagnosis,date,prescription
+157699,86580,"ECG,Echocardiogram",Arrhythmia,2018-03-02,Amiorone
+234179,85768,"Echocardiogram,Cardiac MRI",Congestive heart failure,2007-02-23,Digoxin Lanoxin
+100125,86943,Gastroscopy,Gastric spasm,2014-10-08,Atropine Sulfate
+116823,82167,"Pulmonary function tests,Bronchodilator test",Bronchial asthma,2004-11-14,Ephedrine
+192894,98318,Blood tests,Scurvy,2009-12-22,Vit C Vitacicol
+187147,83057,"Skin prick tests,Blood allergy tests",Allergy,2016-05-06,Dexamethasone
+114369,88277,Blood tests,Hypertension,1987-06-26,SR-lsoptin
+146457,84696,"Esophagogastroduodenoscopy(EGD),pH monitoring",Gastroesophageal reflux disease (GERD),2000-09-02,Nexium
+263408,85061,"Throat swab test,Chest X-ray",Respiratory tract infection,2005-10-01,Cravit
+168616,85203,"Psychological assessment,Mental status examination",Schizophrenia,1981-02-07,Novamin
+201653,89346,"Throat swab test,Chest X-ray",Respiratory tract infection,1986-08-04,Cravit
+110727,83095,"ECG,Echocardiogram",Atrial fibrillation,2022-01-18,Digoxin Lanoxin
+169716,93930,Blood tests,Hypertension,2009-04-02,SR-lsoptin
+136657,97422,Blood tests,Hypertension,1994-01-19,Lasix Rasitol
+115098,97388,"Oral examination,Periodontal disease assessment",Gingival bleeding,1997-07-09,Vit C Vitacicol
+118442,98411,"Gastroscopy,Blood tests",Vomiting,2020-05-22,Primperan
+176008,89791,"Blood tests,Urine tests",Diabetic ketoacidosis (DKA),2022-11-07,KCL
+252582,94486,"Brain imaging studies,Blood tests",Cerebral circulatory insufficiency,2018-09-14,Trental
+203766,91058,"Esophagogastroduodenoscopy( EGD),pH monitorin",Gastroesophageal reflux disease (GERD),1987-01-09,Nexium
+135865,98499,Blood tests,Hypertension,2002-06-15,SR-lsoptin
+189497,87819,Abdominal ultrasound,Loss of appetite,1990-03-06,Primperan
+260109,82557,"Oral examination,Periodontal disease assessment",Gingival bleeding,1982-06-27,Vit C Vitacicol
+290722,99981,"Brain imaging studies,Blood tests",Stroke syndrome,2012-08-04,Trental
+102867,88390,"Vaginal discharge examination,Cervical smear test",Trichomoniasis,1987-11-26,SATA
+149133,80786,"Brain imaging studies,Blood tests",Stroke syndrome,2000-01-07,Trental

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid2">
         <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:

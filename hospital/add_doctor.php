@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid2">
         <!-- <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
@@ -44,19 +44,19 @@
                     if (!empty($_POST['image'])) {
                         $image_path = $_POST['image'];
                     } else {
-                        $image_path = 'default.jpg';
+                        $image_path = 'default.png';
                     }
 
                     $query = "INSERT INTO Doctor (dID, first_name, last_name, speciality, dImage) VALUES ('$doctor_id', '$first_name', '$last_name', '$speciality', '$image_path')";
 
                     if (mysqli_query($link, $query)) {
-                        echo "Doctor information inserted successfully.";
+                        // echo "Doctor information inserted successfully.";
                         ?>
-            <br>
-            <a href="doctor.php">Back to Doctors</a>
+            <!-- <br>
+            <a href="doctor.php">Back to Doctors</a> -->
             <?php
                     } else {
-                        echo "ERROR: Could not able to execute $query." . mysqli_error($link);
+                        // echo "ERROR: Could not able to execute $query." . mysqli_error($link);
                     }
 
                     mysqli_close($link);
@@ -65,7 +65,7 @@
                 }
             }
             ?>
-            <form method="post" action="add_doctor.php">
+            <form method="post" action="add_doctor.php" onsubmit="confirmAdd()">
                 <label for="doctor_id">Doctor ID:</label><br>
                 <input type="text" id="doctor_id" name="doctor_id" required><br>
                 <label for="first_name">First Name:</label><br>
@@ -78,6 +78,11 @@
                 <input type="file" name="image"><br><br>
                 <input type="submit" value="Add Doctor">
             </form>
+            <script>
+            function confirmAdd() {
+                return confirm("Do you want to create a doctor?");
+            }
+            </script>
         </div>
     </div>
 </body>

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid2">
         <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
@@ -25,7 +25,7 @@
             </form>
         </div>
         <div id="side-nav" class="sidenav">
-            <a href="index.html" id="home">Home</a>
+            <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
@@ -66,7 +66,8 @@
                 <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
                 <br><br>
                 Image:
-                <img src="<?php echo $doctor['dImage'] ?>" alt="Dr. <?php echo $doctor['first_name'] ?>'s photo">
+                <img src="<?php if ($doctor['dImage'] == NULL) {echo 'default.png';} else{echo $doctor['dImage'];} ?>"
+                    alt="Dr. <?php echo $doctor['first_name'] ?>'s photo">
                 <input type="file" name="image">
                 <?php
                         if (isset($_FILES['image'])) {

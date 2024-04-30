@@ -125,7 +125,6 @@ T0910,Estradiol (E2) EIA/LIA,serum
 T0463,Thyroglobulin,serum
 T0866,α-fetoprotein(AFP)(Blood),serum
 T0637,Homocysteine,serum
-T0484,HIV 快速測定(婦產科用),serum
 T0128,Intact parathyroid hormone,serum
 T0625,HBsAg EIA  (Qualitative),serum
 T0942,Anti HAV,serum
@@ -136,8 +135,6 @@ T0004,Chlamydia trachomatis Ab,serum
 T0596,RPR/VDRL test(Blood),serum
 T0679,Adrenocorticotropic Hormone (ACTH),serum
 T0427,LH(EIL/LIA),serum
-T0893,登革熱病毒抗體IgG檢查,serum
-T0206,登革熱病毒抗體IgM檢查,serum
 T0914,Glycosylated Hb (HbA1c),serum
 T0493,Dengue NS1 Ag,serum
 T0467,Dengue NS1 Ag,serum
@@ -164,7 +161,6 @@ T0069,IgA Nephelometry,serum
 T0413,prostate specific antigen(PSA),serum
 T0751,CA19-9,serum
 T0052,CA15-3,serum
-T0056,CA12-5 EIA法,serum
 12068,Thyroglobulin antibody (TA),serum
 12050,Ceruloplasmin,serum
 12038,C'4 Nephelometry,serum
@@ -179,19 +175,11 @@ T0056,CA12-5 EIA法,serum
 12020,Mycoplasma ab (Total Ab),serum
 8129,Insulin,serum
 12002,Widal & Weil-Felix test,serum
-12034,C'3 (包括C3c) Nephelometry,serum
-14038,Anti-HBc IgM (EIA法),serum
 1403203,HBsAg EIA Division of Gastroenterology (Quantitative),serum
 14048,CMv Ab-IgM,serum
-14045,Anti-rubella IgM (EIA法),serum
-14039,Anti-HAV IgM（EIA法）,serum
 14035,HBeAg EIA,serum
 14004,CMv Ab-IgG,serum
-1200701,α-fetoprotein(AFP)(羊水),serum
 12011,Rheumatoid factor test Nephelometry,serum
-14036,Anti-HBe (EIA法),serum
-14044,Anti-rubella IgG (EIA法),serum
-1202101,CEA(體液),serum
 12134,Anti-TPO Ab,serum
 8042,Iron stain(B.M.),blood
 8013,WBC differential count,blood
@@ -200,7 +188,6 @@ T0056,CA12-5 EIA法,serum
 8059,Factor VII assay,blood
 8044,LAP stain,blood
 8010,Eosinophil count,blood
-8082,"CBC–III(包含WBC ,RBC ,Hb ,Hct ,MCV)",blood
 8047,Peroxidase stain(B.M.),blood
 8051,PAS stain(B.M.),blood
 8128,B.M. DC,blood
@@ -211,7 +198,6 @@ RETHE,Reticulocyte hemoglobin equivalent(RET-He),blood
 8027,B.M.,blood
 8008,Reticulocyte count,blood
 8092,Mixing APTT,blood
-8011,"CBC–I(包含WBC ,RBC ,Hb ,Hct ,MCV ,MCH ,MCHC ,Platelet)",blood
 8081,Factor 12 assay,blood
 8061,Factor 9 assay,blood
 8002,W.B.C,blood
@@ -247,11 +233,9 @@ LAB011,ABO  antibody titration,blood bank
 11001,A.B.AB.O grouping(tube method),blood bank
 11004,Antibody screening,blood bank
 1100802,Mn Typing,blood bank
-11010,Special blood group studies_ 特殊血型三大群以上,blood bank
 11011,Investigation transfusion reaction,blood bank
 11009,Special blood group studies ╴D.E.C.e.c,blood bank
 9002,Blood urea nitrogen (BUN),Biochemistry
-2400902,"O.G.T.T (75gm,二次,ac,2hr)",Biochemistry
 2400901,"O.G.T.T.(100gm,四次,ac,1hr,2hr,3hr,OBS)",Biochemistry
 905101,Glucose-6-phosphate-dehydrogenase (G-6-P-D),Biochemistry
 900505,Glucose (Ascites),Biochemistry
@@ -279,9 +263,6 @@ LAB011,ABO  antibody titration,blood bank
 9093,ICG,Biochemistry
 900507,Glucose (urine) Random,Biochemistry
 901302,Uric Acid (urine) 24hr,Biochemistry
-901503,Creatinine 透析液,Biochemistry
-900510,Glucose 透析液,Biochemistry
-900201,Urea-N 透析液,Biochemistry
 10807,Ethyl alcohol,Biochemistry
 9138,Bilirubin- D /Bilirubin-T Ratio,Biochemistry
 9039,Globulin,Biochemistry
@@ -323,7 +304,6 @@ LAB011,ABO  antibody titration,blood bank
 901303,Uric Acid(UA),Biochemistry
 1052202,Cyclosporine-A,Biochemistry
 9038,Albumin(ALB),Biochemistry
-OGTT75,"O.G.T.T (75gm,三次,ac,1hr,2hr)",Biochemistry
 10511,Digoxin,Biochemistry
 1219301,NT-proBNP,Biochemistry
 12192,PCT,Biochemistry
@@ -366,7 +346,6 @@ OGTT75,"O.G.T.T (75gm,三次,ac,1hr,2hr)",Biochemistry
 1050901,Theophylline(trough),Biochemistry
 9059,Lactic Acid (lactate),Biochemistry
 9037,Ammonia(NH3),Biochemistry
-900503,"O.G.T.T(50gm,pc,一次,OBS)",Biochemistry
 1211201,CSF-Albumin,Biochemistry
 9064,Lipase,Biochemistry
 1053102,Vancomycin(peak),Biochemistry
@@ -402,10 +381,6 @@ LAB06,Vitamin E,Outbound inspection
 8133,Cystatin C,Outbound inspection
 30013,C1 esterase inhibitor,Outbound inspection
 6010,Bence Jones protein,Outbound inspection
-ACGH31,Array CGH Test(血液),Outbound inspection
-F9001,A型血友病(第9凝血因子)全基因篩檢,Outbound inspection
-F8002,A型血友病(第8凝血因子)全基因定序篩檢,Outbound inspection
-F8001,A型血友病(第8凝血因子-INV1及INV22),Outbound inspection
 30019,Anti-histone,Outbound inspection
 6512,Coproporphyrin,Outbound inspection
 1000702,Chromium(Cr),Outbound inspection
@@ -430,7 +405,6 @@ RDS021,Gaucher screening test,Outbound inspection
 GAD01,Glutamic acid decarboxylase autoantibody (GAD Ab),Outbound inspection
 12056,Anti-mitochontrial antibody(AMA),Outbound inspection
 12057,Anti-smooth muscle antibody(ASMA),Outbound inspection
-F9001S,(採檢費)B型血友病(第9凝血因子)全基因篩檢,Outbound inspection
 12202,HCV Genotype,Outbound inspection
 LAB04,Se(Selenium),Outbound inspection
 1000801,HG(MERCURY)(Urine),Outbound inspection
@@ -445,7 +419,6 @@ LAB012,Test for inborn errors of metabolism,Outbound inspection
 901703,Amylase (urine) 24hr,Outbound inspection
 12133,Anti-β2-glycoprotein-I Ab,Outbound inspection
 12066,Basement Memb. Zone Ab,Outbound inspection
-910201,Adenosine deaminase (ADA)(體液),Outbound inspection
 12160,Immunoglobulin κ/λ,Outbound inspection
 9102,Adenosine deaminase (ADA) (Blood),Outbound inspection
 9107,Free T3 (EIA/LIA),Outbound inspection
@@ -521,8 +494,6 @@ DR-70,DR-70,Outbound inspection
 1206101,Myoglobin(Urine),Outbound inspection
 PGD,Sensorineural Hearing Loss,Outbound inspection
 12052,β2-microglobulin(Blood),Outbound inspection
-LAB014,抗黴菌藥物Voriconazole檢測,Outbound inspection
-F8002S,(採檢費)A型血友病(第8凝血因子)全基因定序篩檢,Outbound inspection
 906701,ALK-isoenzyme-EP,Outbound inspection
 GENEC01,SOFIVA Baby Scan,Outbound inspection
 SCLERO,"Systemic Sclerosis Abs,screening",Outbound inspection
@@ -548,7 +519,6 @@ TEPT02,Platinum(Pt),Outbound inspection
 1217601,HLA-C-high resolution,Outbound inspection
 1217701,HLA-DQB1-high resolution,Outbound inspection
 1217702,HLA-DRB1-high resolution,Outbound inspection
-F8001S,(採檢費)A型血友病(第8凝血因子-INV1及INV22),Outbound inspection
 IMR01,IMR AD(Immuno Magnetic Reduction Alzheimer's Disease),Outbound inspection
 COTIN,Cotinine,Outbound inspection
 10002,Aluminum(Al),Outbound inspection
@@ -572,20 +542,14 @@ HPV-27,HPV-27 CHIP,Molecular testing
 1218209,MucorGenius DNA test,Molecular testing
 1218211,Mycoplasma pneumonia DNA detection,Molecular testing
 1218208,Neisseria gonorrhoeae DNA test(Swab),Molecular testing
-12184,HBV-DNA 定量 PCR,Molecular testing
 12200,Human Leukocyte Panel Reactive Antibodies Percentage screening test,Molecular testing
-1218401,EBV-DNA 定量 PCR,Molecular testing
 14052,HSV 1+2 IgM,Molecular testing
-1218404,BK virus定量PCR (Blood),Molecular testing
-1218402,CMV定量PCR檢測(Blood),Molecular testing
 12214,Lymphocytotoxic test,Molecular testing
 12088,Tissue typing HLA (HLA-DR/DQ),Molecular testing
 12072,Lymphocyte surface marker Tumor/cancer,Molecular testing
 12086,HLA-B27,Molecular testing
-1218405,BK virus定量PCR (Urine),Molecular testing
 12185,HCV-RNA (PCR),Molecular testing
 12215,SARS-CoV-2 RNA,Molecular testing
-CD-1,Immunological Disease Marker檢測,Molecular testing
 1407401,HIV-1 viral load Test (STAT),Molecular testing
 HBV-Y1,HBV YMDD,Molecular testing
 PJP,Pneumocystis jiroveci DNA Detection,Molecular testing
@@ -593,10 +557,6 @@ PJP,Pneumocystis jiroveci DNA Detection,Molecular testing
 12087,Tissue typing HLA (HLA-ABC),Molecular testing
 14047,EB NA IgG,Molecular testing
 1218204,HSV PCR(CSF),Molecular testing
-1404601,EB VCA IgM (檢驗科),Molecular testing
-1404602,EB VCA IgA (檢驗科),Molecular testing
-1404603,EB VCA IgG (檢驗科),Molecular testing
-HBV-Y,HBV YMDD與DNA病毒量檢測,Molecular testing
 14074,HIV viral load test,Molecular testing
 14071,Toxoplasma IgM,Molecular testing
 12073,Lymphocyte surface markerInfectious disease,Molecular testing
@@ -608,7 +568,6 @@ HBV-Y,HBV YMDD與DNA病毒量檢測,Molecular testing
 12196,HLA-B1502,Molecular testing
 14068,Varicella-Zoster virus IgG,Molecular testing
 14013,Varicella-Zoster virus IgM,Molecular testing
-1218406,CMV定量PCR檢測(Urine),Molecular testing
 14070,Measles virus IgG,Molecular testing
 3002252,Egg white,"Pediatric Immunization	"
 3002272,Penicillium notatum,"Pediatric Immunization	"
