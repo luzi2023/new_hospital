@@ -1,9 +1,10 @@
 body {
-    margin-top: 5vw;
+    margin-top: 0vw;
 }
 
 .container-fluid {
-    margin-left: 13vw;
+    margin: 0;
+    padding: 0;
 }
 
 /* Style the links inside the sidenav */
@@ -35,7 +36,56 @@ body {
 }
 
 #body {
-    margin-left: 13vw;
+    margin-left: 0;;
+}
+
+.nav{
+    font-size: 4vw;
+    height: 10vw;
+    line-height: 10vw;
+    width: 100%;
+    background-color: #0063A0;
+    display: flex;
+    height: 8.79vw;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%; 
+    z-index: 1;
+}
+
+.positionfixed {
+    height: 12vw;
+}
+
+.plus{
+    padding-left: 4vw;
+    color: white;
+}
+
+.hometitle{
+    color: white;
+    text-decoration: none;
+    padding-left: 0vw;
+    padding-right: 20vw;
+}
+
+.fa-user:before{
+    padding-left: 8vw;
+    padding-right: 2vw;
+    color: white;
+}
+
+#log{
+    font-size: 3vw;
+    padding-left: 7vw;
+    color: white;
+    text-decoration: none;
+}
+
+.detail{
+    padding-left: 22vw;
 }
 
 /* The about link: 20px from the top with a green background */
@@ -115,7 +165,6 @@ input {
     color: black;
 }
 
-
 img {
     width: 150px;
 }
@@ -157,4 +206,105 @@ img {
 
 #inline-delete {
     display: inline;
+}
+
+.fix1{
+    margin-top: 20vw;
+    height: 10vw;
+    background-color: #FCEFE8;
+}
+
+.decor1{
+    height: 40vw;
+    background-color: #FCEFE8;
+}
+
+.picture{
+    width: 90%;
+    height: 60vw;
+    margin: auto;
+    display: block;
+}
+
+.fix2{
+    height: 6vw;
+    background-color: #FCEFE8;
+    margin-top: 35vw;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FCEFE8;
+}
+
+.line{
+    width: 30%;
+    color: #0063A0;
+}
+
+.item{
+    margin-bottom: 0;
+    font-size: 4vw;
+    text-align: center;
+    margin: 0px 6vw;
+    color: #0063A0;
+}
+
+.decor2{
+    height: 100vw;
+    background-color: #FCEFE8;
+}
+
+
+.backfix{
+    color: white;
+    height: 7vw;
+}
+
+.back{
+    height: 75vw;
+    background-color: white;
+    width: 80%;
+    margin-left: 10vw;
+}
+
+.function{
+    font-size: 3vw;
+    text-align: center;
+    color: #0063A0;
+    line-height: 8vw;
+    margin: 3vw;
+    padding-top: 5vw;
+}
+
+.last{
+    background-color: #0063A0;
+    height: 14vw;
+}
+
+.fa-regular{
+    margin-right: 3vw;
+}
+
+.end{
+    color: white;
+    font-size: 4vw;
+    text-align: center;
+    padding-top: 4vw;
+}
+
+#list_body{
+    padding-left: 22vw;
+}
+
+#list_body h1{
+    color: #0063A0;
+}
+
+.doctor_menu a{
+    text-decoration: none;
+    color: #0063A0;
 }
