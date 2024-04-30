@@ -308,3 +308,11 @@ img {
     text-decoration: none;
     color: #0063A0;
 }
+
+.search{
+    position: absolute;
+    left: 5vw;
+    width: 20vw;
+    top:30vw;
+
+}
