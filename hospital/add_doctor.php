@@ -24,13 +24,13 @@
                 <input type="submit" value="login" name="submit">
                 <a href="register.html">register now</a>
             </form>
-        </div>
+        </div> -->
         <div id="side-nav" class="sidenav">
             <a href="index.html" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
-        </div> -->
+        </div>
 
         <div id="body">
             <h1>Add New Doctor</h1>
