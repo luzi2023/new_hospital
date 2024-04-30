@@ -1,26 +1,26 @@
-Unnamed: 0,useStatus,eID,eName,purchaseDate,manufacturer
-1,Normal,58125,Handheld Wireless Ultrasonic (Linear Probe),2020-06-26,Medtronic
-2,Repaired,50339,Gamma Ray Detector,2023-07-06,Johnson&Johnson
-3,Normal,54748,Flexible Electronic Laparoscope,1997-02-25,Medtronic
-4,Normal,56368,Linear Specialized Broadband Probe,1998-05-13,Medtronic
-5,Repaired,57903,High-Power Diode Laser,1991-03-04,Medtronic
-6,Normal,53931,Digital Apex Locator System,2022-04-19,Johnson&Johnson
-7,Scrapped,55244,Ultrasonic Bone Cutter,2015-11-20,Johnson&Johnson
-8,Normal,52951,Dental Implant and Bone Saw Machine,2015-10-13,Medtronic
-9,Normal,50449,Portable Dental X-ray Machine,2018-10-21,Abbott
-10,Repaired,52065,Orthodontic Clinical Treatment Instrument Set,2005-04-25,Johnson&Johnson
-11,Normal,52799,Current Activity Tester,1989-09-29,Medtronic
-12,Repaired,53322,High-Definition Narrow-Band Electron Colonoscope (Short Version),2003-11-15,Johnson&Johnson
-13,Normal,53303,Laparoscopic Instruments,2022-03-03,Medtronic
-14,Normal,54963,Colonoscope Flushing Pump,1980-10-06,Johnson&Johnson
-15,Normal,56288,Activated Clotting Time (ACT) Analyzer,2012-05-16,Abbott
-16,Repaired,58044,24-Hour ECG (Electrocardiogram) & Analysis System,1981-06-24,Medtronic
-17,Repaired,56966,Blood Parameter Detection System,1993-07-13,Johnson&Johnson
-18,Normal,56652,Minimally Invasive Heart Valve Expander,1987-03-12,Johnson&Johnson
-19,Normal,59047,Vacuum-Assisted Venous Drainage Controller,2014-04-13,Medtronic
-20,Normal,56887,Endoscope Defogging System,1997-08-25,Abbott
-21,Normal,54841,Temperature Cycling Instrument,1996-03-28,Medtronic
-22,Scrapped,57291,Electronic Nasopharyngoscope,1982-12-09,Medtronic
-23,Normal,56173,Portable LED Headlamp,1987-09-01,Medtronic
-24,Repaired,58151,Blood Cell Counter,1991-07-16,Johnson&Johnson
-25,Normal,52699,Advanced Cardiac Ultrasound,1982-02-18,Abbott
+useStatus,eID,eName,purchaseDate,manufacturer
+Normal,58125,Handheld Wireless Ultrasonic (Linear Probe),2020/6/26,Medtronic
+Repaired,50339,Gamma Ray Detector,2023/7/6,Johnson&Johnson
+Normal,54748,Flexible Electronic Laparoscope,1997/2/25,Medtronic
+Normal,56368,Linear Specialized Broadband Probe,1998/5/13,Medtronic
+Repaired,57903,High-Power Diode Laser,1991/3/4,Medtronic
+Normal,53931,Digital Apex Locator System,2022/4/19,Johnson&Johnson
+Scrapped,55244,Ultrasonic Bone Cutter,2015/11/20,Johnson&Johnson
+Normal,52951,Dental Implant and Bone Saw Machine,2015/10/13,Medtronic
+Normal,50449,Portable Dental X-ray Machine,2018/10/21,Abbott
+Repaired,52065,Orthodontic Clinical Treatment Instrument Set,2005/4/25,Johnson&Johnson
+Normal,52799,Current Activity Tester,1989/9/29,Medtronic
+Repaired,53322,High-Definition Narrow-Band Electron Colonoscope (Short Version),2003/11/15,Johnson&Johnson
+Normal,53303,Laparoscopic Instruments,2022/3/3,Medtronic
+Normal,54963,Colonoscope Flushing Pump,1980/10/6,Johnson&Johnson
+Normal,56288,Activated Clotting Time (ACT) Analyzer,2012/5/16,Abbott
+Repaired,58044,24-Hour ECG (Electrocardiogram) & Analysis System,1981/6/24,Medtronic
+Repaired,56966,Blood Parameter Detection System,1993/7/13,Johnson&Johnson
+Normal,56652,Minimally Invasive Heart Valve Expander,1987/3/12,Johnson&Johnson
+Normal,59047,Vacuum-Assisted Venous Drainage Controller,2014/4/13,Medtronic
+Normal,56887,Endoscope Defogging System,1997/8/25,Abbott
+Normal,54841,Temperature Cycling Instrument,1996/3/28,Medtronic
+Scrapped,57291,Electronic Nasopharyngoscope,1982/12/9,Medtronic
+Normal,56173,Portable LED Headlamp,1987/9/1,Medtronic
+Repaired,58151,Blood Cell Counter,1991/7/16,Johnson&Johnson
+Normal,52699,Advanced Cardiac Ultrasound,1982/2/18,Abbott
