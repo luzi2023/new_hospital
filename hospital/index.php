@@ -69,7 +69,12 @@
                 </div>
             </div>
             <div class="positionfixed"></div>
-            <br>
+            
+            <p class = "care">We Care About Your Health</p>
+            <div class = "detail">
+                <img class="picture" src="health.jpg" alt="health">
+                
+            </div>
             <div class="fix1"></div>
             <div class="decor1">
                 <img class="picture" src="medical.jpg" alt="medical">

@@ -46,31 +46,28 @@ body {
 
 #body {
     margin-left: 0;
-    ;
 }
 
 .nav {
-    font-size: 4vw;
-    height: 10vw;
-    line-height: 10vw;
+    font-size: 2.5vw;
+    height: 8vw;
+    line-height: 8vw;
     width: 100%;
-    background-color: #0063A0;
+    background-color: #389ddc;
     display: flex;
-    height: 8.79vw;
     align-items: center;
     position: fixed;
     top: 0%;
     left: 0%;
-    width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .positionfixed {
-    height: 12vw;
+    height: 8vw;
 }
 
 .plus {
-    padding-left: 4vw;
+    padding-left: 8vw;
     color: white;
 }
 
@@ -88,14 +85,26 @@ body {
 }
 
 #log {
-    font-size: 3vw;
-    padding-left: 7vw;
+    font-size: 1.5vw;
+    padding-left: 25vw;
     color: white;
     text-decoration: none;
 }
 
-.detail {
-    padding-left: 22vw;
+.picture{
+    padding-left: 0vw;
+    opacity: 0.9;
+    filter: brightness(50%);
+}
+
+.care{
+    position: relative;
+    top: 35vw;
+    color: white;
+    text-align: center;
+    font-size: 5vw;
+    z-index: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* The about link: 20px from the top with a green background */
@@ -103,6 +112,7 @@ body {
     top: 15vw;
     background-color: #04AA6D;
     opacity: 0.7;
+    z-index: 1;
 }
 
 #doctors {
@@ -110,6 +120,7 @@ body {
     background-color: #2196F3;
     /* Blue */
     opacity: 0.7;
+    z-index: 1;
 }
 
 #equipments {
@@ -117,6 +128,7 @@ body {
     background-color: #f44336;
     /* Red */
     opacity: 0.7;
+    z-index: 1;
 }
 
 #about {
@@ -124,6 +136,7 @@ body {
     background-color: #555;
     /* Light Black */
     opacity: 0.7;
+    z-index: 1;
 }
 
 #login {
@@ -249,15 +262,15 @@ img {
 
 .line {
     width: 30%;
-    color: #0063A0;
+    color: #4385ae;
 }
 
 .item {
     margin-bottom: 0;
-    font-size: 4vw;
+    font-size: 3vw;
     text-align: center;
     margin: 0px 6vw;
-    color: #0063A0;
+    color: #4385ae;
 }
 
 .decor2 {
@@ -268,39 +281,39 @@ img {
 
 .backfix {
     color: white;
-    height: 7vw;
+    height: 2vw;
 }
 
 .back {
-    height: 75vw;
+    height: 60vw;
     background-color: white;
     width: 80%;
     margin-left: 10vw;
 }
 
 .function {
-    font-size: 3vw;
+    font-size: 2vw;
     text-align: center;
-    color: #0063A0;
+    color: #4385ae;
     line-height: 8vw;
-    margin: 3vw;
+    margin: 4vw;
     padding-top: 5vw;
 }
 
 .last {
-    background-color: #0063A0;
-    height: 14vw;
+    background-color: #3a7da7;
+    height: 8vw;
 }
 
 .fa-regular {
-    margin-right: 3vw;
+    margin-right: 1.5vw;
 }
 
 .end {
     color: white;
-    font-size: 4vw;
+    font-size: 2vw;
     text-align: center;
-    padding-top: 4vw;
+    padding-top: 3vw;
 }
 
 #list_body {
@@ -308,20 +321,39 @@ img {
 }
 
 #list_body h1 {
-    color: #0063A0;
+    color: #3a7da7;
 }
 
 .doctor_menu a {
     text-decoration: none;
-    color: #0063A0;
+    color: #3a7da7;
 }
 
 .search {
     position: absolute;
-    left: 5vw;
+    left: 70vw;
     width: 20vw;
-    top: 30vw;
+    top: 2vw;
+    color: #3a7da7;
+    font-size: 1.5vw;
 
+}
+
+#btn{
+    margin-left: 95px;
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#btn:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
 }
 
 /* .label {
@@ -342,7 +374,7 @@ img {
 
 } */
 .form-title {
-    color: #0063A0;
+    color: #3a7da7;
 }
 
 
@@ -418,7 +450,7 @@ input[type="file"] {
 
 .changing-form .button {
     margin-left: -120px;
-    background-color: #0063A0;
+    background-color: #3a7da7;
     border: none;
     padding: 10px 25px 10px 25px;
     color: #FFF;
@@ -430,7 +462,7 @@ input[type="file"] {
 
 .changing-form .button-delete {
     margin-left: 125px;
-    background-color: #0063A0;
+    background-color: #3a7da7;
     border: none;
     padding: 10px 25px 10px 25px;
     color: #FFF;
@@ -443,7 +475,7 @@ input[type="file"] {
 .changing-form .button-submit {
     margin-left: 80px;
     display: block;
-    background-color: #0063A0;
+    background-color: #3a7da7;
     border: none;
     padding: 10px 25px 10px 25px;
     color: #FFF;

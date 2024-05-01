@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <!-- 返回首页的按钮 -->
-        <a id="fish" href="doctor.php" class="back-to-home">Back to Home Page</a>
+        <a id="fish" href="doctor.php" class="back-to-home">Back to Doctor List</a>
 
         <!-- 搜索框 -->
         <div id="aki">
