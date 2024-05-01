@@ -8,7 +8,7 @@ body {
 }
 
 .container-fluid2 {
-    margin-left: 35vw;
+    margin-left: 28vw;
 }
 
 .redirect-message {
@@ -324,10 +324,10 @@ img {
 
 }
 
-.label {
+/* .label {
     transition: all .2s ease;
 
-}
+} */
 
 /* .input-column {
     background: rgb(175, 174, 174);
@@ -342,20 +342,56 @@ img {
 
 } */
 .form-title {
-    color: #888;
+    color: #0063A0;
 }
 
-.changing-form input[type="text"],
-input[type="file"] {
+
+.changing-form input[type="text"] {
     display: block;
     border: 1px solid #DADADA;
     color: #888;
     height: 30px;
     margin-bottom: 16px;
     margin-right: 6px;
-    margin-top: 2px;
+    margin-top: 20px;
     outline: 0 none;
-    padding: 3px 3px 3px 5px;
+    padding: 4px 3px 3px 5px;
+    width: 30%;
+    font-size: 12px;
+    line-height: 14px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+
+input[type="file"] {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 20px;
+    outline: 0 none;
+    padding: 4px 3px 3px 5px;
+    width: 30%;
+    font-size: 12px;
+    line-height: 14px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.add-img-position input[type="file"] {
+    display: block;
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 20px;
+    outline: 0 none;
+    padding: 4px 3px 3px 5px;
     width: 30%;
     font-size: 12px;
     line-height: 14px;
@@ -366,23 +402,68 @@ input[type="file"] {
 
 .changing-form span {
     float: left;
-    width: 20%;
+    width: 15%;
     text-align: right;
     padding-right: 10px;
     margin-top: 10px;
     color: #888;
 }
 
+.changing-form p {
+    color: #888;
+    margin: 0;
+    padding-top: 10px;
+    margin-bottom: 16px;
+}
+
 .changing-form .button {
-    background-color: #E27575;
+    margin-left: -120px;
+    background-color: #0063A0;
     border: none;
     padding: 10px 25px 10px 25px;
     color: #FFF;
     box-shadow: 1px 1px 5px #B6B6B6;
-    text-shadow: 1px 1px 1px #9E3F3F;
+    text-shadow: 1px 1px 1px #83bee2;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.changing-form .button-delete {
+    margin-left: 125px;
+    background-color: #0063A0;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.changing-form .button-submit {
+    margin-left: 80px;
+    display: block;
+    background-color: #0063A0;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.changing-form .button-delete:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.changing-form .button-submit:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
 }
 
 .changing-form .button:hover {
-    background-color: #CF7A7A;
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
 }

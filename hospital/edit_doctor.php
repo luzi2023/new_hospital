@@ -50,15 +50,15 @@
                 class="changing-form">
                 <label>
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
-                    <input type="submit" value="Delete" class="button">
+                    <input type="submit" value="Delete" class="button-delete">
                 </label>
             </form>
 
             <form action="update_doctor.php" method="post" enctype="multipart/form-data" class="changing-form">
                 <label>
                     <span>Doctor ID:
-                        <?php echo $doctor['dID'] ?><br>
                     </span>
+                    <p><?php echo $doctor['dID'] ?></p>
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
                 </label>
                 <label>
@@ -74,6 +74,7 @@
                     <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
                 </label>
                 <label>
+                    <br>
                     <span>Image:</span>
                     <img src="<?php if (file_exists($doctor['dImage'])) {echo $doctor['dImage'];} else {echo "default.png";} ?>"
                         alt="Dr. <?php echo $doctor['first_name'] ?>'s photo">
@@ -89,7 +90,7 @@
                         ?>
                 </label>
                 <label>
-                    <input type="submit" class="button">
+                    <input type="submit" class="button-submit">
                 </label>
             </form>
 

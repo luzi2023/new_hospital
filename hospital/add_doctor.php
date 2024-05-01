@@ -74,9 +74,10 @@
                 }
             }
             ?>
-            <form method="post" action="add_doctor.php" onsubmit="confirmAdd()" enctype="multipart/form-data" class="changing-form">
+            <form method="post" action="add_doctor.php" onsubmit="confirmAdd()" enctype="multipart/form-data"
+                class="changing-form">
                 <label>
-                    <span for="doctor_id" class="label">Doctor ID:</span>
+                    <span for="doctor_id">Doctor ID:</span>
                     <input type="text" id="doctor_id" name="doctor_id" class="input-column" required>
                 </label>
                 <label>
@@ -85,13 +86,13 @@
                 </label>
                 <label>
                     <span for="last_name">Last Name:</span>
-                    <input type="text" id="last_name" name="last_name" required><br>
+                    <input type="text" id="last_name" name="last_name" required>
                 </label>
                 <label>
                     <span for="speciality">Speciality:</span>
-                    <input type="text" id="speciality" name="speciality" required><br>
+                    <input type="text" id="speciality" name="speciality" required>
                 </label>
-                <label>
+                <label class="add-img-position">
                     <span for="photo">Image</span>
                     <input type="file" name="image">
                 </label>
