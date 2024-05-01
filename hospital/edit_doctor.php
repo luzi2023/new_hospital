@@ -21,7 +21,7 @@
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
                 <input type="submit" value="login" name="submit">
-                <a href="register.html">register now</a>
+                <a href="register.php">register now</a>
             </form>
         </div>
         <div id="side-nav" class="sidenav">
@@ -44,41 +44,53 @@
                     if (mysqli_num_rows($result) > 0) {
                         $doctor = mysqli_fetch_assoc($result);
                         ?>
-            <h2 id="inline-delete">Update Doctor</h2>
+            <h2 id="inline-delete" class="form-title">Update Doctor</h2>
 
-            <form action="delete_doctor.php" method="post" onsubmit="return confirmDelete()" id="inline-delete">
-                <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
-                <input type="submit" value="Delete">
+            <form action="delete_doctor.php" method="post" onsubmit="return confirmDelete()" id="inline-delete"
+                class="changing-form">
+                <label>
+                    <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
+                    <input type="submit" value="Delete" class="button">
+                </label>
             </form>
 
-            <form action="update_doctor.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
-                <p class="eliminate-uneven-space">Doctor ID:
-                    <?php echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" . $doctor['dID'] ?>
-                </p>
-                First name:
-                <input type="text" name="first_name" value="<?php echo $doctor['first_name']; ?>">
-                <br>
-                Last name:
-                <input type="text" name="last_name" value="<?php echo $doctor['last_name']; ?>">
-                <br>
-                Speciality:
-                <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
-                <br><br>
-                Image:
-                <img src="<?php if ($doctor['dImage'] == NULL) {echo 'default.png';} else{echo $doctor['dImage'];} ?>"
-                    alt="Dr. <?php echo $doctor['first_name'] ?>'s photo">
-                <input type="file" name="image">
-                <?php
+            <form action="update_doctor.php" method="post" enctype="multipart/form-data" class="changing-form">
+                <label>
+                    <span>Doctor ID:
+                        <?php echo $doctor['dID'] ?><br>
+                    </span>
+                    <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
+                </label>
+                <label>
+                    <span> First name:</span>
+                    <input type="text" name="first_name" value="<?php echo $doctor['first_name']; ?>">
+                </label>
+                <label>
+                    <span>Last name:</span>
+                    <input type="text" name="last_name" value="<?php echo $doctor['last_name']; ?>">
+                </label>
+                <label>
+                    <span>Speciality:</span>
+                    <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
+                </label>
+                <label>
+                    <span>Image:</span>
+                    <img src="<?php if (file_exists($doctor['dImage'])) {echo $doctor['dImage'];} else {echo "default.png";} ?>"
+                        alt="Dr. <?php echo $doctor['first_name'] ?>'s photo">
+                    <input type="file" name="image">
+                    <?php
                         if (isset($_FILES['image'])) {
                             $file_tmp = $_FILES['image']['tmp_name'];
                             $upload_dir = "uploads/";
                             move_uploaded_file($file_tmp, $upload_dir . $doctor_id);
-                            $image_url = "uploads/" . $doctor_id;
+                            $file_name = $doctor_id . "_" . $_FILES['image']['name'];
+                            $image_path = $upload_dir . $file_name;
                         }
                         ?>
-                <br>
-                <input type="submit" class="eliminate-unaligned-margin">
+                </label>
+                <label>
+                    <input type="submit" class="button">
+                </label>
             </form>
 
             <script>

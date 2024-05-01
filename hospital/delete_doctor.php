@@ -15,15 +15,18 @@
 </head>
 
 <body>
+    <?php
+    header("Refresh: 3; url=doctor.php");
+    ?>
     <div class="container-fluid2">
-        <div id="login">
+        <!-- <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
                 <input type="submit" value="login" name="submit">
                 <a href="register.html">register now</a>
             </form>
-        </div>
+        </div> -->
         <div id="side-nav" class="sidenav">
             <a href="index.html" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
@@ -31,7 +34,7 @@
             <a href="" id="about">About</a>
         </div>
 
-        <div id="body">
+        <div class="redirect-message">
             <?php
             if (isset($_POST['doctor_id'])) {
                 $doctor_id = $_POST['doctor_id'];
@@ -41,10 +44,11 @@
                 $delete_success = mysqli_query($link, $query);
 
                 if ($delete_success) {
-                    echo "Doctor information deleted sucessfully!";
+                    echo "Doctor information deleted sucessfully!<br><br>";
+                    echo "Redirect back to doctor page in 3 sec...";
                     ?>
-            <br><br>
-            <a href="doctor.php">Back to Doctors</a>
+            <!-- <br><br>
+            <a href="doctor.php">Back to Doctors</a> -->
             <?php
                 } else {
                     echo "Seems there's a problem when deleting...";

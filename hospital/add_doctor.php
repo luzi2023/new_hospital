@@ -22,30 +22,39 @@
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
                 <input type="submit" value="login" name="submit">
-                <a href="register.html">register now</a>
+                <a href="register.php">register now</a>
             </form>
-        </div>
+        </div>-->
         <div id="side-nav" class="sidenav">
-            <a href="index.html" id="home">Home</a>
+            <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
-        </div> -->
+        </div>
 
         <div id="body">
-            <h1>Add New Doctor</h1>
+            <h2 class="form-title">Add New Doctor</h2>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_POST['doctor_id'], $_POST['first_name'], $_POST['last_name'], $_POST['speciality'])) {
+                if (isset($_POST['doctor_id'], $_POST['first_name'], $_POST['last_name'], $_POST['speciality'], $_FILES['image'])) {
                     $doctor_id = $_POST['doctor_id'];
                     $first_name = $_POST['first_name'];
                     $last_name = $_POST['last_name'];
                     $speciality = $_POST['speciality'];
-                    if (!empty($_POST['image'])) {
-                        $image_path = $_POST['image'];
-                    } else {
-                        $image_path = 'default.png';
-                    }
+                    $file_tmp = $_FILES['image']['tmp_name'];
+                    $upload_dir = "uploads/";
+
+                    // get file name and its extension name
+                    $original_filename = $_FILES['image']['name'];
+                    $extension = pathinfo($original_filename, PATHINFO_EXTENSION);
+
+                    // generate the file name
+                    $file_name = $doctor_id . "_" . $extension;
+
+                    $image_path = $upload_dir . $file_name;
+
+                    // upload the file
+                    move_uploaded_file($file_tmp, $image_path);
 
                     $query = "INSERT INTO Doctor (dID, first_name, last_name, speciality, dImage) VALUES ('$doctor_id', '$first_name', '$last_name', '$speciality', '$image_path')";
 
@@ -65,18 +74,31 @@
                 }
             }
             ?>
-            <form method="post" action="add_doctor.php" onsubmit="confirmAdd()">
-                <label for="doctor_id">Doctor ID:</label><br>
-                <input type="text" id="doctor_id" name="doctor_id" required><br>
-                <label for="first_name">First Name:</label><br>
-                <input type="text" id="first_name" name="first_name" required><br>
-                <label for="last_name">Last Name:</label><br>
-                <input type="text" id="last_name" name="last_name" required><br>
-                <label for="speciality">Speciality:</label><br>
-                <input type="text" id="speciality" name="speciality" required><br>
-                <label for="photo">Image</label><br>
-                <input type="file" name="image"><br><br>
-                <input type="submit" value="Add Doctor">
+            <form method="post" action="add_doctor.php" onsubmit="confirmAdd()" enctype="multipart/form-data" class="changing-form">
+                <label>
+                    <span for="doctor_id" class="label">Doctor ID:</span>
+                    <input type="text" id="doctor_id" name="doctor_id" class="input-column" required>
+                </label>
+                <label>
+                    <span for="first_name">First Name:</span>
+                    <input type="text" id="first_name" name="first_name" required>
+                </label>
+                <label>
+                    <span for="last_name">Last Name:</span>
+                    <input type="text" id="last_name" name="last_name" required><br>
+                </label>
+                <label>
+                    <span for="speciality">Speciality:</span>
+                    <input type="text" id="speciality" name="speciality" required><br>
+                </label>
+                <label>
+                    <span for="photo">Image</span>
+                    <input type="file" name="image">
+                </label>
+                <label>
+                    <span>&nbsp;</span>
+                    <input type="submit" value="Add Doctor" class="button">
+                </label>
             </form>
             <script>
             function confirmAdd() {

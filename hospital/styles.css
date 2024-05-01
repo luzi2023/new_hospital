@@ -8,7 +8,12 @@ body {
 }
 
 .container-fluid2 {
-    margin-left: 40vw;
+    margin-left: 35vw;
+}
+
+.redirect-message {
+    text-align: center;
+    font-size: 3vw;
 }
 
 /* Style the links inside the sidenav */
@@ -205,9 +210,6 @@ img {
     margin-bottom: 0.5vw;
 }
 
-.eliminate-unaligned-margin {
-    margin-left: 0;
-}
 
 #inline-delete {
     display: inline;
@@ -320,4 +322,67 @@ img {
     width: 20vw;
     top: 30vw;
 
+}
+
+.label {
+    transition: all .2s ease;
+
+}
+
+/* .input-column {
+    background: rgb(175, 174, 174);
+    padding: 1.75rem 1rem .75rem;
+
+    &:focus {
+        background: rgb(175, 174, 174);
+        border-bottom: 2px solid #D9444A;
+        outline-width: 0;
+
+    }
+
+} */
+.form-title {
+    color: #888;
+}
+
+.changing-form input[type="text"],
+input[type="file"] {
+    display: block;
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 30%;
+    font-size: 12px;
+    line-height: 14px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.changing-form span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+
+.changing-form .button {
+    background-color: #E27575;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+}
+
+.changing-form .button:hover {
+    background-color: #CF7A7A;
 }

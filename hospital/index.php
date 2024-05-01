@@ -61,50 +61,46 @@
         </div>
         {% endblock %} -->
         <div id="body">
-            <div class = "nav">
-                <div class = "plus">
+            <div class="nav">
+                <div class="plus">
                     <i class="fa-solid fa-plus"></i>
-                    <a class = "hometitle">Hospital Homepage</a>
-                    <a id = "log"><i class="fa-solid fa-user"></i>Login</a>
+                    <a class="hometitle">Hospital Homepage</a>
+                    <a id="log"><i class="fa-solid fa-user"></i>Login</a>
                 </div>
             </div>
             <div class="positionfixed"></div>
             <br>
-            <div class = "detail">
-                <h2>Dynamic content</h2>
-                <p>The hospital has the following details:</p>
-                <ul>
-                    <li><strong>Doctors:</strong> {{ num_doc }}</li>
-                    <li><strong>Medications:</strong> {{ num_medication }}</li>
-                    <li><strong>In-use Equipment:</strong> {{ num_equipment }}</li>
-            </div>
-            <div class = "fix1"></div>
-            <div class = "decor1">
+            <div class="fix1"></div>
+            <div class="decor1">
                 <img class="picture" src="medical.jpg" alt="medical">
             </div>
-            <div class = "fix2"></div>
-            <div class = "about">
+            <div class="fix2"></div>
+            <div class="about">
                 <div class="line">
                     <hr>
                 </div>
                 <div class="item">
-                     <p>About</p>
+                    <p>About</p>
                 </div>
                 <div class="line">
                     <hr>
                 </div>
             </div>
-            <div class = "decor2">
-                <div class = "backfix"></div>
-                <div class = "back">
-                    <p class = "function">Our hospital management system is a comprehensive solution that encompasses hospital, treatment, patient, doctor, registration, case files, equipment, medication, and examination items, among other essential data. Our goal is to provide more comprehensive and professional medical services through this system, enhancing the quality of healthcare and meeting the needs of patients.</p>
+            <div class="decor2">
+                <div class="backfix"></div>
+                <div class="back">
+                    <p class="function">Our hospital management system is a comprehensive solution that encompasses
+                        hospital, treatment, patient, doctor, registration, case files, equipment, medication, and
+                        examination items, among other essential data. Our goal is to provide more comprehensive and
+                        professional medical services through this system, enhancing the quality of healthcare and
+                        meeting the needs of patients.</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="last">
         <div class="footer">
-            <p class="end"><i class="fa-regular fa-envelope"></i>Contact us :  joshuji@gmail.com</p>
+            <p class="end"><i class="fa-regular fa-envelope"></i>Contact us : joshuji@gmail.com</p>
         </div>
     </div>
 

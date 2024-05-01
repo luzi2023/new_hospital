@@ -12,10 +12,10 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    margin-top:5px;
-    
-    
-    
+    margin-top: 5vw;
+
+
+
 }
 
 h2 {
@@ -40,4 +40,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+#back-to-home {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
