@@ -113,7 +113,7 @@ if(isset($_POST["submit"])){
     </div>
     <div class="search">
         <form action="search.php" method="get">
-            <label for="search">Enter some keyword:</label><br>
+            <!-- <label for="search">Enter some keyword:</label><br> -->
             <input type="text" id="search" name="query" placeholder="Search something?">
             <button id="btn" type="submit">Search</button>
         </form>
