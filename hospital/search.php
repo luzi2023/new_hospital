@@ -27,8 +27,10 @@
     <?php
     // 连接数据库
     try {
-        $db = new PDO("mysql:host=localhost;dbname=hospital", "root", "");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // $db = new PDO("mysql:host=localhost;dbname=hospital", "root", "");
+        // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        include('config.php');
 
         // 检查是否存在关键字参数
         if(isset($_GET['query'])) {
@@ -36,18 +38,26 @@
             $keyword = $_GET['query'];
 
             // 查询医生信息
-            $query = "SELECT * FROM doctor WHERE first_name LIKE '%$keyword%' OR last_name LIKE '%$keyword%' OR speciality LIKE '%$keyword%'";
-            $stmt = $db->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $query = "SELECT * FROM Doctor WHERE first_name LIKE '%$keyword%' OR last_name LIKE '%$keyword%' OR speciality LIKE '%$keyword%' ";
+            $result = mysqli_query($link, $query);
+            // $stmt = $db->prepare($query);
+            // $stmt->execute();
+            // $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // 显示搜索结果
-            if(count($result) > 0) {
+            // if(count($result) > 0) {
+            if (mysqli_num_rows($result) > 0) {
                 echo "<ul>";
-                foreach($result as $doctor) {
+                foreach ($result as $doctor) {
                     // 构建医生的姓名
+                    ?>
+    <a href="edit_doctor.php?dID=<?php echo $doctor['dID']?>" class="search-and-edit">
+        <?php
                     $name = $doctor['first_name'] . ", " . $doctor['last_name'];
                     echo "<li>".$name." - ".$doctor['speciality']."</li>";
+                    ?>
+    </a>
+    <?php
                 }
                 echo "</ul>";
             } else {
