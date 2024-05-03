@@ -12,6 +12,7 @@ body {
 }
 
 .redirect-message {
+    padding-top: 2vw;
     text-align: center;
     font-size: 3vw;
 }

@@ -18,7 +18,7 @@
     <?php
     header("Refresh: 3; url=doctor.php");
     ?>
-    <div class="container-fluid2">
+    <div class="redirect-message">
         <!-- <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
