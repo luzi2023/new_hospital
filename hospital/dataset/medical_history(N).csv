@@ -1,0 +1,51 @@
+pNo,mhID,treatment,diagnosis,date,prescription
+157699,86580,"ECG,Echocardiogram",Arrhythmia,2018/3/2,Amiorone
+234179,85768,"Echocardiogram,Cardiac MRI",Congestive heart failure,2023/2/23,Digoxin Lanoxin
+100125,86943,Gastroscopy,Gastric spasm,2014/10/8,Atropine Sulfate
+116823,82167,"Pulmonary function tests,Bronchodilator test",Bronchial asthma,2004/11/14,Ephedrine
+192894,98318,Blood tests,Scurvy,2009/12/22,Vit C Vitacicol
+187147,83057,"Skin prick tests,Blood allergy tests",Allergy,2016/5/6,Dexamethasone
+114369,88277,Blood tests,Hypertension,2018/6/26,SR-lsoptin
+146457,84696,"Esophagogastroduodenoscopy(EGD),pH monitoring",Gastroesophageal reflux disease (GERD),2000/9/2,Nexium
+263408,85061,"Throat swab test,Chest X-ray",Respiratory tract infection,2014/10/1,Cravit
+168616,85203,"Psychological assessment,Mental status examination",Schizophrenia,1981/2/7,Novamin
+201653,89346,"Throat swab test,Chest X-ray",Respiratory tract infection,2006/8/4,Cravit
+110727,83095,"ECG,Echocardiogram",Atrial fibrillation,2022/1/18,Digoxin Lanoxin
+169716,93930,Blood tests,Hypertension,2009/4/2,SR-lsoptin
+136657,97422,Blood tests,Hypertension,1994/1/19,Lasix Rasitol
+115098,97388,"Oral examination,Periodontal disease assessment",Gingival bleeding,1997/7/9,Vit C Vitacicol
+118442,98411,"Gastroscopy,Blood tests",Vomiting,2020/5/22,Primperan
+176008,89791,"Blood tests,Urine tests",Diabetic ketoacidosis (DKA),2022/11/7,KCL
+252582,94486,"Brain imaging studies,Blood tests",Cerebral circulatory insufficiency,2018/9/14,Trental
+203766,91058,"Esophagogastroduodenoscopy( EGD),pH monitorin",Gastroesophageal reflux disease (GERD),1987/1/9,Nexium
+135865,98499,Blood tests,Hypertension,2004/6/15,SR-lsoptin
+189497,87819,Abdominal ultrasound,Loss of appetite,2017/3/6,Primperan
+260109,82557,"Oral examination,Periodontal disease assessment",Gingival bleeding,2021/6/27,Vit C Vitacicol
+290722,99981,"Brain imaging studies,Blood tests",Stroke syndrome,2016/8/4,Trental
+102867,88390,"Vaginal discharge examination,Cervical smear test",Trichomoniasis,2001/11/26,SATA
+149133,80786,"Brain imaging studies,Blood tests",Stroke syndrome,2000/1/7,Trental
+157699,79433,Thyroid function testing,Low blood pressure,2014/7/20,Levophed
+234179,75184,Chest X-ray,Asthma,2023/3/29,Asiphylline
+100125,79989,Electrocardiogram (ECG),Acute coronary artery blockage,2016/3/17,Actilyse r-TPA
+116823,74883,Chest X-ray,Asthma,1975/10/30,Asiphylline
+192894,72036,"Blood pressure measurement,Thyroid function testing",Low blood pressure,1989/7/2,Levophed
+187147,72005,Gastrointestinal endoscopy,Gastroenteritis,2005/7/17,Rotarix
+114369,76884,Electrocardiogram (ECG),High blood pressure,2019/5/12,Behyd
+146457,77060,Allergen-specific IgE testing,Allergy,1982/4/28,Vena-Ca-B6
+263408,77700,Chest X-ray,Asthma,2008/11/8,Asiphylline
+168616,71780,Allergen-specific IgE testing,Allergy,1982/6/11,Vena-Ca-B6
+201653,70988,Electrocardiogram (ECG),Acute coronary artery blockage,2007/10/1,Actilyse r-TPA
+110727,73507,Gastrointestinal endoscopy,Gastroenteritis,1969/3/1,Rotarix
+169716,77018,Urinalysis,Urinary tract infection,2000/5/31,Baktar
+136657,77528,Blood pressure measurement,Low blood pressure,2001/10/20,Levophed
+115098,75320,Urinalysis,Urinary tract infection,2003/8/22,Baktar
+118442,71901,Allergen-specific IgE testing,Allergy,2019/10/18,Vena-Ca-B6
+176008,72903,"Chest X-ray,Pulmonary function tests",Asthma,2000/12/9,Asiphylline
+252582,72184,"Blood pressure measurement,Thyroid function testing",Low blood pressure,2009/12/14,Levophed
+203766,77595,Gastrointestinal endoscopy,Gastroenteritis,2004/8/7,Rotarix
+135865,79454,"Chest X-ray,Pulmonary function tests",Asthma,2021/10/5,Asiphylline
+189497,78606,Electrocardiogram (ECG),High blood pressure,2018/1/30,Behyd
+260109,79625,Thyroid function testing,Low blood pressure,2024/1/1,Levophed
+290722,71424,Urinalysis,Urinary tract infection,2020/5/27,Baktar
+102867,70204,Gastrointestinal endoscopy,Gastroenteritis,2020/6/1,Rotarix
+149133,71371,Thyroid function testing,Low blood pressure,2000/1/11,Levophed
