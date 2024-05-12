@@ -42,11 +42,13 @@ if(isset($_POST["submit"])){
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/4bfa319983.js" crossorigin="anonymous"></script>
     <title>Local hospital</title>
+    <script src="all.js"></script>
 </head>
 
 <body>
+    <body onload="openCity(event, 'doctor')">
     <div class="container-fluid">
-        <div id="login">
+        <!-- <div id="login">
             <form method="post" action="doctor.php">
                 User:
                 <input type="text" name="username">
@@ -56,7 +58,7 @@ if(isset($_POST["submit"])){
                 <a href="register.php">Register now</a>
                 <?php if(isset($error_message)) { echo "<p class='error'>$error_message</p>"; } ?>
             </form>
-        </div>
+        </div> -->
 
         <!-- 其他內容 -->
     </div>
@@ -71,43 +73,84 @@ if(isset($_POST["submit"])){
         </div>-->
         <div id="side-nav" class="sidenav">
             <a href="index.php" id="home">Home</a>
-            <a href="doctor.php" id="doctors">Doctors</a>
+            <a href="doctor.php" id="doctors">Staffs</a>
             <a href="" id="equipments">Equipments</a>
             <a href="" id="about">About</a>
         </div>
+        <!-- Tab links -->
+        <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'doctor')">Doctor List</button>
+        <button class="tablinks" onclick="openCity(event, 'nurse')">Nurse List</button>
+        </div>
+        <div id="doctor" class="tabcontent">
+            <div id="list_body">
+                <h1>Doctor List</h1>
+                <div class="doctor_menu">
+                    <a href="add_doctor.php"></i>Add doctor</a>
+                </div>
 
-        <div id="list_body">
-            <h1>Doctor List</h1>
-            <div class="doctor_menu">
-                <a href="add_doctor.php"><i class="fa-solid fa-pencil"></i>Add doctor</a>
-            </div>
-
-            <?php
-
-
-            $query = "SELECT * FROM Doctor";
-            $query_run =mysqli_query($link, $query);
-
-            ?>
-            <div class="print_doc">
                 <?php
-                if (mysqli_num_rows($query_run) > 0) {
-                    foreach ($query_run as $row) {
-                        ?>
-                <a href="edit_doctor.php?dID=<?php echo $row['dID']?>">
-                    <div class="current_list">
-                        <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
-                            alt="Dr.<?php $row['first_name']?>'s head shot">
-                        <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
-                        <p> <?php echo $row['speciality'] ?> </p>
-                    </div>
-                </a>
-                <?php
-                    }
-                } else {
-                    echo "Sorry, there is no existed doctor.";
-                }
+
+
+                $query = "SELECT * FROM staff, Doctor WHERE staff.dID = Doctor.dID";
+                $query_run =mysqli_query($link, $query);
+
                 ?>
+                <div class="print_doc">
+                    <?php
+                    if (mysqli_num_rows($query_run) > 0) {
+                        foreach ($query_run as $row) {
+                            ?>
+                    <a href="staff_detail.php?dID=<?php echo $row['dID']?>">
+                        <div class="current_list">
+                            <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
+                                alt="Dr.<?php $row['first_name']?>'s head shot">
+                            <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
+                            <p> <?php echo $row['speciality'] ?> </p>
+                        </div>
+                    </a>
+                    <?php
+                        }
+                    } else {
+                        echo "Sorry, there is no existed doctor.";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+
+        <div id="nurse" class="tabcontent">
+            <div id="list_body">
+                <h1>Nurse List</h1>
+                <div class="doctor_menu">
+                    <a href="add_doctor.php"></i>Add nurse</a>
+                </div>
+
+                <?php
+
+
+                $query = "SELECT * FROM staff, nurse  WHERE staff.dID = nurse.dID";
+                $query_run =mysqli_query($link, $query);
+
+                ?>
+                <div class="print_doc">
+                    <?php
+                    if (mysqli_num_rows($query_run) > 0) {
+                        foreach ($query_run as $row) {
+                            ?>
+                    <a href="staff_detail.php?dID=<?php echo $row['dID']?>">
+                        <div class="current_list">
+                            <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
+                                alt="Dr.<?php $row['first_name']?>'s head shot">
+                            <p><?php echo $row['last_name'].', '.$row['first_name']?> </p>
+                        </div>
+                    </a>
+                    <?php
+                        }
+                    } else {
+                        echo "Sorry, there is no existed doctor.";
+                    }
+                    ?>
             </div>
         </div>
     </div>

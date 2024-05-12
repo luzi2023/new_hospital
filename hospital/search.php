@@ -38,7 +38,9 @@
             $keyword = $_GET['query'];
 
             // 查询医生信息
-            $query = "SELECT * FROM Doctor WHERE first_name LIKE '%$keyword%' OR last_name LIKE '%$keyword%' OR speciality LIKE '%$keyword%' ";
+            $query = "SELECT * FROM staff, doctor 
+            WHERE staff.dID = doctor.dID 
+            AND (first_name LIKE '%$keyword%' OR last_name LIKE '%$keyword%' OR speciality LIKE '%$keyword%')";
             $result = mysqli_query($link, $query);
             // $stmt = $db->prepare($query);
             // $stmt->execute();
