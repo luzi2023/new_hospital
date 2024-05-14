@@ -92,6 +92,14 @@
                     <span for="speciality">Speciality:</span>
                     <input type="text" id="speciality" name="speciality" required>
                 </label>
+                <label>
+                    <span>Hospital:</span>
+                    <select name="hName" class="hospital-drag-list">
+                        <option value="Marshall Medical Centers">Marshall Medical Centers</option>
+                        <option value="Greene County Hospital">Greene County Hospital</option>
+                    </select>
+                </label>
+
                 <label class="add-img-position">
                     <span for="photo">Image</span>
                     <input type="file" name="image">
@@ -101,11 +109,6 @@
                     <input type="submit" value="Add Doctor" class="button">
                 </label>
             </form>
-            <script>
-            function confirmAdd() {
-                return confirm("Do you want to create a doctor?");
-            }
-            </script>
         </div>
     </div>
 </body>
