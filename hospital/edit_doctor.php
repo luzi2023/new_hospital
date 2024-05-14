@@ -74,6 +74,13 @@
                     <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
                 </label>
                 <label>
+                    <span>Hospital:</span>
+                    <select name="hName" class="hospital-drag-list">
+                        <option value="Marshall Medical Centers">Marshall Medical Centers</option>
+                        <option value="Greene County Hospital">Greene County Hospital</option>
+                    </select>
+                </label>
+                <label>
                     <br>
                     <span>Image:</span>
                     <img src="<?php if (file_exists($doctor['dImage'])) {echo $doctor['dImage'];} else {echo "default.png";} ?>"
