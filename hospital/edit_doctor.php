@@ -37,7 +37,7 @@
             if (isset($_GET['dID'])) {
                 $doctor_id = $_GET['dID'];
 
-                $query = "SELECT * FROM Doctor WHERE dID = '$doctor_id'";
+                $query = "SELECT * FROM staff, doctor WHERE staff.dID = doctor.dID";
                 $result = mysqli_query($link, $query);
 
                 if ($result) {
