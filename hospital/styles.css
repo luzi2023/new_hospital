@@ -615,3 +615,83 @@ input[type="file"] {
     border: 1px solid #ccc;
     border-top: none;
   }
+
+.container-fluid3 {
+    margin-left: 10vw;
+}
+
+h1 {
+    color: #3a7da7;
+}
+
+.treatment-table,
+.equipment-table {
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    color: rgb(114, 114, 114);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.treatment-table th,
+.equipment-table th {
+    background-color: #3a7da7;
+    color: #ffffff;
+    width: 25vw;
+    height: 60px;
+
+}
+
+.treatment-table td,
+.equipment-table td {
+    width: 35vw;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.treatment-table td a,
+.equipment-table td a {
+    text-decoration: none;
+    color: rgb(114, 114, 114);
+
+}
+
+tr:nth-of-type(even) td {
+    background-color: #f3f3f3;
+}
+
+.treatment-search-box,
+.equipment-search-box {
+    width: 40vw;
+    height: 2.2vw;
+    border: 1px solid #DADADA;
+    color: #888;
+    margin-right: 6px;
+    margin-top: 8px;
+    outline: 0 none;
+    padding: 4px 3px 3px 5px;
+    line-height: 14px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.treatment-search-button,
+.equipment-search-button {
+    height: 2.5vw;
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.search-checkbox {
+    display: block;
+    width: 50vw;
+}
