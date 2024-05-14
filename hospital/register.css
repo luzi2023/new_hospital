@@ -1,5 +1,3 @@
-/* register.css */
-
 .container-wrapper {
     display: flex;
     flex-direction: column;
@@ -8,14 +6,29 @@
 
 .container {
     width: 300px;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-top: 5vw;
+    background-color:rgb(236, 89, 89);
+    margin-top: 10px;
+}
+.container1{
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(127, 225, 118);
+    margin-top: 10px;
 
-
-
+}
+.container2{
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:white;
+    margin-top: 10px;
+    
 }
 
 h2 {

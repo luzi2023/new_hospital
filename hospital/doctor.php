@@ -6,7 +6,7 @@ if(isset($_POST["submit"])){
     $password = $_POST["password"];
 
     // 使用參數化查詢來防止 SQL 注入攻擊
-    $sql = "SELECT * FROM users WHERE username=?";
+    $sql = "SELECT * FROM users WHERE userID=?";
     $stmt = mysqli_prepare($link, $sql);
     mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);
@@ -47,8 +47,8 @@ if(isset($_POST["submit"])){
 
 <body>
     <body onload="openCity(event, 'doctor')">
-    <div class="container-fluid">
-        <!-- <div id="login">
+    <!--<div class="container-fluid">
+         <div id="login">
             <form method="post" action="doctor.php">
                 User:
                 <input type="text" name="username">
