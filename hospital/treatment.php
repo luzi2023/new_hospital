@@ -44,7 +44,7 @@ include('config.php');
             <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="equipment.php" id="equipments">Equipments</a>
-            <a href="" id="about">About</a>
+            <a href="treatment.php" id="treatments">Treatments</a>
         </div>
         <h1>Treatment Option</h1>
         <!-- search front, back end -->
@@ -86,13 +86,13 @@ include('config.php');
                 <tr>
 
                     <td><a
-                            href="treatment_view.php?chargeID=<?php echo $row['chargeID']; ?>"><?php echo $row['chargeID']; ?></a>
+                            href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a>
                     </td>
                     <td><a
-                            href="treatment_view.php?chargeID=<?php echo $row['chargeID']; ?>"><?php echo $row['tName']; ?></a>
+                            href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tName']; ?></a>
                     </td>
                     <td><a
-                            href="treatment_view.php?chargeID=<?php echo $row['chargeID']; ?>"><?php echo $row['tType']; ?></a>
+                            href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tType']; ?></a>
                     </td>
 
                 </tr>

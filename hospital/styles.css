@@ -19,7 +19,7 @@ body {
 
 /* Style the links inside the sidenav */
 #side-nav a {
-    position: absolute;
+    position: fixed;
     /* Position them relative to the browser window */
     left: -15vw;
     /* Position them outside of the screen */
@@ -163,7 +163,7 @@ body {
 
 }
 
-#about {
+#treatments {
     top: 36vw;
     background-color: #555;
     /* Light Black */

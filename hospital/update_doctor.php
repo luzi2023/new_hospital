@@ -31,8 +31,8 @@
         <div id="side-nav" class="sidenav">
             <a href="index.html" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
-            <a href="" id="equipments">Equipments</a>
-            <a href="" id="about">About</a>
+            <a href="equipment.php" id="equipments">Equipments</a>
+            <a href="treatment.php" id="treatments">Treatments</a>
         </div> -->
 
         <div id="body">

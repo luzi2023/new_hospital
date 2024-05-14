@@ -28,14 +28,14 @@ include('config.php');
             <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Doctors</a>
             <a href="equipment.php" id="equipments">Equipments</a>
-            <a href="" id="about">About</a>
+            <a href="treatment.php" id="treatments">Treatments</a>
         </div>
         <div id="body">
             <?php
-            if (isset($_GET['chargeID'])) {
-                $cID = $_GET['chargeID'];
+            if (isset($_GET['tID'])) {
+                $cID = $_GET['tID'];
 
-                $query = "SELECT * FROM Option_info WHERE chargeID = '$cID'";
+                $query = "SELECT * FROM Option_info WHERE tID = '$cID'";
                 $result = mysqli_query($link, $query);
 
                 if ($result) {
@@ -43,7 +43,7 @@ include('config.php');
                         $treatment = mysqli_fetch_assoc($result);
                         ?>
             <h1><?php echo $treatment['tName']; ?> </h1>
-            <p>ID: <?php echo $treatment['chargeID']; ?></p>
+            <p>ID: <?php echo $treatment['tID']; ?></p>
             <p>Type: <?php echo $treatment['tType']; ?></p>
 
             <?php

@@ -63,19 +63,19 @@ if(isset($_POST["submit"])){
         <!-- 其他內容 -->
     </div>
     <div class="container-fluid">
-        <!--<div id="login">
+        <!-- <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
                 <input type="submit" value="login" name="submit">
                 <a href="register.php">register now</a>
             </form>
-        </div>-->
+        </div> -->
         <div id="side-nav" class="sidenav">
             <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Staffs</a>
-            <a href="" id="equipments">Equipments</a>
-            <a href="" id="about">About</a>
+            <a href="equipment.php" id="equipments">Equipments</a>
+            <a href="treatment.php" id="treatments">Treatments</a>
         </div>
         <!-- Tab links -->
         <div class="tab">
