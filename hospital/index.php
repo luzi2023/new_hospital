@@ -65,7 +65,7 @@
                 <div class="plus">
                     <i class="fa-solid fa-plus"></i>
                     <a class="hometitle">Hospital Homepage</a>
-                    <a id="log"><i class="fa-solid fa-user"></i>Login</a>
+                    <a href="signin.php"id="log"><i class="fa-solid fa-user"></i>Login</a>
                 </div>
             </div>
             <div class="positionfixed"></div>

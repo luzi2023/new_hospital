@@ -48,7 +48,7 @@
         <div class="nav">
                 <div class="D">
                     <!-- <i class="fa-solid fa-plus"></i> -->
-                    <a class="hometitle">Doctor</a>
+                    <a class="hometitle">Nurse</a>
                     <?php
 include('config.php');
 
@@ -58,7 +58,7 @@ if (isset($_GET['dID'])) {
     $doctor_id = $_GET['dID'];
 
     // 查询医生信息
-    $query = "SELECT * FROM doctor WHERE dID = ?";
+    $query = "SELECT * FROM nurse WHERE dID = ?";
     $stmt = mysqli_prepare($link, $query);
     mysqli_stmt_bind_param($stmt, "s", $doctor_id);
     mysqli_stmt_execute($stmt);
@@ -72,7 +72,7 @@ if (isset($_GET['dID'])) {
             $doctor = mysqli_fetch_assoc($result);
             // 显示编辑链接
             ?>
-            <a href="edit_doctor.php?dID=<?php echo $doctor['dID']; ?>"><i class="fa-solid fa-pencil"></i>Edit Doctor</a>
+            <a href="edit_nurse.php?dID=<?php echo $doctor['dID']; ?>"><i class="fa-solid fa-pencil"></i>Edit Nurse</a>
             <?php
         } else {
             // 如果未找到医生记录，则显示消息

@@ -42,14 +42,14 @@ if (isset($_POST['doctor_id'])) {
     $doctor_id = $_POST['doctor_id'];
 
     // 使用外键约束删除医生信息和相关的员工信息
-    $delete_query = "DELETE doctor, staff FROM doctor 
-                    LEFT JOIN staff ON doctor.dID = staff.dID 
-                    WHERE doctor.dID = '$doctor_id'";
+    $delete_query = "DELETE nurse, staff FROM nurse 
+                    LEFT JOIN staff ON nurse.dID = staff.dID 
+                    WHERE nurse.dID = '$doctor_id'";
 
     $delete_success = mysqli_query($link, $delete_query);
 
     if ($delete_success) {
-        echo "Doctor information and related staff information deleted successfully!<br><br>";
+        echo "Nurse information and related staff information deleted successfully!<br><br>";
         echo "Redirecting back to doctor page in 3 seconds...";
         // 最后进行页面重定向
         header("Refresh: 3; url=doctor.php");

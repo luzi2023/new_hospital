@@ -14,14 +14,14 @@
 
 <body>
     <div class="container-fluid2">
-        <div id="login">
+        <!--<div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
                 <input type="submit" value="login" name="submit">
                 <a href="register.php">register now</a>
             </form>
-        </div>
+        </div>-->
         <div id="side-nav" class="sidenav">
             <a href="index.php" id="home">Home</a>
             <a href="doctor.php" id="doctors">Staffs</a>
@@ -39,7 +39,7 @@ if (isset($_GET['dID'])) {
     $doctor_id = $_GET['dID'];
 
     // 使用 prepared statement 来避免 SQL 注入攻击
-    $query = "SELECT * FROM staff JOIN doctor WHERE staff.dID = doctor.dID AND doctor.dID = ?";
+    $query = "SELECT * FROM staff JOIN nurse WHERE staff.dID = nurse.dID AND nurse.dID = ?";
 
     // 准备 SQL 查询
     $stmt = mysqli_prepare($link, $query);
@@ -74,9 +74,9 @@ mysqli_close($link);
 
 
 
-            <h2 id="inline-delete" class="form-title">Update Doctor</h2>
+            <h2 id="inline-delete" class="form-title">Update Nurse</h2>
 
-            <form action="delete_doctor.php" method="post" onsubmit="return confirmDelete()" id="inline-delete"
+            <form action="delete_nurse.php" method="post" onsubmit="return confirmDelete()" id="inline-delete"
                 class="changing-form">
                 <label>
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
@@ -84,9 +84,9 @@ mysqli_close($link);
                 </label>
             </form>
 
-            <form action="update_doctor.php" method="post" enctype="multipart/form-data" class="changing-form">
+            <form action="update_nurse.php" method="post" enctype="multipart/form-data" class="changing-form">
                 <label>
-                    <span>Doctor ID:
+                    <span>Nurse ID:
                     </span>
                     <p><?php echo $doctor['dID'] ?></p>
                     <input type="hidden" name="doctor_id" value="<?php echo $doctor['dID']; ?>">
@@ -100,8 +100,8 @@ mysqli_close($link);
                     <input type="text" name="last_name" value="<?php echo $doctor['last_name']; ?>">
                 </label>
                 <label>
-                    <span>Speciality:</span>
-                    <input type="text" name="speciality" value="<?php echo $doctor['speciality']; ?>">
+                    <span>Period:</span>
+                    <input type="text" name="period" value="<?php echo $doctor['period']; ?>">
                 </label>
                 <label>
                     <span>Hospital:</span>
@@ -134,7 +134,7 @@ mysqli_close($link);
 
             <script>
             function confirmDelete() {
-                return confirm("Are you sure you want to delete doctor ID: <?php echo $doctor_id?>?");
+                return confirm("Are you sure you want to delete nurse ID: <?php echo $doctor_id?>?");
             }
             </script>
         </div>

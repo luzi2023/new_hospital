@@ -40,11 +40,11 @@
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['first_name'], $_POST['last_name'], $_POST['speciality'], $_POST['doctor_id'])) {
+    if (isset($_POST['first_name'], $_POST['last_name'], $_POST['period'], $_POST['doctor_id'])) {
         $doctor_id = $_POST['doctor_id'];
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
-        $speciality = $_POST['speciality'];
+        $period = $_POST['period'];
 
         // check if user uploaded a new file
         if ($_FILES['image']['size'] > 0) {
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_autocommit($link, false);
 
         $query1 = "UPDATE staff SET first_name='$first_name', last_name='$last_name', dImage='$image_url' WHERE dID='$doctor_id'";
-        $query2 = "UPDATE doctor SET speciality='$speciality' WHERE dID='$doctor_id'";
+        $query2 = "UPDATE nurse SET period='$period' WHERE dID='$doctor_id'";
 
 
         $success = true;
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Commit or rollback the transaction based on success
         if ($success) {
             mysqli_commit($link);
-            echo "Doctor information updated successfully!<br><br>";
+            echo "Nurse information updated successfully!<br><br>";
             echo "Redirect back to doctor page in 3 sec...";
         } else {
             mysqli_rollback($link);

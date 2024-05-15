@@ -33,7 +33,6 @@
         </div>
 
         <div id="body">
-            <h2 class="form-title">Add New Doctor</h2>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_POST['doctor_id'], $_POST['first_name'], $_POST['last_name'], $_POST['speciality'], $_FILES['image'])) {
@@ -43,37 +42,46 @@
                     $speciality = $_POST['speciality'];
                     $file_tmp = $_FILES['image']['tmp_name'];
                     $upload_dir = "uploads/";
-
-                    // get file name and its extension name
+            
                     $original_filename = $_FILES['image']['name'];
                     $extension = pathinfo($original_filename, PATHINFO_EXTENSION);
-
-                    // generate the file name
+            
                     $file_name = $doctor_id . "_" . $extension;
-
+            
                     $image_path = $upload_dir . $file_name;
-
-                    // upload the file
+            
                     move_uploaded_file($file_tmp, $image_path);
+            
+                    $query_staff = "INSERT INTO staff (dID, first_name, last_name, dImage) VALUES ('$doctor_id', '$first_name', '$last_name', '$image_path')";
+            
+                    if (mysqli_query($link, $query_staff)) {
+                        $query_doctor = "INSERT INTO doctor (dID, speciality) VALUES ('$doctor_id', '$speciality')";
+                        if (mysqli_query($link, $query_doctor)) {
+                            // 成功添加医生，显示医生信息
 
-                    $query = "INSERT INTO Doctor (dID, first_name, last_name, speciality, dImage) VALUES ('$doctor_id', '$first_name', '$last_name', '$speciality', '$image_path')";
-
-                    if (mysqli_query($link, $query)) {
-                        // echo "Doctor information inserted successfully.";
-                        ?>
-            <!-- <br>
-            <a href="doctor.php">Back to Doctors</a> -->
-            <?php
+                            header("Location: doctor.php");
+                            exit();
+                            ?>
+                            <div class="doctor-info">
+                                <img src="<?php echo $image_path; ?>" alt="Doctor Image">
+                                <h3><?php echo $first_name . ", " . $last_name; ?></h3>
+                                <p><?php echo $speciality; ?></p>
+                            </div>
+                            <?php
+                        } else {
+                            echo "Error: " . $query_doctor . "<br>" . mysqli_error($link);
+                        }
                     } else {
-                        // echo "ERROR: Could not able to execute $query." . mysqli_error($link);
+                        echo "Error: " . $query_staff . "<br>" . mysqli_error($link);
                     }
-
+            
                     mysqli_close($link);
                 } else {
                     echo "ERROR: Incomplete data received.";
                 }
             }
             ?>
+            <h2 class="form-title">Add New Doctor</h2>
             <form method="post" action="add_doctor.php" onsubmit="confirmAdd()" enctype="multipart/form-data"
                 class="changing-form">
                 <label>

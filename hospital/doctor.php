@@ -1,34 +1,3 @@
-<?php
-include('config.php');
-
-if(isset($_POST["submit"])){
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-
-    // 使用參數化查詢來防止 SQL 注入攻擊
-    $sql = "SELECT * FROM users WHERE userID=?";
-    $stmt = mysqli_prepare($link, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $username);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    if($user=mysqli_fetch_assoc($result)){
-        // 驗證密碼是否正確
-        if(password_verify($password, $user["password"])){
-            // 登入成功，導向到 doctor.php 頁面
-            header("Location: login.php");
-            exit();
-        } else {
-            // 密碼不匹配的錯誤訊息
-            $error_message = "Password does not match!";
-        }
-    } else {
-        // 使用者名稱不存在的錯誤訊息
-        $error_message = "Username is not valid!";
-    }
-}
-?>
-
 
 
 <!DOCTYPE html>
@@ -47,8 +16,8 @@ if(isset($_POST["submit"])){
 
 <body>
     <body onload="openCity(event, 'doctor')">
-    <!--<div class="container-fluid">
-         <div id="login">
+    <div class="container-fluid">
+         <!--<div id="login">
             <form method="post" action="doctor.php">
                 User:
                 <input type="text" name="username">
@@ -58,7 +27,8 @@ if(isset($_POST["submit"])){
                 <a href="register.php">Register now</a>
                 <?php if(isset($error_message)) { echo "<p class='error'>$error_message</p>"; } ?>
             </form>
-        </div> -->
+        </div> 
+        -->
 
         <!-- 其他內容 -->
     </div>
@@ -88,9 +58,16 @@ if(isset($_POST["submit"])){
                 <div class="doctor_menu">
                     <a href="add_doctor.php"></i>Add doctor</a>
                 </div>
+                <div class="search">
+                <form action="search.php" method="get">
+                <input type="text" id="search" name="query" placeholder="Search something?">
+                 <button id="btn" type="submit">Search</button>
+                 </form>
+                </div>
 
                 <?php
-
+                
+                include('config.php');
 
                 $query = "SELECT * FROM staff, Doctor WHERE staff.dID = Doctor.dID";
                 $query_run =mysqli_query($link, $query);
@@ -123,7 +100,13 @@ if(isset($_POST["submit"])){
             <div id="list_body">
                 <h1>Nurse List</h1>
                 <div class="doctor_menu">
-                    <a href="add_doctor.php"></i>Add nurse</a>
+                    <a href="add_nurse.php"></i>Add nurse</a>
+                </div>
+                <div class="search">
+                <form action="search_nurse.php" method="get">
+                <input type="text" id="search" name="query" placeholder="Search something?">
+                 <button id="btn" type="submit">Search</button>
+                 </form>
                 </div>
 
                 <?php
@@ -138,7 +121,7 @@ if(isset($_POST["submit"])){
                     if (mysqli_num_rows($query_run) > 0) {
                         foreach ($query_run as $row) {
                             ?>
-                    <a href="staff_detail.php?dID=<?php echo $row['dID']?>">
+                    <a href="nurse_detail.php?dID=<?php echo $row['dID']?>">
                         <div class="current_list">
                             <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
                                 alt="Dr.<?php $row['first_name']?>'s head shot">
@@ -154,13 +137,7 @@ if(isset($_POST["submit"])){
             </div>
         </div>
     </div>
-    <div class="search">
-        <form action="search.php" method="get">
-            <!-- <label for="search">Enter some keyword:</label><br> -->
-            <input type="text" id="search" name="query" placeholder="Search something?">
-            <button id="btn" type="submit">Search</button>
-        </form>
-    </div>
+    
 </body>
 
 </html>
