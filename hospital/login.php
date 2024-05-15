@@ -10,6 +10,9 @@
 
     <title>User Dashboard</title>
 </head>
+<?php
+$userID = $_GET["userID"];
+?>
 <body>
     <h1>Welcome!</h1>
     <a href="logout.php">Logout!</a>

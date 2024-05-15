@@ -14,6 +14,7 @@
     <script src="all.js"></script>
 </head>
 
+
 <body>
     <body onload="openCity(event, 'doctor')">
     <div class="container-fluid">

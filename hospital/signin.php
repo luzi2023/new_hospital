@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
         // 驗證密碼是否正確
         if(password_verify($password, $user["password"])){
             // 登入成功，導向到醫生頁面
-            header("Location: doctor.php");
+            header("Location: login.php?userID=" . $user["userID"]);
             exit();
         } else {
             // 密碼不匹配的錯誤訊息
