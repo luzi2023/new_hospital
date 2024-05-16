@@ -690,3 +690,31 @@ tr:nth-of-type(even) td {
     display: block;
     width: 50vw;
 }
+#patient-heading {
+    color: #333;
+    font-size: 24px;
+    margin-left: 23vw;
+}
+
+#patient-list {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 23vw;
+    
+}
+
+#patient-link {
+    text-decoration: none;
+    color: #007bff;
+    margin-left: 23vw;
+}
+
+#patient-link:hover {
+    text-decoration: underline;
+    margin-left: 23vw;
+}
+#nope{
+    font-size:26px;
+    margin-left: 23vw;
+    color:red;
+}

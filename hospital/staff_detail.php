@@ -93,9 +93,15 @@ if (isset($_GET['dID'])) {
     echo "Doctor ID not provided.";
 }
 
+
+
 // 关闭数据库连接
-mysqli_close($link);
+
 ?>
+
+
+
+
 
 
 
@@ -215,6 +221,41 @@ mysqli_close($link);
         </nav>
         <p>©2024 University of Medical Center</p>
     </footer> -->
+
+    <?php
+
+if (isset($_GET['dID'])) {
+    // 將dID參數轉換為整數
+    $doctor_id = $_GET['dID'];
+
+    $patients_query = "SELECT patient.pNo, patient.pname
+                        FROM patient 
+                        JOIN doctor ON patient.doctorID = doctor.dID
+                        WHERE doctor.dID = '$doctor_id'";
+
+    $patients_result = mysqli_query($link, $patients_query);
+
+    if(mysqli_num_rows($patients_result) > 0) {
+        // 如果有病患
+        echo "<h2 id='patient-heading'>My patients</h2>";
+        echo "<ul id='patient-list'>";
+        while($patient_row = mysqli_fetch_assoc($patients_result)) {
+            // 顯示病患的連結
+            echo "<li><a href='patient.php?pNo={$patient_row['pNo']}'>{$patient_row['pname']}</a></li>";
+        }
+        echo "</ul>";
+    } else {
+        // 如果沒有病患
+        echo "<p id='nope'>No patients found!</p>";
+    }
+} else {
+    // 如果未設置dID參數
+    echo "<p>No doctor ID specified.</p>";
+}
+
+
+mysqli_close($link);
+?>
 
     <div class="last">
         <div class="footer">
