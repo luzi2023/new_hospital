@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,7 +10,7 @@
 
     <title>Local hospital</title>
 
-    
+
 </head>
 
 <body>
@@ -32,47 +33,31 @@
         <div id="body">
 
         <?php
-include('config.php');
+        include('config.php');
 
-if (isset($_GET['dID'])) {
-    // 将 dID 参数转换为整数
-    $doctor_id = $_GET['dID'];
+        if (isset($_GET['dID'])) {
+            $doctor_id = $_GET['dID'];
 
-    // 使用 prepared statement 来避免 SQL 注入攻击
-    $query = "SELECT * FROM staff JOIN doctor WHERE staff.dID = doctor.dID AND doctor.dID = ?";
+            $query = "SELECT * FROM staff JOIN doctor WHERE staff.dID = doctor.dID AND doctor.dID = ?";
+            $stmt = mysqli_prepare($link, $query);
+            mysqli_stmt_bind_param($stmt, "s", $doctor_id);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
 
-    // 准备 SQL 查询
-    $stmt = mysqli_prepare($link, $query);
-
-    // 绑定参数
-    mysqli_stmt_bind_param($stmt, "s", $doctor_id);
-
-    // 执行查询
-    mysqli_stmt_execute($stmt);
-
-    // 获取结果
-    $result = mysqli_stmt_get_result($stmt);
-
-    if ($result) {
-        if (mysqli_num_rows($result) > 0) {
-            $doctor = mysqli_fetch_assoc($result);
-            // 在这里输出编辑表单，使用 $doctor 中的信息
-        } else {
-            echo "Doctor not found.";
+            if ($result) {
+                if (mysqli_num_rows($result) > 0) {
+                    $doctor = mysqli_fetch_assoc($result);
+                } else {
+                    echo "Doctor not found.";
+                }
+                mysqli_free_result($result);
+            } else {
+                echo "Error:" . mysqli_error($link);
+            }
+            mysqli_stmt_close($stmt);
         }
-        mysqli_free_result($result);
-    } else {
-        echo "Error:" . mysqli_error($link);
-    }
 
-    // 关闭 prepared statement
-    mysqli_stmt_close($stmt);
-}
-
-mysqli_close($link);
-?>
-
-
+        ?>
 
             <h2 id="inline-delete" class="form-title">Update Doctor</h2>
 
@@ -132,13 +117,81 @@ mysqli_close($link);
                 </label>
             </form>
 
-            <script>
-            function confirmDelete() {
-                return confirm("Are you sure you want to delete doctor ID: <?php echo $doctor_id?>?");
+            <h2 id="inline-delete2" class="form-title">Schedule Management</h2>
+            <?php
+            // Get doctor schedule information
+            $query = "SELECT sID, dID, day, time, patient FROM schedule WHERE dID = ? ORDER BY day, time";
+            $stmt = mysqli_prepare($link, $query);
+            if (!$stmt) {
+                die("Failed to prepare statement: " . mysqli_error($link));
             }
-            </script>
+            mysqli_stmt_bind_param($stmt, "s", $doctor_id);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                echo "<table border='1'>";
+                echo "<tr><th>sID</th><th>Day</th><th>Time</th><th>Patient</th></tr>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row["sID"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["day"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($row["patient"]) . "</td>";
+                    echo "<td>
+                            <form method='post' action='delete_schedule.php'>
+                                <input type='hidden' name='schedule_id' value='" . htmlspecialchars($row['sID']) . "'>
+                                <input type='hidden' name='doctor_id' value='" . htmlspecialchars($doctor_id) . "'>
+                                <input type='submit' value='Delete' class='button-delete'>
+                            </form>
+                          </td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "No schedule information available.";
+            }
+            mysqli_free_result($result);
+            mysqli_stmt_close($stmt);
+            mysqli_close($link);
+            ?>
+
+            <h2 class="form-title">Add Schedule</h2>
+            <form action="add_schedule.php" method="post" enctype="multipart/form-data" class="changing-form2">
+                <!-- Add a hidden input field to pass the doctor_id -->
+                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id; ?>">
+                <label>
+                    <span>sID:</span>
+                    <input type="text" name="sID" class="input-column">
+                </label>
+                <label>
+                    <span>Day:</span>
+                    <select name="day" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Time:</span>
+                    <select name="time" required>
+                        <option value="Morning">Morning</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Patient:</span>
+                    <input type="text" name="patient">
+                </label>
+                <input type="submit" value="Add Schedule" class="button">
+            </form>
         </div>
     </div>
 </body>
-
 </html>
+
