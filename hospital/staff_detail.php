@@ -98,17 +98,6 @@ if (isset($_GET['dID'])) {
 // 关闭数据库连接
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
                 </div>
         </div>
 
@@ -175,36 +164,48 @@ if (isset($_GET['dID'])) {
     <div class="schedule-info">
     <h2>Schedule</h2>
     <?php
-                try {
-                    $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
-                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    // 查詢排班資訊，包含醫生的相關資訊
-                    $sql = "SELECT schedule.*, staff.first_name, staff.last_name 
-                            FROM schedule 
-                            INNER JOIN staff ON staff.dID = schedule.dID 
-                            ORDER BY schedule.day, schedule.time";
-                    $result = $db->query($sql);
+    // 取得 URL 中的 dID 參數
+    $doctorID = isset($_GET['dID']) ? $_GET['dID'] : '';
 
-                    // 如果查詢結果不為空，則顯示排班表
-                    if ($result->rowCount() > 0) {
-                        echo "<table border='1'>";
-                        echo "<tr><th>Day</th><th>Time</th><th>Patiemt</th></tr>";
-                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                            echo "<tr>";
-                            echo "<td>" . $row["day"] . "</td>";
-                            echo "<td>" . $row["time"] . "</td>";
-                            echo "<td>" . $row["patient"]. "</td>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-                    } else {
-                        echo "No schedule information available.";
-                    }
-                } catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-                ?>
+    if ($doctorID) {
+        // 查詢對應醫生的排班信息
+        $sql = "SELECT schedule.*, staff.first_name, staff.last_name 
+                FROM schedule 
+                INNER JOIN staff ON staff.dID = schedule.dID 
+                WHERE staff.dID = :doctorID
+                ORDER BY schedule.day, schedule.time";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':doctorID', $doctorID, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 如果查詢結果不為空，則顯示排班表
+        if (count($result) > 0) {
+            echo "<table border='1'>";
+            echo "<tr><th>Day</th><th>Time</th><th>Patient</th></tr>";
+            foreach ($result as $row) {
+                echo "<tr>";
+                echo "<td>" . $row["day"] . "</td>";
+                echo "<td>" . $row["time"] . "</td>";
+                echo "<td>" . $row["patient"] . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "No schedule information available for this doctor.";
+        }
+    } else {
+        echo "Doctor ID is missing.";
+    }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+
 
 </div>
 
