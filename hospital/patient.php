@@ -8,6 +8,43 @@
     <title>Patient Details</title>
 </head>
 <body>
+<?php
+
+
+if (isset($_GET['pNo'])) {
+    // 将 pNo 参数转为整型以确保安全
+    $patient_no = (int)$_GET['pNo'];
+
+    // 查询与该病患关联的医生 ID
+    $docs_query = "SELECT doctor.dID
+                   FROM doctor 
+                   JOIN patient ON patient.doctorID = doctor.dID
+                   WHERE patient.pNo = '$patient_no'";
+
+    $docs_result = mysqli_query($link, $docs_query);
+
+    if (mysqli_num_rows($docs_result) > 0) {
+        while ($doc_row = mysqli_fetch_assoc($docs_result)) {
+            // 生成指向医生详细页面的链接
+            $doctor_id = $doc_row['dID'];
+            echo "<a href='staff_detail.php?dID={$doctor_id}'>Back to details page</a>";
+        }
+    } else {
+        // 如果没有找到与该病患关联的医生
+        echo "<p id='nope'>No doctor found for this patient!</p>";
+    }
+} else {
+    // 如果没有设置 pNo 参数
+    echo "<p>No patient number specified.</p>";
+}
+
+
+?>
+
+
+</body>
+</html>
+
     <div class="container">
         <h1>Patient Details</h1>
         <div class="patient-info">
