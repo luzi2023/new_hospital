@@ -40,11 +40,12 @@
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['first_name'], $_POST['last_name'], $_POST['period'], $_POST['doctor_id'])) {
+    if (isset($_POST['first_name'], $_POST['last_name'], $_POST['period'], $_POST['doctor_id'],$_POST['contact'])) {
         $doctor_id = $_POST['doctor_id'];
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $period = $_POST['period'];
+        $contact = $_POST['contact'];
 
         // check if user uploaded a new file
         if ($_FILES['image']['size'] > 0) {
@@ -72,7 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Start a transaction
         mysqli_autocommit($link, false);
 
-        $query1 = "UPDATE staff SET first_name='$first_name', last_name='$last_name', dImage='$image_url' WHERE dID='$doctor_id'";
+        $first_name = mysqli_real_escape_string($link, $_POST['first_name']);
+        $last_name = mysqli_real_escape_string($link, $_POST['last_name']);
+        $contact = mysqli_real_escape_string($link, $_POST['contact']);
+        
+        $query1 = "UPDATE staff SET first_name='$first_name', last_name='$last_name',contact='$contact', dImage='$image_url' WHERE dID='$doctor_id'";
         $query2 = "UPDATE nurse SET period='$period' WHERE dID='$doctor_id'";
 
 
@@ -97,6 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_autocommit($link, true);
     }
 }
+
 ?>
 
         </div>

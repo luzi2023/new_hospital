@@ -40,11 +40,12 @@
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['doctor_id'], $_POST['first_name'], $_POST['last_name'], $_POST['period'], $_FILES['image'])) {
+    if (isset($_POST['doctor_id'], $_POST['first_name'], $_POST['last_name'], $_POST['period'],$_POST['contact'], $_FILES['image'])) {
         $nurse_id = $_POST['doctor_id'];
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $period = $_POST['period'];
+        $contact = $_POST['contact'];
         $file_tmp = $_FILES['image']['tmp_name'];
         $upload_dir = "uploads/";
 
@@ -58,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         move_uploaded_file($file_tmp, $image_path);
 
         // 首先插入到 staff 表中
-        $query_staff = "INSERT INTO staff (dID, first_name, last_name, dImage) VALUES ('$nurse_id', '$first_name', '$last_name',  '$image_path')";
+        $query_staff = "INSERT INTO staff (dID, first_name, last_name,contact, dImage) VALUES ('$nurse_id', '$first_name', '$last_name','$contact',  '$image_path')";
         if (mysqli_query($link, $query_staff)) {
             // 插入成功后再插入到 nurse 表中
             $query_nurse = "INSERT INTO nurse (dID, period) VALUES ('$nurse_id', '$period')";
@@ -100,6 +101,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label>
                     <span for="period">Period:</span>
                     <input type="text" id="period" name="period" required>
+
+                </label>
+                <label>
+                    <span for="contact">Contact:</span>
+                    <input type="text" id="contact" name="contact" required>
 
                 </label>
                 <label>

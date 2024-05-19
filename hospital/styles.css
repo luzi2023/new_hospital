@@ -466,7 +466,7 @@ input[type="file"] {
     height: 30px;
     margin-bottom: 16px;
     margin-right: 6px;
-    margin-top: 20px;
+    margin-top: 8px;
     outline: 0 none;
     padding: 4px 3px 3px 5px;
     width: 30%;
@@ -484,7 +484,6 @@ input[type="file"] {
     padding-right: 10px;
     margin-top: 10px;
     color: #888;
-    
 }
 
 .changing-form p {
@@ -718,76 +717,4 @@ tr:nth-of-type(even) td {
     font-size:26px;
     margin-left: 23vw;
     color:red;
-}
-
-#inline-delete2 {
-    margin-top: 4vw;
-    margin-bottom: 1.3vw;
-}
-
-.changing-form2 input[type="text"],
-.changing-form2 select {
-    display: block;
-    border: 1px solid #DADADA;
-    color: #888;
-    height: 30px;
-    margin-bottom: 16px;
-    margin-right: 6px;
-    margin-top: 8px;
-    outline: 0 none;
-    padding: 4px 3px 3px 5px;
-    width: calc(40% - 10px); /* Adjust width to fit within the form */
-    font-size: 14px;
-    line-height: 14px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
-}
-
-.changing-form2 span {
-    float: left;
-    width: 5%;
-    text-align: right;
-    padding-right: 10px;
-    margin-top: 10px;
-    color: #888;
-}
-
-.changing-form2 label {
-    margin-bottom: 10px;
-    
-}
-
-.changing-form2 .button {
-    background-color: #3a7da7;
-    border: none;
-    padding: 10px 25px;
-    color: #FFF;
-    box-shadow: 1px 1px 5px #B6B6B6;
-    text-shadow: 1px 1px 1px #83bee2;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.changing-form2 .button:hover {
-    background-color: #1f88c9;
-    box-shadow: 5px 5px 5px #B6B6B6;
-}
-
-.button-delete {
-    margin-left: 35px;
-    margin-right: 35px;
-    background-color: #3a7da7;
-    border: none;
-    padding: 10px 10px 8px 10px;
-    color: #FFF;
-    box-shadow: 1px 1px 5px #B6B6B6;
-    text-shadow: 1px 1px 1px #83bee2;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.button-delete:hover {
-    background-color: #1f88c9;
-    box-shadow: 5px 5px 5px #B6B6B6;
 }

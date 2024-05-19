@@ -40,6 +40,8 @@
                     $first_name = $_POST['first_name'];
                     $last_name = $_POST['last_name'];
                     $speciality = $_POST['speciality'];
+                    $contact = $_POST['contact'];
+                    $About = $_POST['About'];
                     $file_tmp = $_FILES['image']['tmp_name'];
                     $upload_dir = "uploads/";
             
@@ -52,10 +54,10 @@
             
                     move_uploaded_file($file_tmp, $image_path);
             
-                    $query_staff = "INSERT INTO staff (dID, first_name, last_name, dImage) VALUES ('$doctor_id', '$first_name', '$last_name', '$image_path')";
+                    $query_staff = "INSERT INTO staff (dID, first_name, last_name,contact, dImage) VALUES ('$doctor_id', '$first_name', '$last_name','$contact', '$image_path')";
             
                     if (mysqli_query($link, $query_staff)) {
-                        $query_doctor = "INSERT INTO doctor (dID, speciality) VALUES ('$doctor_id', '$speciality')";
+                        $query_doctor = "INSERT INTO doctor (dID, speciality,About) VALUES ('$doctor_id', '$speciality','$About')";
                         if (mysqli_query($link, $query_doctor)) {
                             // 成功添加医生，显示医生信息
 
@@ -99,6 +101,14 @@
                 <label>
                     <span for="speciality">Speciality:</span>
                     <input type="text" id="speciality" name="speciality" required>
+                </label>
+                <label>
+                    <span for="contact">Conact:</span>
+                    <input type="text" id="contact" name="contact" required>
+                </label>
+                <label>
+                    <span for="About">About:</span>
+                    <input type="text" id="About" name="About" required>
                 </label>
                 <label>
                     <span>Hospital:</span>
