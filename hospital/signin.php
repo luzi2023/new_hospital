@@ -1,5 +1,7 @@
 <?php
-include_once('config.php');
+include('config.php');
+
+session_start();
 
 if(isset($_POST["submit"])){
     $username = $_POST["username"];
@@ -17,7 +19,8 @@ if(isset($_POST["submit"])){
         // 驗證密碼是否正確
         if(password_verify($password, $user["password"])){
             // 登入成功，導向到醫生頁面
-            header("Location: login.php?userID=" . $user["userID"]);
+            $_SESSION['username'] = $username; 
+            header("Location: doctor.php?userID=" . $user["userID"]);
             exit();
         } else {
             // 密碼不匹配的錯誤訊息
