@@ -67,26 +67,26 @@ body {
 .plus {
     padding-left: 8vw;
     color: white;
-    
+
 }
 
-.plus a{
+.plus a {
     text-decoration: none;
     color: white;
 }
 
-.D{
+.D {
     padding-left: 8vw;
     color: white;
-    
+
 }
 
-.D a{
+.D a {
     text-decoration: none;
     color: white;
 }
 
-.fa-pencil:before{
+.fa-pencil:before {
     padding-left: 40vw;
     color: white;
     padding-right: 1.5vw;
@@ -545,33 +545,33 @@ input[type="file"] {
     box-shadow: 5px 5px 5px #B6B6B6;
 }
 
-.all{
+.all {
     margin-left: 23vw;
 }
 
-.provider_info{
+.provider_info {
     margin-top: 15vw;
     display: flex;
 }
 
-.profile_picture{
+.profile_picture {
     margin-right: 6vw;
 }
 
-.profile_picture img{
+.profile_picture img {
     width: 18vw;
     height: 25vw;
 }
 
-.name_info h1{
+.name_info h1 {
     margin-top: 0;
 }
 
-.about_me{
+.about_me {
     width: 80%;
 }
 
-.schedule-info{
+.schedule-info {
     margin-left: 23vw
 }
 
@@ -580,10 +580,10 @@ input[type="file"] {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -591,25 +591,25 @@ input[type="file"] {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
     background-color: #ddd;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
     background-color: #ccc;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
+}
+
+/* Style the tab content */
+.tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-  }
+}
 
 .container-fluid3 {
     margin-left: 10vw;
@@ -686,10 +686,15 @@ tr:nth-of-type(even) td {
 
 }
 
+.button-form {
+    display: inline;
+}
+
 .search-checkbox {
     display: block;
     width: 50vw;
 }
+
 #patient-heading {
     color: #333;
     font-size: 24px;
@@ -700,7 +705,7 @@ tr:nth-of-type(even) td {
     list-style-type: none;
     padding: 0;
     margin-left: 23vw;
-    
+
 }
 
 #patient-link {
@@ -713,8 +718,43 @@ tr:nth-of-type(even) td {
     text-decoration: underline;
     margin-left: 23vw;
 }
-#nope{
-    font-size:26px;
+
+#nope {
+    font-size: 26px;
     margin-left: 23vw;
-    color:red;
+    color: red;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
 }
