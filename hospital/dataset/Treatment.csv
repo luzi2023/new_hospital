@@ -1,0 +1,636 @@
+tID,tName,tType
+T0050,Pus or Discharge,Microscopic examination
+T0727,Analysis of total cell count and differntiation in BAL fluid,Microscopic examination
+T0562,Stool Occult Blood(EIA/LIA),Microscopic examination
+T0334,Influenza B RNA Detection,Microscopic examination
+T0028,FilmArray Meningitis/ Encephalitis Panel (ME),Microscopic examination
+T0378,Influenza B Ag,Microscopic examination
+T0462,Occult blood (N-G) test,Microscopic examination
+T0270,Semen analysis,Microscopic examination
+T0737,Stool Occult Blood(EIA/LIA),Microscopic examination
+T0073,Ascitic fluid,Microscopic examination
+T0347,Pleural fluid,Microscopic examination
+T0199,Influenza A Ag,Microscopic examination
+T0617,FilmArray Pneumonia Panel (PN),Microscopic examination
+T0795,Synovial fluid analysis,Microscopic examination
+T0621,Helicobactor pylori stool antigen (HpSA) test,Microscopic examination
+T0045,Urine RBC morphology,Microscopic examination
+T0543,Electrocardiography(E.K.G.),Microscopic examination
+T0709,Starch stain,Microscopic examination
+T0201,Reducing substances,Microscopic examination
+T0056,Pregnancy test EIA,Microscopic examination
+T0181,Urine routine examination,Microscopic examination
+T0311,Adenovirus Ag test,Microscopic examination
+T0692,Occult blood (Stool) test,Microscopic examination
+T0612,Influenza A RNA Detection,Microscopic examination
+T0178,CSF Routine,Microscopic examination
+T0032,Stool routine,Microscopic examination
+T0451,Neutral fat stain,Microscopic examination
+T0324,RSV RNA,Microscopic examination
+T0338,Group A Streptococcus DNA,Microscopic examination
+T0126,Fatty acid stain,Microscopic examination
+T0597,Parasite ova direct smear,Microscopic examination
+T0786,PH,Microscopic examination
+T0132,Parasite ova onc.,Microscopic examination
+T0328,Perianal swab for pinwarm,Microscopic examination
+T0121,Hematocrit-Pleural,Microscopic examination
+T0548,APT test,Microscopic examination
+T0082,RSV screening test,Microscopic examination
+T0688,Pneumococcus Ag (urine),Microscopic examination
+T0158,FilmArray Respiratory Panel (RP),Microscopic examination
+T0012,FilmArray Gastrointestinal (GI),Microscopic examination
+T0463,Urine biochemistry examination,Microscopic examination
+T0484,Enterovirus 71 IgM antibody,Microscopic examination
+T0755,Legionella pneumophila Ag(urine),Microscopic examination
+T0248,Amoeba (direct smear),Microscopic examination
+T0449,Blood culture (for TB),Mycobacteria
+T0757,Acid-fast stain and Mycobacteria culture (unuse anti-TB drug),Mycobacteria
+T0307,NTM molecular ID,Mycobacteria
+T0326,MTB PCR/RIF(§???°ò¦]),Mycobacteria
+T0139,Acid-fast stain and Mycobacteria culture (Treatment),Mycobacteria
+T0223,Susceptibility of TB(4 drugs),Mycobacteria
+T0571,"Blood culture (for resin , Aer & Anaerobic,Fungus)¤j¤H¨?¥?",bacteria
+T0097,Pleural effusion culture (Aer & Anaerobic),bacteria
+T0306,"Blood culture (Aer,Anaerobic,Fungus)",bacteria
+T0220,Group B Streptococcus culture,bacteria
+T0438,BAL culture(Aerobic),bacteria
+T0447,MIC method,bacteria
+T0184,Fungus culture,bacteria
+T0780,Anaerobic culture (only),bacteria
+T0209,Acid fast stain(Slide use only),bacteria
+T0642,Group B Streptococcus culture,bacteria
+T0392,Sputum Culture + Sputum Routine aerobic culture,bacteria
+T0681,India ink stain,bacteria
+T0569,Aerobic culture (only),bacteria
+T0456,Clostridium difficile culture(Stool),bacteria
+T0193,Campylobacter species culture(Stool),bacteria
+T0722,"Salmonella,Shigella or other Pathogens culture",bacteria
+T0684,Pus aerobic & anaerobic culture,bacteria
+T0676,Fungus stain,bacteria
+T0055,Discharge aerobic culture,bacteria
+T0261,Susceptibility of yeast,bacteria
+T0406,"Blood culture (for resin , Aer & Anaerobic,Fungus)¤p«?¨?¥?",bacteria
+T0290,Cryptococcus antigen test(Blood),bacteria
+T0743,Cryptococcus antigen test(CSF),bacteria
+T0634,Helicobacter pylori antibody test,bacteria
+T0552,Urine aerobic culture,bacteria
+T0747,Throat swab culture(Aerobic),bacteria
+T0793,Gram's stain,bacteria
+T0752,Ascites (for Aer & Anaerobic),bacteria
+T0436,Vibrio cholerae culture,bacteria
+T0170,Staphylococcus aureus culture(Stool),bacteria
+T0622,Bile culture (Aer & Anaerobic),bacteria
+T0138,Quantiferon-TB(QFT),bacteria
+T0076,Stool for screen,bacteria
+T0429,Clostridium difficle toxin test (RT-PCR),bacteria
+T0142,CSF culture (Aer & Anaerobic),bacteria
+T0690,Pericardial fluid culture (Aer & Anaerobic),bacteria
+T0256,Synovial fluid culture (Aer & Anaerobic),bacteria
+T0315,Lead (Pb),poison
+T0397,Opiates screen test,poison
+T0666,Opiates screen test,poison
+T0228,Amphetamines screen test,poison
+T0561,Cannabis (THCA)  confirmation test,poison
+T0693,Cannabinoids screen test,poison
+T0165,MDMA confirmation test,poison
+T0179,Ketamine confirmation test,poison
+T0372,Amphetamines screen test,poison
+T0057,hair-drug test I (Amphetamines /Opiates/MDMA /Ketamine),poison
+T0405,Amphetamines confirmation test,poison
+T0506,Ketamine screen test,poison
+T0619,MDMA screen test,poison
+T0677,Opiates confirmation test,poison
+T0607,Anti-ENA(Sm/RNP Ab),immunity
+T0750,Anti-ENA(Scl-70 Ab),immunity
+T0054,Anti-dsDNA (ELISAªk),immunity
+T0584,Anti-nuclear antibody (ANA) IFAªk,immunity
+T0437,Anti-Cardiolipin-IgG,immunity
+T0414,ANCA,immunity
+T0740,Anti-ENA (SSA/SSB),immunity
+T0695,ANCA(PR3)(ELISA),immunity
+T0260,ANCA(MPO)(ELISA),immunity
+T0145,Anti-ENA(Jo-1 Ab),immunity
+T0344,Anti-CCP antibody,immunity
+T0631,Anti HCV,serum
+T0529,HIV Ag/Ab Combo Test,serum
+T0648,T3,serum
+T0512,Free-T4 (E.I.A),serum
+T0272,T4,serum
+T0249,Folic acid(EIA/LIA),serum
+T0732,Insulin-like Growth Factor 1 (IGF-1),serum
+T0017,Chlamydia Pneumoniae Antibody IgM (§?³tªk),serum
+T0526,Mycoplasma pneumonia IgM (§?³tªk),serum
+T0430,Growth Hormone (GH),serum
+T0613,Estradiol (E2) EIA/LIA,serum
+T0025,Thyroglobulin,serum
+T0356,£\-fetoprotein(AFP)(Blood),serum
+T0105,Homocysteine,serum
+T0399,Intact parathyroid hormone,serum
+T0276,HBsAg EIA  (Qualitative),serum
+T0029,Anti HAV,serum
+T0665,Anti HBs,serum
+T0531,TPPA/TPHA test,serum
+T0643,Aspergillus (Galactomannan)Ag-(BAL),serum
+T0782,Chlamydia trachomatis Ab,serum
+T0626,RPR/VDRL test(Blood),serum
+T0599,Adrenocorticotropic Hormone (ACTH),serum
+T0141,LH(EIL/LIA),serum
+T0195,Glycosylated Hb (HbA1c),serum
+T0518,Dengue NS1 Ag,serum
+T0567,Dengue NS1 Ag,serum
+T0416,Rota virus Ag,serum
+T0611,Adenovirus Antigen (Fecal),serum
+T0711,Progesterone (EIA/LIA),serum
+T0329,TSH(EIA/LIA),serum
+T0287,"Prolactin (PRL),EIA/LIA",serum
+T0748,Carbohydrate Antigen 72-4,serum
+T0702,FSH(EIA/LIA),serum
+T0490,"ASLO,anti-streptolysin-O test",serum
+T0096,Vitamin B12,serum
+T0710,Cold hemogglutinin,serum
+T0453,Protein induced by Vitamin K absence or antagonists-II,serum
+T0689,Neuron Specific Enolase (NSE),serum
+T0278,SCC,serum
+T0471,Cryoglobulin,serum
+T0041,Cyfra 21-1,serum
+T0147,25-OH Vitamin D,serum
+T0644,Anti-HBc (EIAªk),serum
+T0332,Mycoplasma pneumonia IgM (ELISA),serum
+T0769,Testosterone(EIA/LIA),serum
+T0441,IgA Nephelometry,serum
+T0197,prostate specific antigen(PSA),serum
+T0143,CA19-9,serum
+T0601,CA15-3,serum
+T0089,Thyroglobulin antibody (TA),serum
+T0443,Ceruloplasmin,serum
+T0303,C'4 Nephelometry,serum
+T0358,Ferritin (EIA/LIA),serum
+T0444,IgM Nephelometry,serum
+T0555,Chlamydia Pneumoniae Antibody IgM(ELISA),serum
+T0557,Aspergillus (Galactomannan)Ag,serum
+T0036,IgG Nephelometry,serum
+T0476,Everolimus (Certican),serum
+T0002,£]-HCG (EIAªk),serum
+T0412,CEA(Blood),serum
+T0247,Mycoplasma ab (Total Ab),serum
+T0398,Insulin,serum
+T0385,Widal & Weil-Felix test,serum
+T0373,HBsAg EIA Division of Gastroenterology (Quantitative),serum
+T0592,CMv Ab-IgM,serum
+T0774,HBeAg EIA,serum
+T0266,CMv Ab-IgG,serum
+T0062,Rheumatoid factor test Nephelometry,serum
+T0225,Anti-TPO Ab,serum
+T0112,Iron stain(B.M.),blood
+T0425,WBC differential count,blood
+T0241,E.S.R.,blood
+T0257,Hb H preparation,blood
+T0729,Factor VII assay,blood
+T0146,LAP stain,blood
+T0341,Eosinophil count,blood
+T0084,Peroxidase stain(B.M.),blood
+T0646,PAS stain(B.M.),blood
+T0568,B.M. DC,blood
+T0068,Factor 8 assay,blood
+T0424,Reticulocyte hemoglobin equivalent(RET-He),blood
+T0163,Platelet count,blood
+T0069,Hct,blood
+T0124,B.M.,blood
+T0113,Reticulocyte count,blood
+T0033,Mixing APTT,blood
+T0775,Factor 12 assay,blood
+T0426,Factor 9 assay,blood
+T0116,W.B.C,blood
+T0130,Parasite(malaria or filaria),blood
+T0707,Hematopoietic progenitor cell count (HPC#),blood
+T0602,R.B.C,blood
+T0150,Factor 8 inhibitor test,blood
+T0015,Mixing PT,blood
+T0663,AT ¢» (antithrombin),blood
+T0325,Protein S,blood
+T0653,Protein C,blood
+T0217,RBC morphology,blood
+T0745,Hb,blood
+T0731,Bleeding time (Duke method),blood
+T0258,vWF: activity (GP1b-R),blood
+T0349,Factor 8 assay(Chromogenic),blood
+T0700,Fibrinogen (quantitative),blood
+T0060,D- dimer,blood
+T0386,PT,blood
+T0772,APTT,blood
+T0004,Factor 11 assay,blood
+T0632,vWF¡GAg,blood
+T0240,Factor 9 inhibitor,blood
+T0222,Coombs' polyspecific test Direct,blood bank
+T0323,Special blood group studies ¡? Lewis antigen,blood bank
+T0418,Antibody identification,blood bank
+T0067,Cross matching,blood bank
+T0194,Coombs ( D ) C3d monospecific test,blood bank
+T0388,Coombs IgG monospecific test,blood bank
+T0008,ABO  antibody titration,blood bank
+T0594,Coombs' polyspecific test Indirect,blood bank
+T0353,RH(D) Typing(tube method),blood bank
+T0273,A.B.AB.O grouping(tube method),blood bank
+T0550,Antibody screening,blood bank
+T0525,Mn Typing,blood bank
+T0704,Investigation transfusion reaction,blood bank
+T0789,Special blood group studies ¡ZD.E.C.e.c,blood bank
+T0253,Blood urea nitrogen (BUN),Biochemistry
+T0154,"O.G.T.T.(100gm,¥|¦¸,ac,1hr,2hr,3hr,OBS)",Biochemistry
+T0308,Glucose-6-phosphate-dehydrogenase (G-6-P-D),Biochemistry
+T0736,Glucose (Ascites),Biochemistry
+T0600,Chloride (Cl) (urine) Random,Biochemistry
+T0749,Chloride (Cl) (Pleural),Biochemistry
+T0623,Chloride  (Cl) (Ascities),Biochemistry
+T0551,Chloride (Cl) (C.S.F),Biochemistry
+T0570,Sodium (Na) (urine) Random,Biochemistry
+T0527,Creatinine (urine) Random,Biochemistry
+T0773,Uric Acid (urine) Random,Biochemistry
+T0333,Phosphoras (P) (urine) Random,Biochemistry
+T0785,Calcium(Ca) (urine) Random,Biochemistry
+T0762,Urea-N (urine) Random,Biochemistry
+T0723,Glucose (Pleural),Biochemistry
+T0738,LDH (Pleural),Biochemistry
+T0094,Glucose (C.S.F.),Biochemistry
+T0190,Hb electrophoresis,Biochemistry
+T0172,Immunoelectrophoresis (Urine),Biochemistry
+T0520,Immunoelectrophoresis (CSF),Biochemistry
+T0521,Immunoelectrophoresis (serum),Biochemistry
+T0233,Carboxylhemoglobin,Biochemistry
+T0219,Acetaminophen,Biochemistry
+T0044,Benzodiazepine,Biochemistry
+T0360,Salicylate,Biochemistry
+T0751,ICG,Biochemistry
+T0085,Glucose (urine) Random,Biochemistry
+T0477,Uric Acid (urine) 24hr,Biochemistry
+T0708,Ethyl alcohol,Biochemistry
+T0269,Bilirubin- D /Bilirubin-T Ratio,Biochemistry
+T0374,Globulin,Biochemistry
+T0099,Triglyceride (TG),Biochemistry
+T0407,Paraquet test,Biochemistry
+T0300,Magnesium(Mg) (Urine) Random,Biochemistry
+T0263,Chloride (Cl) (urine) 24hr,Biochemistry
+T0492,LDH (C.S.F.),Biochemistry
+T0052,Creatinine (urine) 24hr,Biochemistry
+T0574,LDH (Ascites),Biochemistry
+T0603,Phosphoras (P)  (urine) 24hr,Biochemistry
+T0246,Calcium(Ca) (urine) 24hr,Biochemistry
+T0413,Glucose (urine) 24hr,Biochemistry
+T0093,Blood gas analysis,Biochemistry
+T0039,Blood gas analysis,Biochemistry
+T0457,Total-Protein (Pleural),Biochemistry
+T0034,Total-Protein (Ascites),Biochemistry
+T0651,Albumin(Ascites),Biochemistry
+T0454,Albumin(Pleural),Biochemistry
+T0393,Fe (Iron ¡Vbound),Biochemistry
+T0092,Potassium (K) (urine) 24hr,Biochemistry
+T0734,Protein electrophoresis(Serum),Biochemistry
+T0157,Bilirubin direct,Biochemistry
+T0485,Transferrin & TIBC,Biochemistry
+T0459,Total protein(TP),Biochemistry
+T0292,Potassium (K),Biochemistry
+T0309,Sodium(Na),Biochemistry
+T0224,Creatinine (CRE),Biochemistry
+T0403,Blood osmolarity test,Biochemistry
+T0321,Calcium (Ca),Biochemistry
+T0417,Glucose(PC),Biochemistry
+T0516,Prealbumin,Biochemistry
+T0316,Potassium (K) (urine) Random,Biochemistry
+T0114,Total-Protein (C.S.F.),Biochemistry
+T0001,Total-Protein (urine) Random,Biochemistry
+T0741,Urea-N (urine) 24hr,Biochemistry
+T0355,Sodium (Na) (urine)  24hr,Biochemistry
+T0679,Total-Protein (urine) 24hr,Biochemistry
+T0202,Uric Acid(UA),Biochemistry
+T0169,Cyclosporine-A,Biochemistry
+T0239,Albumin(ALB),Biochemistry
+T0182,Digoxin,Biochemistry
+T0319,NT-proBNP,Biochemistry
+T0638,PCT,Biochemistry
+T0277,Microalbumin (Nephelometry),Biochemistry
+T0546,Urine-osmolarity test,Biochemistry
+T0267,Amylase-Pleural,Biochemistry
+T0586,HS C.R.P,Biochemistry
+T0336,Cyclosporine-A,Biochemistry
+T0446,Urine Protein electrophoresis,Biochemistry
+T0589,Protein electrophoresis(CSF),Biochemistry
+T0294,Triglyceride-Pleural,Biochemistry
+T0210,Cholesterol-Pleural,Biochemistry
+T0705,Creatine kinase-MB (CK-MB ),Biochemistry
+T0226,Methotrexate (MTX),Biochemistry
+T0342,HS Troponin T,Biochemistry
+T0513,Glucose(AC),Biochemistry
+T0221,£^-glutamyl transferase(£^-GT),Biochemistry
+T0110,Amylase (AMY),Biochemistry
+T0135,Vancomycin(trough),Biochemistry
+T0671,Magnesium (Mg ),Biochemistry
+T0125,Phosphoras (P),Biochemistry
+T0330,Cholesterol (CHO),Biochemistry
+T0554,Cholinesterase(ChE),Biochemistry
+T0480,Aspartate Aminotransferase (AST),Biochemistry
+T0185,Alanine Aminotransferase (ALT),Biochemistry
+T0604,Theophylline(peak),Biochemistry
+T0507,Lactic dehydrogenase (LDH),Biochemistry
+T0234,Sirolimus,Biochemistry
+T0483,Chloride (Cl),Biochemistry
+T0591,Bilirubin total,Biochemistry
+T0796,Creatine-kinase (CK),Biochemistry
+T0348,Magnesium(Mg) (Urine) 24hr,Biochemistry
+T0031,Tacrolimus(FK 506),Biochemistry
+T0317,Phenobarbital,Biochemistry
+T0229,Alkaline phosphatase(ALP),Biochemistry
+T0155,Lithium(Li),Biochemistry
+T0401,Valproic acid(Depakin),Biochemistry
+T0432,Phenytoin(Dilantin),Biochemistry
+T0156,Carbamazepine,Biochemistry
+T0077,Theophylline(trough),Biochemistry
+T0380,Lactic Acid (lactate),Biochemistry
+T0003,Ammonia(NH3),Biochemistry
+T0509,CSF-Albumin,Biochemistry
+T0395,Lipase,Biochemistry
+T0735,Vancomycin(peak),Biochemistry
+T0565,Amphetamines screen test,Biochemistry
+T0205,L.D.L.cholesterol,Biochemistry
+T0337,H.D.L.cholesterol (HDL-C),Biochemistry
+T0765,Opiates screen test,Biochemistry
+T0624,Urinary Inorganic Arsenic Speciation Test¡AInorganic Arsenic,Outbound inspection
+T0556,17 OHCS,Outbound inspection
+T0227,"Anti-HLA specificantibodies, class I and classII (Donor specificantibodies)",Outbound inspection
+T0367,Vitamin B1,Outbound inspection
+T0320,CPK isoenzyme,Outbound inspection
+T0714,Factor 5 assay,Outbound inspection
+T0455,Stone analysis,Outbound inspection
+T0314,Isoenzyme-LDH,Outbound inspection
+T0523,Anti-Intercellular Substance Antibodies,Outbound inspection
+T0719,Vitamin B6,Outbound inspection
+T0168,Bone-alkaline phosphatase,Outbound inspection
+T0503,Fructosamine,Outbound inspection
+T0694,Vitamin B2,Outbound inspection
+T0537,£]2-microglobulin(urine),Outbound inspection
+T0245,Cadmium (Cd),Outbound inspection
+T0633,Cadmium (Cd),Outbound inspection
+T0770,Nickel (Ni),Outbound inspection
+T0335,Chlamydia trachomatis Ag EIA (Urine)(¥~°e),Outbound inspection
+T0370,Arsenic (As),Outbound inspection
+T0536,Lead (Pb)(urine),Outbound inspection
+T0763,Chlamydia trachomatis Ag EIA (Swab)(¥~°e),Outbound inspection
+T0580,Arsenic (As),Outbound inspection
+T0776,Aquaporin-4 Ab,Outbound inspection
+T0198,17 KS,Outbound inspection
+T0371,Vitamin E,Outbound inspection
+T0691,Cystatin C,Outbound inspection
+T0188,C1 esterase inhibitor,Outbound inspection
+T0207,Bence Jones protein,Outbound inspection
+T0070,Anti-histone,Outbound inspection
+T0167,Coproporphyrin,Outbound inspection
+T0701,Chromium(Cr),Outbound inspection
+T0652,Methy alcohol,Outbound inspection
+T0027,Fabry male screening test (>7 years old),Outbound inspection
+T0046,17£\-Hydroxy Progesterone(17£\-OHP),Outbound inspection
+T0081,Tryptase,Outbound inspection
+T0486,Fabry Patient biomarker test,Outbound inspection
+T0575,Fabry family screening test,Outbound inspection
+T0296,Pompe Patient biomarker test,Outbound inspection
+T0588,Pompe family screening test,Outbound inspection
+T0579,C-Terminal Telopeptide(CTx)¡A£]-CrossLaps,Outbound inspection
+T0792,Gaucher family screening test,Outbound inspection
+T0035,Prostate Health Index,Outbound inspection
+T0629,Legionella antibody,Outbound inspection
+T0021,Amylase (urine) Random,Outbound inspection
+T0541,Fabry female test,Outbound inspection
+T0051,Pompe screening test (>1y ars old),Outbound inspection
+T0382,Cobalt (Co),Outbound inspection
+T0369,Gaucher Patient biomarker test,Outbound inspection
+T0115,Gaucher screening test,Outbound inspection
+T0628,Glutamic acid decarboxylase autoantibody (GAD Ab),Outbound inspection
+T0489,Anti-mitochontrial antibody(AMA),Outbound inspection
+T0357,Anti-smooth muscle antibody(ASMA),Outbound inspection
+T0291,HCV Genotype,Outbound inspection
+T0059,Se(Selenium),Outbound inspection
+T0149,HG(MERCURY)(Urine),Outbound inspection
+T0452,Interleukin-6 (IL-6),Outbound inspection
+T0011,Anti platelet factor 4 antibody,Outbound inspection
+T0794,Amoebic Antibody,Outbound inspection
+T0655,Acetone,Outbound inspection
+T0100,Test for inborn errors of metabolism,Outbound inspection
+T0474,Urinary organic acid analysis,Outbound inspection
+T0137,RPR/VDRL test(CSF),Outbound inspection
+T0090,Tandem Mass Analysis of Metabolites,Outbound inspection
+T0042,Amylase (urine) 24hr,Outbound inspection
+T0058,Anti-£]2-glycoprotein-I Ab,Outbound inspection
+T0656,Basement Memb. Zone Ab,Outbound inspection
+T0578,Immunoglobulin £e/£f,Outbound inspection
+T0678,Adenosine deaminase (ADA) (Blood),Outbound inspection
+T0131,Free T3 (EIA/LIA),Outbound inspection
+T0636,Lipoprotein electrophoresis,Outbound inspection
+T0214,free cortisol(24 hours urine),Outbound inspection
+T0075,Vitamin A,Outbound inspection
+T0351,Amino acids analysis,Outbound inspection
+T0281,Anti-Phospholipase-A2-Receptor (PLA2R) autoantibody,Outbound inspection
+T0620,Gastrin,Outbound inspection
+T0152,Paroxysmal Nocturnal Hemoglobinuria (PNH),Outbound inspection
+T0030,Acute Leukemia Screen(B.M.),Outbound inspection
+T0339,Anti-Ribosomal-P,Outbound inspection
+T0006,Acute Leukemia Screen(Blood),Outbound inspection
+T0230,Copper(urine) 24hr,Outbound inspection
+T0609,5-HIAA,Outbound inspection
+T0659,Zinc (Zn),Outbound inspection
+T0192,Glycated Albumin (GA),Outbound inspection
+T0470,Catecholamine,Outbound inspection
+T0345,VMA-Urine,Outbound inspection
+T0215,Chromogranin A (CGA),Outbound inspection
+T0781,Copper(Cu),Outbound inspection
+T0758,Atypical lymphocyte/lymphoma Screen(Blood),Outbound inspection
+T0650,Free Testosterone,Outbound inspection
+T0305,Anti-Mullerian Hormone (AMH),Outbound inspection
+T0460,DNA qualitative amplification test,Outbound inspection
+T0595,IgG1,Outbound inspection
+T0421,dehydroepiandrosterone sulfate(DHEA-S),Outbound inspection
+T0419,Plasma Renin Activity(PRA),Outbound inspection
+T0387,Aldosterone (Blood),Outbound inspection
+T0180,BCR-ABL1,Outbound inspection
+T0064,Tissue polypeptide antigen (TPA),Outbound inspection
+T0283,T-cell Chronic LymphoProliferative (B.M.),Outbound inspection
+T0725,IgG3,Outbound inspection
+T0563,Copper(Cu)(Urine)Random,Outbound inspection
+T0048,Indium (In),Outbound inspection
+T0495,Myeloma MRD (B.M.),Outbound inspection
+T0798,T-cell Chronic LymphoProliferative (Blood),Outbound inspection
+T0720,B ALL MRD (B.M.),Outbound inspection
+T0144,Acute Megakaryoblastic Leukemia (Blood),Outbound inspection
+T0080,Acute Megakaryoblastic Leukemia (B.M.),Outbound inspection
+T0637,B ALL MRD (Blood),Outbound inspection
+T0285,Precursor T-Lymphoblastic Leukemia (B.M.),Outbound inspection
+T0577,Precursor T-Lymphoblastic Leukemia (Blood),Outbound inspection
+T0411,Precursor B-Lymphoblastic Leukemia (B.M.),Outbound inspection
+T0491,Precursor B-Lymphoblastic Leukemia (Blood),Outbound inspection
+T0545,MyeloDysplastic Syndrome (B.M.),Outbound inspection
+T0383,MyeloDysplastic Syndrome (Blood),Outbound inspection
+T0402,Anti-HDV,Outbound inspection
+T0177,Acute Myeloid Leukemia characterizatiom(Blood),Outbound inspection
+T0095,Quantitative PCR of BCR-ABL1,Outbound inspection
+T0466,Plasma Cell Dyscrasia(B.M.),Outbound inspection
+T0685,Myeloma MRD (Blood),Outbound inspection
+T0645,Plasma Cell Dyscrasia(Blood),Outbound inspection
+T0730,Acute Leukemia of Ambiguous Lineage (Blood),Outbound inspection
+T0231,Acute Leukemia of Ambiguous Lineage (B.M.),Outbound inspection
+T0564,Chronic Lymphoid Leukemia (Blood),Outbound inspection
+T0289,Chronic Lymphoid Leukemia (B.M.),Outbound inspection
+T0530,B-cell Chronic LymphoProliferative Disorders(Blood),Outbound inspection
+T0390,B-cell Chronic LymphoProliferative Disorders (B.M.),Outbound inspection
+T0282,NK-cell Chronic LymphoProliferative Disorders(B.M.),Outbound inspection
+T0559,NK-cell Chronic LymphoProliferative(Blood),Outbound inspection
+T0275,Atypical lymphocyte/lymphoma Screen(B.M.),Outbound inspection
+T0458,Acute Myeloid Leukemia characterizatiom (B.M.),Outbound inspection
+T0716,Lupus anticoagulant test,Outbound inspection
+T0614,Myoglobin(Blood),Outbound inspection
+T0160,Procollagen type 1 amino-terminal propeptide¡Atotal P1NP¡AP1NP,Outbound inspection
+T0767,IgG4,Outbound inspection
+T0558,FTA-ABS,Outbound inspection
+T0133,IgG2,Outbound inspection
+T0542,£-antitrypsin,Outbound inspection
+T0071,DR-70,Outbound inspection
+T0616,Haptoglobin Nephelometry,Outbound inspection
+T0396,Myoglobin(Urine),Outbound inspection
+T0074,Sensorineural Hearing Loss,Outbound inspection
+T0200,£]2-microglobulin(Blood),Outbound inspection
+T0232,ALK-isoenzyme-EP,Outbound inspection
+T0784,SOFIVA Baby Scan,Outbound inspection
+T0106,"Systemic Sclerosis Abs,screening",Outbound inspection
+T0517,Myositis specific Ab,Outbound inspection
+T0083,Autoimmune Liver disease antibodies,Outbound inspection
+T0791,Erythropoietin(EPO),Outbound inspection
+T0066,Plasma free Ca++,Outbound inspection
+T0016,Acetylcholine Receptor Ab,Outbound inspection
+T0540,HTLV-1 antibody,Outbound inspection
+T0284,Anti-Glomerular Basement Membrane Antibodies (Anti-GBM Ab),Outbound inspection
+T0164,Apolipoprotein A1 (Nephelometry),Outbound inspection
+T0496,Apolipoprotein B (Nephelometry),Outbound inspection
+T0352,IgG Nephelometry (CSF),Outbound inspection
+T0118,13C-urea breath test for helicobacter pylori infection,Outbound inspection
+T0153,Estriol (E3),Outbound inspection
+T0572,C-peptide,Outbound inspection
+T0606,Calcitonin,Outbound inspection
+T0497,Gentamicin(peak),Outbound inspection
+T0532,Platinum(Pt),Outbound inspection
+T0318,Anti-phospholipid antibody¡?IgG,Outbound inspection
+T0587,Anti-phospholipid antibody¡?IgM,Outbound inspection
+T0354,HLA-AB-high resolution,Outbound inspection
+T0488,HLA-C-high resolution,Outbound inspection
+T0724,HLA-DQB1-high resolution,Outbound inspection
+T0703,HLA-DRB1-high resolution,Outbound inspection
+T0746,IMR AD(Immuno Magnetic Reduction Alzheimer's Disease),Outbound inspection
+T0535,Cotinine,Outbound inspection
+T0410,Aluminum(Al),Outbound inspection
+T0761,Gentamicin(trough),Outbound inspection
+T0120,Amikacin(peak),Outbound inspection
+T0298,APOE genotyping,Outbound inspection
+T0739,Amikacin(trough),Outbound inspection
+T0379,Mercury(Hg),Outbound inspection
+T0400,ALA/ PBG,Outbound inspection
+T0475,Cocaine,Outbound inspection
+T0728,Serum ketone body (quantitative),Outbound inspection
+T0640,Phencyclidine (PCP),Outbound inspection
+T0498,inhibin B,Outbound inspection
+T0673,Human Epididymis Protein 4,Outbound inspection
+T0662,HSV I IgG,Molecular testing
+T0122,HPV-27 CHIP,Molecular testing
+T0312,HSV II (IgG),Molecular testing
+T0427,Neisseria gonorrhoeae DNA test(§¿²G),Molecular testing
+T0271,Chlamydia trachomatis test(Swab),Molecular testing
+T0670,Chlamydia trachomatis test(Urine),Molecular testing
+T0547,MucorGenius DNA test,Molecular testing
+T0293,Mycoplasma pneumonia DNA detection,Molecular testing
+T0508,Neisseria gonorrhoeae DNA test(Swab),Molecular testing
+T0111,Human Leukocyte Panel Reactive Antibodies Percentage screening test,Molecular testing
+T0108,HSV 1+2 IgM,Molecular testing
+T0439,Lymphocytotoxic test,Molecular testing
+T0024,Tissue typing HLA (HLA-DR/DQ),Molecular testing
+T0087,Lymphocyte surface marker Tumor/cancer,Molecular testing
+T0128,HLA-B27,Molecular testing
+T0212,HCV-RNA (PCR),Molecular testing
+T0187,SARS-CoV-2 RNA,Molecular testing
+T0549,HIV-1 viral load Test (STAT),Molecular testing
+T0362,HBV YMDD,Molecular testing
+T0660,Pneumocystis jiroveci DNA Detection,Molecular testing
+T0063,HIV-1/2 Confirmatory Assay (Immunochromatography),Molecular testing
+T0726,Tissue typing HLA (HLA-ABC),Molecular testing
+T0174,EB NA IgG,Molecular testing
+T0522,HSV PCR(CSF),Molecular testing
+T0391,HIV viral load test,Molecular testing
+T0264,Toxoplasma IgM,Molecular testing
+T0119,Lymphocyte surface markerInfectious disease,Molecular testing
+T0243,Mumps virus 1gM,Molecular testing
+T0499,HSV PCR(Blood),Molecular testing
+T0515,Toxoplasma IgG,Molecular testing
+T0238,Mumps virus IgG,Molecular testing
+T0259,Measles virus IgM,Molecular testing
+T0377,HLA-B1502,Molecular testing
+T0576,Varicella-Zoster virus IgG,Molecular testing
+T0641,Varicella-Zoster virus IgM,Molecular testing
+T0539,Measles virus IgG,Molecular testing
+T0502,Egg white,"Pediatric Immunization	"
+T0274,Penicillium notatum,"Pediatric Immunization	"
+T0101,Peanut,"Pediatric Immunization	"
+T0203,Wheat,"Pediatric Immunization	"
+T0244,Shrimp,"Pediatric Immunization	"
+T0560,Crab,"Pediatric Immunization	"
+T0415,Yeast,"Pediatric Immunization	"
+T0472,Milk,"Pediatric Immunization	"
+T0674,Melons,"Pediatric Immunization	"
+T0768,Seminal fluid,"Pediatric Immunization	"
+T0664,Common silver brich,"Pediatric Immunization	"
+T0007,Watermelon,"Pediatric Immunization	"
+T0583,Goat milk,"Pediatric Immunization	"
+T0196,Oyster,"Pediatric Immunization	"
+T0409,Clam,"Pediatric Immunization	"
+T0301,Fish,"Pediatric Immunization	"
+T0327,Dog dander,"Pediatric Immunization	"
+T0286,Gluten,"Pediatric Immunization	"
+T0465,Total-IgE,"Pediatric Immunization	"
+T0760,Aspergillus-Specific IgG,"Pediatric Immunization	"
+T0573,Mix allergens-Panel 5,"Pediatric Immunization	"
+T0639,Candida albicans,"Pediatric Immunization	"
+T0753,Soya bean,"Pediatric Immunization	"
+T0420,Cladosporium herbarum,"Pediatric Immunization	"
+T0148,Mosquito,"Pediatric Immunization	"
+T0005,Cat dander,"Pediatric Immunization	"
+T0534,"Blaella germanica, Cockroach","Pediatric Immunization	"
+T0389,Dermatophagoides microceras,"Pediatric Immunization	"
+T0295,Dermatophagoides farinae,"Pediatric Immunization	"
+T0647,Dermatophagoides pteronyssinus,"Pediatric Immunization	"
+T0104,Blomia tropicalis,"Pediatric Immunization	"
+T0127,Aspergillus fumigatus,"Pediatric Immunization	"
+T0654,Japaness cedar,"Pediatric Immunization	"
+T0086,Staphylococcal enterotoxin B,"Pediatric Immunization	"
+T0479,Staphylococcal enterotoxin A,"Pediatric Immunization	"
+T0687,Common pigweed,"Pediatric Immunization	"
+T0585,Common ragweed,"Pediatric Immunization	"
+T0630,Bermuda grass,"Pediatric Immunization	"
+T0251,Acacia,"Pediatric Immunization	"
+T0173,Eucalyptus,"Pediatric Immunization	"
+T0183,Pork,"Pediatric Immunization	"
+T0408,5 alternative common & 2 special allergens -Panel 4,"Pediatric Immunization	"
+T0669,10 alternative common allergens-Panel3,"Pediatric Immunization	"
+T0504,Food allergens - Panel 2,"Pediatric Immunization	"
+T0501,Air allergens - Panel 1,"Pediatric Immunization	"
+T0581,Air Screen,"Pediatric Immunization	"
+T0519,Food Screen,"Pediatric Immunization	"
+T0481,Australian pine,"Pediatric Immunization	"
+T0237,Apple,"Pediatric Immunization	"
+T0322,ECP,"Pediatric Immunization	"
+T0211,Latex,"Pediatric Immunization	"
+T0038,Amoxicilloyl,"Pediatric Immunization	"
+T0759,Penicillyl G,"Pediatric Immunization	"
+T0777,Banana,"Pediatric Immunization	"
+T0610,Mango,"Pediatric Immunization	"
+T0696,Corn,"Pediatric Immunization	"
+T0434,Egg yolk,"Pediatric Immunization	"
+T0423,Tomato,"Pediatric Immunization	"
+T0510,Onion,"Pediatric Immunization	"
+T0218,Strawberry,"Pediatric Immunization	"
+T0478,Orange,"Pediatric Immunization	"
+T0140,Carrot,"Pediatric Immunization	"
+T0236,Beef,"Pediatric Immunization	"
+T0787,Cotton,"Pediatric Immunization	"
+T0717,Kiwi,"Pediatric Immunization	"
