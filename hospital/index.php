@@ -13,6 +13,15 @@
 </head>
 
 <body>
+<?php
+session_start();
+
+// 检查用户是否未登录，然后重定向到登录页面
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: login.php");
+    exit;
+}
+?>
     <?php
     try{
         $db = new PDO("mysql:dbname=hospital;port=3316", "root", "");
@@ -26,10 +35,7 @@
     session_start();
 
     // Check if the user is already logged in, if yes then redirect him to welcome page
-    if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header("location: welcome.php");
-        exit;  //記得要跳出來，不然會重複轉址過多次
-    }
+    
     ?>
 
     <div class="container-fluid">
@@ -65,7 +71,12 @@
                 <div class="plus">
                     <i class="fa-solid fa-plus"></i>
                     <a class="hometitle">Hospital Homepage</a>
-                    <a href="signin.php"id="log"><i class="fa-solid fa-user"></i>Login</a>
+                    <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+                        <a href="logout.php" id="log"><i class="fa-solid fa-user"></i>Logout</a>
+                    <?php else: ?>
+                        <a href="login.php" id="log"><i class="fa-solid fa-user"></i>Login</a>
+                    <?php endif; ?>
+                    
                 </div>
             </div>
             <div class="positionfixed"></div>
