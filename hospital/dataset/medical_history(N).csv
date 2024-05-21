@@ -1,4 +1,24 @@
 pNo,mhID,treatment,diagnosis,date,prescription
+157710,86591,"ECG,Holter Monitor",Atrial Fibrillation,2019/6/15,Warfarin
+157711,86592,"MRI,Physical Therapy",Multiple Sclerosis,2017/3/10,Interferon Beta
+157712,86593,"X-ray,Physical Therapy",Osteoarthritis,2021/8/20,Acetaminophen
+157713,86594,"CT Scan,Colonoscopy",Diverticulitis,2020/5/22,Antibiotics
+157714,86595,"Blood Test,Ultrasound",Hypothyroidism,2018/11/30,Levothyroxine
+157715,86596,"EEG,Neurological Exam",Migraine,2016/9/12,Sumatriptan
+157716,86597,"Endoscopy,Biopsy",Celiac Disease,2019/4/17,Gluten-Free Diet
+157717,86598,"Liver Function Test,Ultrasound",Fatty Liver Disease,2021/2/9,Lifestyle Changes
+157718,86599,"Pulmonary Function Test,Bronchoscopy",Chronic Bronchitis,2017/7/25,Inhaled Steroids
+157719,86600,"EKG,Stress Test",Coronary Artery Disease,2020/3/3,Atorvastatin
+157700,86581,"ECG,Echocardiogram",Arrhythmia,2021/5/15,Amiodarone
+157701,86582,"X-ray,CT Scan",Pneumonia,2020/11/23,Azithromycin
+157702,86583,"MRI,Physical Therapy",Herniated Disc,2019/8/5,Ibuprofen
+157703,86584,"Blood Test,Ultrasound",Diabetes,2017/2/14,Metformin
+157704,86585,"EKG,Stress Test",Hypertension,2016/4/10,Lisinopril
+157705,86586,"Colonoscopy,Biopsy",Colorectal Cancer,2018/10/22,Chemotherapy
+157706,86587,"EEG,Neurological Exam",Epilepsy,2019/1/30,Valproate
+157707,86588,"Endoscopy,Biopsy",Gastritis,2020/7/18,Omeprazole
+157708,86589,"Liver Function Test,Ultrasound",Hepatitis,2021/12/4,Interferon
+157709,86590,"Pulmonary Function Test,Spirometry",Asthma,2018/9/28,Salbutamol
 157699,86580,"ECG,Echocardiogram",Arrhythmia,2018/3/2,Amiorone
 234179,85768,"Echocardiogram,Cardiac MRI",Congestive heart failure,2023/2/23,Digoxin Lanoxin
 100125,86943,Gastroscopy,Gastric spasm,2014/10/8,Atropine Sulfate

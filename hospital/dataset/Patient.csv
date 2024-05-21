@@ -1,4 +1,24 @@
 pNo,pAddress,age,gender,birthdate,pName,phone,allergen,doctorID
+157710,"808 Willow Street, Portland, OR, 97201, United States",73,F,1951/5/20,Margaret Hall,1-503-5551234,No,D00021
+157711,"909 Maple Avenue, Las Vegas, NV, 89101, United States",68,M,1956/8/9,John Adams,1-702-5555678,No,D00464
+157712,"1010 Birch Road, Nashville, TN, 37201, United States",66,F,1958/12/3,Dorothy Green,1-615-5559101,No,D00598
+157713,"1111 Cedar Street, San Diego, CA, 92101, United States",70,M,1954/7/16,Charles White,1-619-5551122,No,D00027
+157714,"1212 Elm Street, New Orleans, LA, 70112, United States",72,F,1952/4/24,Helen Harris,1-504-5553344,No,D00020
+157715,"1313 Walnut Avenue, Detroit, MI, 48201, United States",69,M,1955/9/10,George Clark,1-313-5555566,Seafood,D00044
+157716,"1414 Cherry Lane, Baltimore, MD, 21201, United States",67,F,1957/11/22,Betty Lewis,1-410-5557788,No,D00139
+157717,"1515 Pine Drive, Memphis, TN, 38101, United States",71,M,1953/3/14,Joseph Walker,1-901-5559900,Seafood,D00558
+157718,"1616 Maple Court, Louisville, KY, 40201, United States",74,F,1950/6/5,Nancy Young,1-502-5552134,No,D00573
+157719,"1717 Birch Boulevard, Milwaukee, WI, 53201, United States",65,M,1959/10/21,Frank King,1-414-5554356,Peanut,D00556
+157700,"123 Maple Avenue, Springfield, IL, 62701, United States",65,F,1959/3/14,Mary Johnson,1-217-5551234,Egg,D00345
+157701,"456 Oak Street, Austin, TX, 73301, United States",72,M,1952/6/22,James Smith,1-512-5555678,No,D00869
+157702,"789 Pine Road, Orlando, FL, 32801, United States",68,F,1956/9/30,Patricia Brown,1-407-5559101,Milk,D00327
+157703,"101 Cedar Lane, Denver, CO, 80201, United States",70,M,1954/11/5,Robert Jones,1-303-5551122,No,D00516
+157704,"202 Birch Boulevard, Seattle, WA, 98101, United States",75,F,1949/2/19,Linda Williams,1-206-5553344,Peanut,D00909
+157705,"303 Elm Street, Boston, MA, 02101, United States",67,M,1957/4/8,Michael Taylor,1-617-5555566,No,D00952
+157706,"404 Walnut Drive, Miami, FL, 33101, United States",69,F,1955/7/12,Barbara Davis,1-305-5557788,Milk,D00688
+157707,"505 Cherry Court, Phoenix, AZ, 85001, United States",71,M,1953/10/25,William Miller,1-602-5559900,No,D00037
+157708,"606 Maple Lane, Columbus, OH, 43201, United States",74,F,1950/1/17,Elizabeth Wilson,1-614-5552134,Egg,D00983
+157709,"707 Pine Avenue, Charlotte, NC, 28201, United States",66,M,1958/8/3,David Anderson,1-704-5554356,No,D00851
 157699,"19 Riverside Street, Big Bend,wi, 53103  United States",12,M,2012/1/1,Kendrick,1-705-4804052,No,D00808
 234179,"27 Mallard Ridge, Easton,md, 21601  United States",2,F,2022/1/31,Aubree,1-347-9256347,Egg,D00479
 100125,"17 Katie Rose Street S, Salem,or, 97302  United States",9,F,2014/4/19,Kayleigh,1-705-9556121,Milk,D00264
