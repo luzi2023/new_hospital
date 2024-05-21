@@ -1,25 +1,35 @@
 <?php
 session_start();
+
+// 檢查用戶是否已登入，否則重定向到登入頁面
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header("Location: login.php");
     exit;
 }
 
-$dID = $_SESSION['dID'];
+// 從會話中取得 userID
+$userID = isset($_SESSION['userID']) ? $_SESSION['userID'] : '';
 
-// 如果查詢字符串中的 dID 未設置或與會話中的 dID 不匹配，則使用會話中的 dID 進行重導
-if (!isset($_GET['dID']) || $_GET['dID'] !== $dID) {
-    // 只有當當前查詢字符串中的 dID 不匹配會話中的 dID 時才進行重導
-    if (!isset($_GET['dID']) || $_GET['dID'] !== $dID) {
-        header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($dID));
-        exit;
-    }
+// 檢查查詢字符串中的 dID 是否已設置且匹配會話中的 userID
+if (!isset($_GET['dID']) || $_GET['dID'] !== $userID) {
+    // 重定向到相同頁面並附加正確的 dID
+    header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($userID));
+    exit;
 }
+
+// 獲取 URL 中的 dID 參數
+$dID = $_GET['dID'];
 
 include('config.php');
 
-// 您的其他代碼在這裡
+// 獲取設備信息的 SQL 查詢
+$sql = "SELECT * FROM equipment JOIN users WHERE userID = ?";
+$stmt = mysqli_prepare($link, $sql);
+mysqli_stmt_bind_param($stmt, "s", $dID);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 ?>
+
 
 
 <!DOCTYPE html>
