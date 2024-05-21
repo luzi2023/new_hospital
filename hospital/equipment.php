@@ -1,6 +1,19 @@
 <?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+
+$dID = $_SESSION['dID'];
+if (!isset($_GET['dID']) || $_GET['dID'] !== $dID) {
+    header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($dID));
+    exit;
+}
+
 include('config.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +74,7 @@ include('config.php');
             <th>purchase date</th>
             <th>Status</th>
             <th>manufacturer</th>
+            <th>Reservation</th>
             <div class="equipment-table-list">
                 <?php
                 if (mysqli_num_rows($result) > 0) {
@@ -78,6 +92,7 @@ include('config.php');
                     <td><a
                             href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a>
                     </td>
+                    <td><a href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a></td>
 
                 </tr>
                 <?php
