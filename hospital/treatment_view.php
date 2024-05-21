@@ -35,7 +35,7 @@ include('config.php');
             if (isset($_GET['tID'])) {
                 $cID = $_GET['tID'];
 
-                $query = "SELECT * FROM Option_info WHERE tID = '$cID'";
+                $query = "SELECT * FROM treatment WHERE tID = '$cID'";
                 $result = mysqli_query($link, $query);
 
                 if ($result) {

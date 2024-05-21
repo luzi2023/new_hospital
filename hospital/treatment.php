@@ -79,7 +79,7 @@ include('config.php');
         <!-- option list -->
         <?php
         // Get sorting option from GET request
-        $Option = isset($_GET['sort']) ? $_GET['sort'] : 'most_used';
+        $Option = isset($_GET['sort']);
 
         // Build SQL query based on sorting option
         switch($Option) {
@@ -99,7 +99,12 @@ include('config.php');
             $sort = "SELECT *
                     FROM treatment";
             break;
-}
+         default:
+            $sort = "SELECT *
+                    FROM treatment";
+            break;
+
+        }
 
 // Execute the query
 $result = mysqli_query($link, $sort);
