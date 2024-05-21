@@ -65,7 +65,7 @@ if(isset($_POST["submit"])){
     </head>
 
     <body>
-        <a id="back-to-home" href="signin.php">Back to Login Page</a>
+        <a id="back-to-home" href="login.php">Back to Login Page</a>
         <div class="container2">
             <h2>User Registration</h2>
             <form method="post" action="register.php">

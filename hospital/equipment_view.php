@@ -25,7 +25,7 @@ include('config.php');
             </form>
         </div>-->
         <div id="side-nav" class="sidenav">
-            <a href="index.php" id="home">Home</a>
+        <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>

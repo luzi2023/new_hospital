@@ -27,39 +27,37 @@
     <?php
     // 连接数据库
     try {
-        // $db = new PDO("mysql:host=localhost;dbname=hospital", "root", "");
-        // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         include('config.php');
 
         // 检查是否存在关键字参数
-        if(isset($_GET['query'])) {
-            // 获取用户输入的关键字
-            $keyword = $_GET['query'];
+        if (isset($_GET['query'])) {
+            // 获取用户输入的关键字并进行转义以防止 SQL 注入
+            $keyword = mysqli_real_escape_string($link, $_GET['query']);
 
-            // 查询医生信息
-            $query = "SELECT * FROM staff, nurse 
-            WHERE staff.dID = nurse.dID 
-            AND (first_name LIKE '%$keyword%' OR last_name LIKE '%$keyword%' OR period LIKE '%$keyword%')";
+            // 查询医生信息，使用 GROUP BY 进行分组
+            $query = "
+                SELECT staff.dID, first_name, last_name, period 
+                FROM staff 
+                JOIN nurse ON staff.dID = nurse.dID 
+                WHERE first_name LIKE '%$keyword%' 
+                OR last_name LIKE '%$keyword%' 
+                OR period LIKE '%$keyword%' 
+                GROUP BY staff.dID, first_name, last_name, period
+            ";
             $result = mysqli_query($link, $query);
-            // $stmt = $db->prepare($query);
-            // $stmt->execute();
-            // $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // 检查查询是否成功
+            if (!$result) {
+                echo "<p>Error: " . mysqli_error($link) . "</p>";
+            }
 
             // 显示搜索结果
-            // if(count($result) > 0) {
             if (mysqli_num_rows($result) > 0) {
                 echo "<ul>";
-                foreach ($result as $doctor) {
+                while ($doctor = mysqli_fetch_assoc($result)) {
                     // 构建医生的姓名
-                    ?>
-    <a href="edit_nurse.php?dID=<?php echo $doctor['dID']?>" class="search-and-edit">
-        <?php
-                    $name = $doctor['first_name'] . ", " . $doctor['last_name'];
-                    echo "<li>".$name." - ".$doctor['period']."</li>";
-                    ?>
-    </a>
-    <?php
+                    $name = $doctor['last_name'] . ", " . $doctor['first_name'];
+                    echo "<li><a href='edit_nurse.php?dID=" . $doctor['dID'] . "' class='search-and-edit'>" . $name . " - " . $doctor['period'] . "</a></li>";
                 }
                 echo "</ul>";
             } else {

@@ -1,0 +1,54 @@
+/* Style for the medication detail page */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.medication-details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.medication-details img.medication-image {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 200px; /* 調整照片的最大寬度 */
+    height: auto;
+}
+
+.medication-details p {
+    margin: 0 0 10px;
+}
+
+.medication-details p strong {
+    font-weight: bold;
+}
+
+.back-to-list {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-to-list a {
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-list a:hover {
+    background-color: #0056b3;
+}

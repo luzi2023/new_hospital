@@ -1,16 +1,16 @@
 <?php
-session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: login.php");
-    exit;
-}
+// session_start();
+// if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+//     header("Location: login.php");
+//     exit;
+// }
 
-$dID = $_SESSION['dID'];
+// $dID = $_SESSION['dID'];
 
-if (!isset($_GET['eID'])) {
-    header("Location: equipment.php?dID=" . urlencode($dID));
-    exit;
-}
+// if (!isset($_GET['eID'])) {
+//     header("Location: equipment.php?dID=" . urlencode($dID));
+//     exit;
+// }
 
 include('config.php');
 
@@ -124,7 +124,7 @@ $result = mysqli_stmt_get_result($stmt);
 <body>
     <div class="container-fluid3">
         <div id="side-nav" class="sidenav">
-            <a href="index.php" id="home">Home</a>
+        <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>

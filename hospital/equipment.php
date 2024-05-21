@@ -6,13 +6,21 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 }
 
 $dID = $_SESSION['dID'];
+
+// 如果查詢字符串中的 dID 未設置或與會話中的 dID 不匹配，則使用會話中的 dID 進行重導
 if (!isset($_GET['dID']) || $_GET['dID'] !== $dID) {
-    header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($dID));
-    exit;
+    // 只有當當前查詢字符串中的 dID 不匹配會話中的 dID 時才進行重導
+    if (!isset($_GET['dID']) || $_GET['dID'] !== $dID) {
+        header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($dID));
+        exit;
+    }
 }
 
 include('config.php');
+
+// 您的其他代碼在這裡
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +62,7 @@ include('config.php');
             </form>
         </div>-->
         <div id="side-nav" class="sidenav">
-            <a href="index.php" id="home">Home</a>
+        <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>

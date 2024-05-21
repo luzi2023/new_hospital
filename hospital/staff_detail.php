@@ -13,7 +13,7 @@
 <body>
     <div class="container-fluid">
         <div id="side-nav" class="sidenav">
-            <a href="index.php" id="home">Home</a>
+        <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>
@@ -168,7 +168,7 @@ try {
 
 if (isset($_GET['dID'])) {
     $doctor_id = $_GET['dID'];
-    $patients_query = "SELECT patient.pNo, patient.pname
+    $patients_query = "SELECT DISTINCT patient.pNo, patient.pname
                         FROM patient 
                         JOIN doctor ON patient.doctorID = doctor.dID
                         WHERE doctor.dID = ?";
