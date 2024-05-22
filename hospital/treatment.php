@@ -48,60 +48,121 @@ include('config.php');
         </div>
         <h1>Treatment Option</h1>
         <!-- search front, back end -->
-        <form action="treatment_search.php">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="treatment-search-button">Sort in</button>
+            <div id="myDropdown" class="dropdown-content">
+                <p onclick="sort('most_used')">The most used</p>
+                <p onclick="sort('highest_price')">Highest Price</p>
+                <p onclick="sort('default')">Default</p>
+            </div>
+        </div>
+        <form id="sortForm" method="GET" action="">
+            <input type="hidden" name="sort" id="sortInput">
+        </form>
+        <form action="treatment_search.php" class="button-form">
             <label for="search"></label>
-            <!-- <input type="text" class="treatment-search-box" name="search"> -->
             <input type="submit" value="Search" class="treatment-search-button">
-            <!-- <div class="search-checkbox">
-        <label for="cID">
-            <input type="checkbox" name="cID" value="chargeID">chargeID
-        </label>
-        <label for="tName">
-            <input type="checkbox" name="tName" value="tName" checked>tName
-        </label>
-        <label for="tType">
-            <input type="checkbox" name="tType" value="tType">tType
-        </label>
-    </div> -->
         </form>
 
         <!-- option list -->
         <?php
-    $query = "SELECT * FROM treatment";
-    $action = mysqli_query($link, $query);
-    ?>
+        // Get sorting option from GET request
+        $Option = isset($_GET['sort']);
+
+        // Build SQL query based on sorting option
+        switch($Option) {
+        case 'most_used':
+            $sort = "SELECT t.tID, t.tName, t.tType, COUNT(m.treatment) AS treatment_count
+                    FROM treatment AS t
+                    LEFT JOIN medical_history AS m ON m.treatment LIKE CONCAT('%', t.tName, '%')
+                    GROUP BY t.tID, t.tName, t.tType
+                    ORDER BY treatment_count DESC";
+            break;
+        case 'highest_price':
+            $sort = "SELECT tID, tName, tType, price
+                    FROM treatment
+                    ORDER BY price DESC";
+            break;
+        case 'default':
+            $sort = "SELECT *
+                    FROM treatment";
+            break;
+        default:
+            $sort = "SELECT *
+                    FROM treatment";
+            break;
+        }
+
+        // Execute the query
+        $result = mysqli_query($link, $sort);
+        ?>
         <table class="treatment-table">
             <tr>
-                <th>chargeID</th>
+                <th>tID</th>
                 <th>tName</th>
-                <th>
-                    <label for="type">tType</label>
-                </th>
+                <th>tType</th>
+                <?php if ($Option == 'most_used'): ?>
+                <th>Number of Patients Used</th>
+                <?php elseif ($Option == 'highest_price'): ?>
+                <th>Price</th>
+                <?php endif; ?>
             </tr>
             <div class="treatment-body-list">
                 <?php
-        if (mysqli_num_rows($action) > 0) {
-            foreach ($action as $row) {
-                ?>
+                if (mysqli_num_rows($result) > 0) {
+                    foreach ($result as $row) {
+                        ?>
                 <tr>
-
                     <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a>
                     </td>
                     <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tName']; ?></a>
                     </td>
                     <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tType']; ?></a>
                     </td>
+                    <?php if ($Option == 'most_used'): ?>
+                    <td><?php echo $row['treatment_count']; ?></td>
+                    <?php elseif ($Option == 'highest_price'): ?>
+                    <td><?php echo $row['price']; ?></td>
+                    <?php endif; ?>
 
                 </tr>
                 <?php
             }
+        } else {
+            echo "<tr><td colspan='4'>No results found.</td></tr>";
         }
         ?>
         </table>
     </div>
-
-
     </div>
 </body>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function sort(value) {
+    // Set the value of the hidden input field
+    document.getElementById("sortInput").value = value;
+    // Submit the form
+    document.getElementById("sortForm").submit();
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.treatment-search-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+</script>
 
 </html>
