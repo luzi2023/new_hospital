@@ -493,7 +493,6 @@
                                 .style("opacity", .9);
 
                             const link = e.find(e => e.mName === d.data.prescription);
-                            console.log(link);
                             const total_link = "medicine_detail.php?mID=" + link.mID;
                             hovertext.append("p")
                                 .attr("class", "moreinformation")
