@@ -844,3 +844,9 @@ tr:nth-of-type(even) td {
     pointer-events: auto;
     cursor: pointer;
 }
+
+.moreinformation {
+    margin: 10px 0px 6px 0px;
+    font-size: 15px;
+    width: 250px;
+}
