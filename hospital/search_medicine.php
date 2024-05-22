@@ -34,9 +34,9 @@
 
         // 查询药物信息并进行分组
         $query = "
-            SELECT mID, mName, Type FROM medication 
+            SELECT mID, mName, mType FROM medication 
             WHERE mName LIKE '%$keyword%' 
-            GROUP BY mName, Type
+            GROUP BY mName, mType
         ";
         $result = mysqli_query($link, $query);
 
@@ -49,7 +49,7 @@
         if (mysqli_num_rows($result) > 0) {
             echo "<ul>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<li><a href='medicine_detail.php?mID=" . $row['mID'] . "'>" . $row['mName'] . " - " . $row['Type'] . "</a></li>";
+                echo "<li><a href='medicine_detail.php?mID=" . $row['mID'] . "'>" . $row['mName'] . " - " . $row['mType'] . "</a></li>";
             }
             echo "</ul>";
         } else {
