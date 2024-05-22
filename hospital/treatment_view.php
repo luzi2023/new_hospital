@@ -25,7 +25,7 @@ include('config.php');
             </form>
         </div>-->
         <div id="side-nav" class="sidenav">
-        <a href="medicine.php" id="home">Medicine</a>
+            <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>
@@ -35,7 +35,7 @@ include('config.php');
             if (isset($_GET['tID'])) {
                 $cID = $_GET['tID'];
 
-                $query = "SELECT * FROM Option_info WHERE tID = '$cID'";
+                $query = "SELECT * FROM treatment WHERE tID = '$cID'";
                 $result = mysqli_query($link, $query);
 
                 if ($result) {

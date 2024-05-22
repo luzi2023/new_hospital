@@ -39,7 +39,7 @@
             </form>
         </div>-->
         <div id="side-nav" class="sidenav">
-        <a href="medicine.php" id="home">Medicine</a>
+            <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>
@@ -71,7 +71,7 @@
                     $search_value = $_POST["search"];
                     $fields = $_POST["fields"];
 
-                    $query = "SELECT * FROM Option_info WHERE ";
+                    $query = "SELECT * FROM treatment WHERE ";
                     $conditions = [];
 
                     foreach ($fields as $field) {

@@ -41,7 +41,7 @@ include('config.php');
             </form>
         </div>-->
         <div id="side-nav" class="sidenav">
-        <a href="medicine.php" id="home">Medicine</a>
+            <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>
@@ -67,7 +67,7 @@ include('config.php');
 
         <!-- option list -->
         <?php
-    $query = "SELECT * FROM option_info";
+    $query = "SELECT * FROM treatment";
     $action = mysqli_query($link, $query);
     ?>
         <table class="treatment-table">
@@ -85,14 +85,11 @@ include('config.php');
                 ?>
                 <tr>
 
-                    <td><a
-                            href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a>
+                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a>
                     </td>
-                    <td><a
-                            href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tName']; ?></a>
+                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tName']; ?></a>
                     </td>
-                    <td><a
-                            href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tType']; ?></a>
+                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tType']; ?></a>
                     </td>
 
                 </tr>
