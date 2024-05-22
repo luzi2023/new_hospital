@@ -66,3 +66,28 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
+
+#back {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    text-decoration: none;
+
+}
+
+#back {
+    margin-left: 10px;
+    background-color: #45a049;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: white;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    /* text-shadow: 1px 1px 1px #6d7880; */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#back:hover {
+    background-color: #45a049;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}

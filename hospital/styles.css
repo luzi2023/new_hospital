@@ -67,26 +67,26 @@ body {
 .plus {
     padding-left: 8vw;
     color: white;
-
+    
 }
 
-.plus a {
+.plus a{
     text-decoration: none;
     color: white;
 }
 
-.D {
+.D{
     padding-left: 8vw;
     color: white;
-
+    
 }
 
-.D a {
+.D a{
     text-decoration: none;
     color: white;
 }
 
-.fa-pencil:before {
+.fa-pencil:before{
     padding-left: 40vw;
     color: white;
     padding-right: 1.5vw;
@@ -466,7 +466,7 @@ input[type="file"] {
     height: 30px;
     margin-bottom: 16px;
     margin-right: 6px;
-    margin-top: 8px;
+    margin-top: 20px;
     outline: 0 none;
     padding: 4px 3px 3px 5px;
     width: 30%;
@@ -484,6 +484,7 @@ input[type="file"] {
     padding-right: 10px;
     margin-top: 10px;
     color: #888;
+    
 }
 
 .changing-form p {
@@ -545,33 +546,33 @@ input[type="file"] {
     box-shadow: 5px 5px 5px #B6B6B6;
 }
 
-.all {
+.all{
     margin-left: 23vw;
 }
 
-.provider_info {
+.provider_info{
     margin-top: 15vw;
     display: flex;
 }
 
-.profile_picture {
+.profile_picture{
     margin-right: 6vw;
 }
 
-.profile_picture img {
+.profile_picture img{
     width: 18vw;
     height: 25vw;
 }
 
-.name_info h1 {
+.name_info h1{
     margin-top: 0;
 }
 
-.about_me {
+.about_me{
     width: 80%;
 }
 
-.schedule-info {
+.schedule-info{
     margin-left: 23vw
 }
 
@@ -580,10 +581,10 @@ input[type="file"] {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -591,25 +592,25 @@ input[type="file"] {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
     background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
     background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}
+  }
 
 .container-fluid3 {
     margin-left: 10vw;
@@ -619,8 +620,15 @@ h1 {
     color: #3a7da7;
 }
 
+h2 {
+    color: #3a7da7;
+}
+
 .treatment-table,
-.equipment-table {
+.equipment-table,
+.reservation-table {
+    margin-right: 20px;
+    margin-bottom: 80px;
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
@@ -629,7 +637,8 @@ h1 {
 }
 
 .treatment-table th,
-.equipment-table th {
+.equipment-table th,
+.reservation-table th {
     background-color: #3a7da7;
     color: #ffffff;
     width: 25vw;
@@ -638,7 +647,8 @@ h1 {
 }
 
 .treatment-table td,
-.equipment-table td {
+.equipment-table td,
+.reservation-table td {
     width: 35vw;
     height: 50px;
     text-align: center;
@@ -646,7 +656,8 @@ h1 {
 }
 
 .treatment-table td a,
-.equipment-table td a {
+.equipment-table td a, 
+.reservation-table td a {
     text-decoration: none;
     color: rgb(114, 114, 114);
 
@@ -686,15 +697,10 @@ tr:nth-of-type(even) td {
 
 }
 
-.button-form {
-    display: inline;
-}
-
 .search-checkbox {
     display: block;
     width: 50vw;
 }
-
 #patient-heading {
     color: #333;
     font-size: 24px;
@@ -705,7 +711,7 @@ tr:nth-of-type(even) td {
     list-style-type: none;
     padding: 0;
     margin-left: 23vw;
-
+    
 }
 
 #patient-link {
@@ -718,11 +724,86 @@ tr:nth-of-type(even) td {
     text-decoration: underline;
     margin-left: 23vw;
 }
-
-#nope {
-    font-size: 26px;
+#nope{
+    font-size:26px;
     margin-left: 23vw;
-    color: red;
+    color:red;
+}
+
+#inline-delete2 {
+    margin-top: 4vw;
+    margin-bottom: 1.3vw;
+}
+
+.changing-form2 input[type="text"],
+.changing-form2 select {
+    display: block;
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 8px;
+    outline: 0 none;
+    padding: 4px 3px 3px 5px;
+    width: calc(40% - 10px); /* Adjust width to fit within the form */
+    font-size: 14px;
+    line-height: 14px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.changing-form2 span {
+    float: left;
+    width: 5%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+
+.changing-form2 label {
+    margin-bottom: 10px;
+    
+}
+
+.changing-form2 .button {
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.changing-form2 .button:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.button-delete {
+    margin-left: 35px;
+    margin-right: 35px;
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 10px 8px 10px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-delete:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.addReservation{
+    margin-bottom: 50px;
 }
 
 /* The container <div> - needed to position the dropdown content */

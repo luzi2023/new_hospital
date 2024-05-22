@@ -27,7 +27,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color:white;
-    margin-top: 10px;
+    margin-top: 100px;
     
 }
 
@@ -57,6 +57,25 @@ input[type="submit"]:hover {
 
 #back-to-home {
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 10px;
+    text-decoration: none;
+
+}
+
+#back-to-home {
+    margin-left: 10px;
+    background-color: #45a049;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: white;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    /* text-shadow: 1px 1px 1px #6d7880; */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#back-to-home:hover {
+    background-color: #45a049;
+    box-shadow: 5px 5px 5px #B6B6B6;
 }

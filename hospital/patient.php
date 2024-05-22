@@ -22,7 +22,7 @@ if (isset($_GET['pNo'])) {
     if (mysqli_num_rows($docs_result) > 0) {
         while ($doc_row = mysqli_fetch_assoc($docs_result)) {
             $doctor_id = $doc_row['dID'];
-            echo "<a href='staff_detail.php?dID={$doctor_id}'>Back to details page</a>";
+            echo "<a id = 'back' href='staff_detail.php?dID={$doctor_id}'>Back to details page</a>";
         }
     } else {
         echo "<p id='nope'>No doctor found for this patient!</p>";
