@@ -31,7 +31,6 @@
         </div>
         -->
 
-            <!-- 其他內容 -->
         </div>
         <div class="container-fluid">
             <!-- <div id="login">
@@ -453,7 +452,7 @@
                                 .attr("class", "hovertext")
                                 .style("position", "absolute")
                                 .style("background", "white")
-                                .style("padding", "5px")
+                                .style("padding", "10px")
                                 .style("border", "1px solid black")
                                 .style("border-radius", "5px")
                                 .style("pointer-events", "none")
@@ -467,9 +466,10 @@
                                 .duration(200)
                                 .style("opacity", .9);
                             hovertext.append("p")
-                                .append("a")
-                                .html("go to the page")
-                                .attr("href", "")
+                                .html("※click dounut slice to see more")
+                                .style("font-size", "15px")
+                                .style("margin-top", "10px")
+                                .style("margin-buttom", "0px")
                         })
 
                         .on("click", (event, d) => {
@@ -477,25 +477,41 @@
                                 .attr("class", "hovertext")
                                 .style("position", "absolute")
                                 .style("background", "white")
-                                .style("padding", "5px")
+                                .style("padding", "10px")
                                 .style("border", "1px solid black")
                                 .style("border-radius", "5px")
                                 // .style("pointer-events", "none")
                                 .style("font-size", "30px")
-                                .style("z-index", "10")
+                                .style("z-index", "20")
                                 .style("opacity", 0);
+
                             hovertext.html(d.data.prescription)
                                 .style("left", "150px")
                                 .style("top", "750px")
                                 .transition()
                                 .duration(200)
                                 .style("opacity", .9);
+
+                            const link = e.find(e => e.mName === d.data.prescription);
+                            console.log(link);
+                            const total_link = "medicine_detail.php?mID=" + link.mID;
                             hovertext.append("p")
-                                .append("a")
+                                .attr("class", "moreinformation")
+                                .html(`Medicine ID: ${link.mID}<br>`)
+                            hovertext.append("p")
+                                .attr("class", "moreinformation")
+                                .html(`Side Effect: ${link.side_effect}<br>`)
+                            hovertext.append("a")
                                 .html("go to the page")
-                                .attr("href", "doctor.php");
+                                .attr("href", total_link)
+                                .style("font-size", "15px")
+                                .style("margin-top", "4px");
 
                         })
+
+                        // .on("click", (event, d) => {
+                        //     d3.select(".hovertext").hide();
+                        // })
 
                         .on("mouseout", (event, d) => {
                             d3.select(".hovertext").remove()

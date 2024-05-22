@@ -72,7 +72,7 @@ $result = mysqli_stmt_get_result($stmt);
             </form>
         </div>-->
         <div id="side-nav" class="sidenav">
-        <a href="medicine.php" id="home">Medicine</a>
+            <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>
@@ -110,7 +110,9 @@ $result = mysqli_stmt_get_result($stmt);
                     <td><a
                             href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a>
                     </td>
-                    <td><a href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a></td>
+                    <td><a
+                            href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a>
+                    </td>
 
                 </tr>
                 <?php
@@ -119,6 +121,30 @@ $result = mysqli_stmt_get_result($stmt);
                 ?>
             </div>
         </table>
+    </div>
+
+    <div id="visualize" class="tabcontent">
+        <div id="list_body">
+            <h1>Visualization</h1>
+            <div id="statusviz"></div>
+        </div>
+    </div>
 </body>
+<script>
+const margin = {
+    top: 40,
+    right: 20,
+    bottom: 40,
+    left: 90
+};
+const width = 500 - margin.left - margin.right;
+const height = 400 - margin.top - margin.bottom;
+const svg = d3.select("#statusviz")
+    .append("svg")
+    .attr("width", 500)
+    .attr("height", 425)
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+</script>
 
 </html>

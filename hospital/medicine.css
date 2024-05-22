@@ -1,7 +1,16 @@
-
 body {
-    padding-left: 200px; /* 為導覽列留出空間 */
+    /* padding-left: 200px; */
+    /* 為導覽列留出空間 */
     position: relative;
+    margin: 0px;
+}
+
+#list_body {
+    padding-left: 22vw;
+}
+
+#list_body h1 {
+    color: #3a7da7;
 }
 
 #side-nav a {
@@ -34,8 +43,10 @@ body {
 
 .search {
     position: absolute;
-    top: 20px; /* 距離頂部的距離 */
-    right: 20px; /* 距離右側的距離 */
+    top: 20px;
+    /* 距離頂部的距離 */
+    right: 20px;
+    /* 距離右側的距離 */
 }
 
 #home {
@@ -77,8 +88,10 @@ body {
 
 .hospital-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 三個一排 */
-    gap: 20px; /* 設定元素間的間距 */
+    grid-template-columns: repeat(3, 1fr);
+    /* 三個一排 */
+    gap: 20px;
+    /* 設定元素間的間距 */
 }
 
 .hospital {
@@ -88,34 +101,87 @@ body {
 }
 
 .hospital img {
-    width: 100px; /* 調整圖片大小 */
+    width: 100px;
+    /* 調整圖片大小 */
     height: 100px;
 }
+
 .search {
-    position:absolute;
-    top: 10px; /* 增加上边距 */
-    right: 20px; /* 增加右边距 */
-    text-align: center; /* 居中对齐 */
+    position: absolute;
+    top: 6px;
+    /* 增加上边距 */
+    right: 20px;
+    /* 增加右边距 */
+    text-align: center;
+    /* 居中对齐 */
 }
 
 #search {
-    border: 1px solid #ccc; /* 添加边框 */
-    border-radius: 5px; /* 圆角边框 */
-    padding: 10px; /* 增加内边距 */
-    width: 200px; /* 设置输入框宽度 */
+    border: 1px solid #ccc;
+    /* 添加边框 */
+    border-radius: 5px;
+    /* 圆角边框 */
+    padding: 10px;
+    /* 增加内边距 */
+    width: 200px;
+    /* 设置输入框宽度 */
 }
 
 #btn {
-    background-color:#389ddc; /* 设置按钮背景色 */
-    color: white; /* 设置文字颜色 */
-    border: none; /* 移除按钮边框 */
-    padding: 10px 20px; /* 增加内边距 */
-    margin-left: 5px; /* 设置左边距 */
-    cursor: pointer; /* 添加指针样式 */
-    border-radius: 5px; /* 圆角按钮 */
+    background-color: #389ddc;
+    /* 设置按钮背景色 */
+    color: white;
+    /* 设置文字颜色 */
+    border: none;
+    /* 移除按钮边框 */
+    padding: 10px 20px;
+    /* 增加内边距 */
+    margin-left: 5px;
+    /* 设置左边距 */
+    cursor: pointer;
+    /* 添加指针样式 */
+    border-radius: 5px;
+    /* 圆角按钮 */
 }
 
 #btn:hover {
-    background-color:#389ddc; /* 鼠标悬停时的背景色 */
+    background-color: #389ddc;
+    /* 鼠标悬停时的背景色 */
     opacity: 0.7;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
 }
