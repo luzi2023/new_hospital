@@ -26,7 +26,7 @@
             <?php
             include('config.php');
 
-            $query = "SELECT mID, mName, Type FROM medication";
+            $query = "SELECT mID, mName, mType FROM medication";
             $query_run = mysqli_query($link, $query);
 
             if (mysqli_num_rows($query_run) > 0) {
@@ -38,7 +38,7 @@
                             <img src="th.jpg" alt="Medication Image">
                             <div>
                                 <p><strong>Medication Name:</strong> <?php echo $row['mName']; ?></p>
-                                <p><strong>Type:</strong> <?php echo $row['Type']; ?></p>
+                                <p><strong>Type:</strong> <?php echo $row['mType']; ?></p>
                             </div>
                         </a>
                     </div>

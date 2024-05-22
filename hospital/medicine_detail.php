@@ -36,6 +36,7 @@
                 <div class="medication-details">
                     <img src="th.jpg" alt="Medication Image" class="medication-image">
                     <p><strong>Medication Name:</strong> <?php echo $medication['mName']; ?></p>
+                    <p><strong>Medication Type:</strong> <?php echo $medication['mType']; ?></p>
                     <p><strong>Medication Code:</strong> <?php echo $medication['mCode']; ?></p>
                     <p><strong>Side Effect:</strong> <?php echo $medication['side_effect']; ?></p>
                     <p><strong>Indication:</strong> <?php echo $medication['indication']; ?></p>
