@@ -1,27 +1,31 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-//     header("Location: login.php");
-//     exit;
-// }
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit;
+}
 
-// $dID = $_SESSION['dID'];
+if (!isset($_SESSION['userID'])) {
+    die("User ID is not set in the session.");
+}
 
-// if (!isset($_GET['eID'])) {
-//     header("Location: equipment.php?dID=" . urlencode($dID));
-//     exit;
-// }
+$dID = $_SESSION['userID'];
+
+if (!isset($_GET['eID'])) {
+    header("Location: equipment.php");
+    exit;
+}
 
 include('config.php');
 
 $equipment_id = $_GET['eID'];
 
-//add
+// Add reservation
 if (isset($_POST['add_reservation'])) {
     $date = $_POST['date'];
     $time = $_POST['time'];
 
-    //check if the same
+    // Check if already reserved
     $check_query = "SELECT * FROM reservation WHERE eID=? AND date=? AND time=?";
     $check_stmt = mysqli_prepare($link, $check_query);
     if ($check_stmt === false) {
@@ -50,7 +54,7 @@ if (isset($_POST['add_reservation'])) {
     mysqli_stmt_close($check_stmt);
 }
 
-//delete
+// Delete reservation
 if (isset($_POST['delete_reservation'])) {
     $reservation_id = $_POST['reservation_id'];
     $query = "DELETE FROM reservation WHERE rID=? AND dID=?";
@@ -67,13 +71,13 @@ if (isset($_POST['delete_reservation'])) {
     mysqli_stmt_close($stmt);
 }
 
-//update
+// Update reservation
 if (isset($_POST['update_reservation'])) {
     $reservation_id = $_POST['reservation_id'];
     $date = $_POST['date'];
     $time = $_POST['time'];
 
-    //check if the same
+    // Check if already reserved
     $check_query = "SELECT * FROM reservation WHERE eID=? AND date=? AND time=? AND rID!=?";
     $check_stmt = mysqli_prepare($link, $check_query);
     if ($check_stmt === false) {
@@ -93,7 +97,7 @@ if (isset($_POST['update_reservation'])) {
         }
         mysqli_stmt_bind_param($stmt, "ssss", $date, $time, $reservation_id, $dID);
         if (mysqli_stmt_execute($stmt)) {
-            // echo "Reservation updated successfully.";
+            echo "Reservation updated successfully.";
         } else {
             echo "Error updating reservation: " . mysqli_stmt_error($stmt);
         }
@@ -102,7 +106,7 @@ if (isset($_POST['update_reservation'])) {
     mysqli_stmt_close($check_stmt);
 }
 
-//show reservation
+// Show reservations
 $query = "SELECT * FROM reservation WHERE eID=?";
 $stmt = mysqli_prepare($link, $query);
 if ($stmt === false) {
@@ -124,7 +128,7 @@ $result = mysqli_stmt_get_result($stmt);
 <body>
     <div class="container-fluid3">
         <div id="side-nav" class="sidenav">
-        <a href="medicine.php" id="home">Medicine</a>
+            <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
             <a href="equipment.php" id="equipments">Equipments</a>
             <a href="treatment.php" id="treatments">Treatments</a>
