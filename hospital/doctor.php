@@ -10,13 +10,15 @@
     <script src="https://kit.fontawesome.com/4bfa319983.js" crossorigin="anonymous"></script>
     <title>Local hospital</title>
     <script src="all.js"></script>
+    <script src="https://d3js.org/d3.v6.js"></script>
 </head>
 
 
 <body>
+
     <body onload="openCity(event, 'doctor')">
-    <div class="container-fluid">
-         <!--<div id="login">
+        <div class="container-fluid">
+            <!--<div id="login">
             <form method="post" action="doctor.php">
                 User:
                 <input type="text" name="username">
@@ -26,13 +28,13 @@
                 <a href="register.php">Register now</a>
                 <?php if(isset($error_message)) { echo "<p class='error'>$error_message</p>"; } ?>
             </form>
-        </div> 
+        </div>
         -->
 
-        <!-- 其他內容 -->
-    </div>
-    <div class="container-fluid">
-        <!-- <div id="login">
+            <!-- 其他內容 -->
+        </div>
+        <div class="container-fluid">
+            <!-- <div id="login">
             <form method="post" action="login.php">User:
                 <input type="text" name="username">Password:
                 <input type="text" name="password">
@@ -40,103 +42,535 @@
                 <a href="register.php">register now</a>
             </form>
         </div> -->
-        <div id="side-nav" class="sidenav">
-            <a href="medicine.php" id="home">Medicine</a>
-            <a href="doctor.php" id="doctors">Staffs</a>
-            <a href="equipment.php" id="equipments">Equipments</a>
-            <a href="treatment.php" id="treatments">Treatments</a>
-        </div>
-        <!-- Tab links -->
-        <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'doctor')">Doctor List</button>
-        <button class="tablinks" onclick="openCity(event, 'nurse')">Nurse List</button>
-        </div>
-        <div id="doctor" class="tabcontent">
-            <div id="list_body">
-                <h1>Doctor List</h1>
-                <div class="doctor_menu">
-                    <a href="add_doctor.php"></i>Add doctor</a>
-                </div>
-                <div class="search">
-                <form action="search.php" method="get">
-                <input type="text" id="search" name="query" placeholder="Search something?">
-                 <button id="btn" type="submit">Search</button>
-                 </form>
-                </div>
+            <div id="side-nav" class="sidenav">
+                <a href="medicine.php" id="home">Medicine</a> <a href="doctor.php" id="doctors">Staffs</a>
+                <a href="equipment.php" id="equipments">Equipments</a>
+                <a href="treatment.php" id="treatments">Treatments</a>
+            </div>
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'doctor')">Doctor List</button>
+                <button class="tablinks" onclick="openCity(event, 'nurse')">Nurse List</button>
+                <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
+            </div>
+            <div id="doctor" class="tabcontent">
+                <div id="list_body">
+                    <h1>Doctor List</h1>
+                    <div class="doctor_menu">
+                        <a href="add_doctor.php"></i>Add doctor</a>
+                    </div>
+                    <div class="search">
+                        <form action="search.php" method="get">
+                            <input type="text" id="search" name="query" placeholder="Search something?">
+                            <button id="btn" type="submit">Search</button>
+                        </form>
+                    </div>
 
-                <?php
-                
+                    <?php
+
                 include('config.php');
 
                 $query = "SELECT * FROM staff, Doctor WHERE staff.dID = Doctor.dID";
                 $query_run =mysqli_query($link, $query);
 
                 ?>
-                <div class="print_doc">
-                    <?php
+                    <div class="print_doc">
+                        <?php
                     if (mysqli_num_rows($query_run) > 0) {
                         foreach ($query_run as $row) {
                             ?>
-                    <a href="staff_detail.php?dID=<?php echo $row['dID']?>">
-                        <div class="current_list">
-                            <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
-                                alt="Dr.<?php $row['first_name']?>'s head shot">
-                            <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
-                            <p> <?php echo $row['speciality'] ?> </p>
-                        </div>
-                    </a>
-                    <?php
+                        <a href="staff_detail.php?dID=<?php echo $row['dID']?>">
+                            <div class="current_list">
+                                <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
+                                    alt="Dr.<?php $row['first_name']?>'s head shot">
+                                <p> <?php echo $row['last_name'].', '.$row['first_name']?> </p>
+                                <p> <?php echo $row['speciality'] ?> </p>
+                            </div>
+                        </a>
+                        <?php
                         }
                     } else {
                         echo "Sorry, there is no existed doctor.";
                     }
                     ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="nurse" class="tabcontent">
-            <div id="list_body">
-                <h1>Nurse List</h1>
-                <div class="doctor_menu">
-                    <a href="add_nurse.php"></i>Add nurse</a>
-                </div>
-                <div class="search">
-                <form action="search_nurse.php" method="get">
-                <input type="text" id="search" name="query" placeholder="Search something?">
-                 <button id="btn" type="submit">Search</button>
-                 </form>
-                </div>
+            <div id="nurse" class="tabcontent">
+                <div id="list_body">
+                    <h1>Nurse List</h1>
+                    <div class="doctor_menu">
+                        <a href="add_nurse.php"></i>Add nurse</a>
+                    </div>
+                    <div class="search">
+                        <form action="search_nurse.php" method="get">
+                            <input type="text" id="search" name="query" placeholder="Search something?">
+                            <button id="btn" type="submit">Search</button>
+                        </form>
+                    </div>
 
-                <?php
+                    <?php
 
 
                 $query = "SELECT * FROM staff, nurse  WHERE staff.dID = nurse.dID";
                 $query_run =mysqli_query($link, $query);
 
                 ?>
-                <div class="print_doc">
-                    <?php
+                    <div class="print_doc">
+                        <?php
                     if (mysqli_num_rows($query_run) > 0) {
                         foreach ($query_run as $row) {
                             ?>
-                    <a href="nurse_detail.php?dID=<?php echo $row['dID']?>">
-                        <div class="current_list">
-                            <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
-                                alt="Dr.<?php $row['first_name']?>'s head shot">
-                            <p><?php echo $row['last_name'].', '.$row['first_name']?> </p>
-                        </div>
-                    </a>
-                    <?php
+                        <a href="nurse_detail.php?dID=<?php echo $row['dID']?>">
+                            <div class="current_list">
+                                <img src="<?php if (file_exists($row['dImage'])) {echo $row['dImage'];} else {echo "default.png";} ?>"
+                                    alt="Dr.<?php $row['first_name']?>'s head shot">
+                                <p><?php echo $row['last_name'].', '.$row['first_name']?> </p>
+                            </div>
+                        </a>
+                        <?php
                         }
                     } else {
                         echo "Sorry, there is no existed doctor.";
                     }
                     ?>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-</body>
+
+            <div id="visualize" class="tabcontent">
+                <div id="list_body">
+                    <h1>Visualization</h1>
+                    <p>Statistic of Patients</p>
+                    <select id="patientselectButton"></select>
+                    <div id="patientviz"></div>
+                    <p>Statistic of Diagnosis</p>
+                    <!-- <button onclick="update(data1)">Data 1</button>
+                    <button onclick="update(data2)">Data 2</button> -->
+                    <div id="prescriptionviz"></div>
+                </div>
+            </div>
+            <script>
+            const margin = {
+                top: 40,
+                right: 20,
+                bottom: 40,
+                left: 90
+            };
+            const width = 500 - margin.left - margin.right;
+            const height = 400 - margin.top - margin.bottom;
+            const svg = d3.select("#patientviz")
+                .append("svg")
+                .attr("width", 500)
+                .attr("height", 425)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+            const svg1 = d3.select("#prescriptionviz")
+                .append("svg")
+                .attr("width", 550)
+                .attr("height", 425)
+                .append("g")
+                .attr("transform", `translate(250, 200)`);
+
+
+            d3.csv("./dataset/Patient.csv").then(function(data) {
+                const allGroup = ["Age", "Gender"];
+
+                d3.select("#patientselectButton")
+                    .selectAll("myOptions")
+                    .data(allGroup)
+                    .enter()
+                    .append("option")
+                    .text(function(d) {
+                        return d;
+                    })
+                    .attr("value", function(d) {
+                        return d;
+                    })
+
+                const x = d3.scaleBand()
+                    .range([0, width])
+                    .padding(0.3);
+                const xAxis = svg.append("g")
+                    .attr("transform", `translate(0, ${height})`);
+                const y = d3.scaleLinear()
+                    .range([height, 0]);
+                const yAxis = svg.append("g");
+
+                function ageGrouping(age) {
+                    if (age <= 10) return "0-10";
+                    else if (age <= 20) return "10-20";
+                    else if (age <= 30) return "20-30";
+                    else if (age <= 40) return "30-40";
+                    else if (age <= 50) return "40-50";
+                    else if (age <= 60) return "50-60";
+                    else if (age <= 70) return "60-70";
+                    else if (age <= 80) return "70-80";
+                    else return "80+";
+                }
+
+                const ageGroups = [{
+                        range: "0-10",
+                        patients: []
+                    },
+                    {
+                        range: "10-20",
+                        patients: []
+                    },
+                    {
+                        range: "20-30",
+                        patients: []
+                    },
+                    {
+                        range: "30-40",
+                        patients: []
+                    },
+                    {
+                        range: "40-50",
+                        patients: []
+                    },
+                    {
+                        range: "50-60",
+                        patients: []
+                    },
+                    {
+                        range: "60-70",
+                        patients: []
+                    }, {
+                        range: "70-80",
+                        patients: []
+                    }, {
+                        range: "80+",
+                        patients: []
+                    }
+                ]
+
+                const genderGroups = [{
+                    gender: "Male",
+                    patients: []
+                }, {
+                    gender: "Female",
+                    patients: []
+                }]
+
+                data.forEach(d => {
+                    if (d.age < 10) ageGroups[0].patients.push(d.pName);
+                    else if (d.age >= 10 && d.age < 20) ageGroups[1].patients.push(d.pName);
+                    else if (d.age >= 20 && d.age < 30) ageGroups[2].patients.push(d.pName);
+                    else if (d.age >= 30 && d.age < 40) ageGroups[3].patients.push(d.pName);
+                    else if (d.age >= 40 && d.age < 50) ageGroups[4].patients.push(d.pName);
+                    else if (d.age >= 50 && d.age < 60) ageGroups[5].patients.push(d.pName);
+                    else if (d.age >= 60 && d.age < 70) ageGroups[6].patients.push(d.pName);
+                    else if (d.age >= 70 && d.age < 80) ageGroups[7].patients.push(d.pName);
+                    else if (d.age >= 80) ageGroups[8].patients.push(d.pName);
+                    if (d.gender == "M") genderGroups[0].patients.push(d.pName);
+                    else if (d.gender == "F") genderGroups[1].patients.push(d.pName);
+                });
+
+
+                function genderGrouping(gender) {
+                    if (gender == 'M') return "Male";
+                    else return "Female";
+                }
+
+                function update(selectedGroup) {
+                    if (selectedGroup === "Age") {
+
+                        svg.selectAll("rect").remove();
+
+                        const ageCounts = d3.rollup(data, v => v.length, d => ageGrouping(d.age));
+                        const ageCountsArray = Array.from(ageCounts, ([key, value]) => ({
+                            key,
+                            value
+                        }));
+
+                        x.domain(['0-10', '10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80',
+                            '80+'
+                        ]);
+                        y.domain([0, 10]);
+
+                        xAxis.transition().duration(1000).call(d3.axisBottom(x));
+
+                        yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+                        const bar = svg.selectAll("mybar")
+                            .data(ageCountsArray, d => d.key)
+                            .join("rect")
+                            .attr("x", d => x(d.key))
+                            .attr("y", d => y(d.value))
+                            .style("fill", "#3a7da7")
+                            .transition()
+                            .duration(1000)
+                            .attr("width", x.bandwidth())
+                            .attr("height", d => height - y(d.value));
+
+                        svg.selectAll("rect")
+                            .data(ageGroups)
+                            .on("mouseover", (event, d) => {
+                                const tooltip = d3.select("body").append("div")
+                                    .attr("class", "tooltip")
+                                    .style("position", "absolute")
+                                    .style("background", "white")
+                                    .style("padding", "5px")
+                                    .style("border", "1px solid #d3d3d3")
+                                    .style("border-radius", "5px")
+                                    .style("pointer-events", "none")
+                                    .style("z-index", "10")
+                                    .style("opacity", 0);
+
+                                tooltip.html(d.patients.join(", "))
+                                    .style("left", (event.pageX + 5) + "px")
+                                    .style("top", (event.pageY - 28) + "px")
+                                    .transition()
+                                    .duration(200)
+                                    .style("opacity", .9);
+                            })
+                            .on("mousemove", function(event) {
+                                d3.select(".tooltip")
+                                    .style("left", (event.pageX + 5) + "px")
+                                    .style("top", (event.pageY - 28) + "px");
+                            })
+                            .on("mouseout", function() {
+                                d3.select(".tooltip").remove();
+                            });
+
+                    } else if (selectedGroup === "Gender") {
+
+                        svg.selectAll("rect").remove();
+
+                        const genderCounts = d3.rollup(data, v => v.length, d => genderGrouping(d.gender));
+                        const genderCountsArray = Array.from(genderCounts, ([key, value]) => ({
+                            key,
+                            value
+                        }));
+
+                        x.domain(['Male', 'Female']);
+                        y.domain([0, 20]);
+
+                        xAxis.transition().duration(1000).call(d3.axisBottom(x));
+
+                        yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+                        const bar = svg.selectAll("mybar")
+                            .data(genderCountsArray, d => d.key)
+                            .join("rect")
+                            .attr("x", d => x(d.key))
+                            .attr("y", d => y(d.value))
+                            .style("fill", "#3a7da7")
+                            .transition()
+                            .duration(1000)
+                            .attr("width", x.bandwidth())
+                            .attr("height", d => height - y(d.value));
+
+                        svg.selectAll("rect")
+                            .data(genderGroups)
+                            .on("mouseover", (event, d) => {
+                                const tooltip = d3.select("body").append("div")
+                                    .attr("class", "tooltip")
+                                    .style("position", "absolute")
+                                    .style("background", "white")
+                                    .style("padding", "5px")
+                                    .style("border", "1px solid #d3d3d3")
+                                    .style("border-radius", "5px")
+                                    .style("pointer-events", "none")
+                                    .style("z-index", "10")
+                                    .style("opacity", 0);
+                                tooltip.html(d.patients.join(", "))
+                                    .style("left", (event.pageX + 5) + "px")
+                                    .style("top", (event.pageY - 28) + "px")
+                                    .transition()
+                                    .duration(200)
+                                    .style("opacity", .9);
+                            })
+                            .on("mousemove", function(event) {
+                                d3.select(".tooltip")
+                                    .style("left", (event.pageX + 5) + "px")
+                                    .style("top", (event.pageY - 28) + "px");
+                            })
+                            .on("mouseout", function() {
+                                d3.select(".tooltip").remove();
+                            });
+
+                    }
+                }
+                d3.select("#patientselectButton").on("change", function(event, d) {
+                    const selectedOption = d3.select(this).property("value");
+                    update(selectedOption);
+                });
+
+                update(allGroup[0]);
+            });
+
+            d3.csv("./dataset/medical_history(N).csv").then(function(data) {
+                d3.csv("./dataset/medicine.csv").then(function(e) {
+
+                    const radius = Math.max(width, height) / 2 - margin.top;
+
+                    const prescriptCounts = d3.rollup(data, v => v.length, d => d.prescription);
+                    const aggregatedData = Array.from(prescriptCounts, ([prescription, count]) => ({
+                        prescription,
+                        count
+                    }));
+
+                    const color = d3.scaleOrdinal()
+                        .range(d3.schemeDark2);
+
+
+                    const pie = d3.pie()
+                        .value(d => d.count)
+                        (aggregatedData);
+
+                    const filteredPieData = pie.filter(d => d.data.count >= 3);
+                    // const hoveredPieData = pie.filter(d => d.data.count <= 3);
+
+                    const arc = d3.arc()
+                        .innerRadius(radius * 0.45)
+                        .outerRadius(radius * 0.8)
+
+                    const outerArc = d3.arc()
+                        .innerRadius(radius * 0.9)
+                        .outerRadius(radius * 1)
+
+                    // Append the pie chart slices
+                    svg1.selectAll("path")
+                        .data(pie)
+                        .enter()
+                        .append("path")
+                        .attr("d", arc)
+                        .attr("fill", d => color(d.data.prescription))
+                        .attr("stroke", "white")
+                        .style("stroke-width", "2px")
+                        .style("opacity", 0.7)
+
+                        .data(pie)
+                        .on("mouseover", (event, d) => {
+                            d3.select(event.currentTarget)
+                                .attr("stroke", d => color(d.data.prescription))
+                                .attr("stroke-width", "200px");
+                            const hovertext = d3.select("#prescriptionviz").append("div")
+                                .attr("class", "hovertext")
+                                .style("position", "absolute")
+                                .style("background", "white")
+                                .style("padding", "5px")
+                                .style("border", "1px solid black")
+                                .style("border-radius", "5px")
+                                .style("pointer-events", "none")
+                                .style("font-size", "30px")
+                                .style("z-index", "10")
+                                .style("opacity", 0);
+                            hovertext.html(d.data.prescription)
+                                .style("left", "150px")
+                                .style("top", "750px")
+                                .transition()
+                                .duration(200)
+                                .style("opacity", .9);
+                            hovertext.append("p")
+                                .append("a")
+                                .html("go to the page")
+                                .attr("href", "")
+                        })
+
+                        .on("click", (event, d) => {
+                            const hovertext = d3.select("#prescriptionviz").append("div")
+                                .attr("class", "hovertext")
+                                .style("position", "absolute")
+                                .style("background", "white")
+                                .style("padding", "5px")
+                                .style("border", "1px solid black")
+                                .style("border-radius", "5px")
+                                // .style("pointer-events", "none")
+                                .style("font-size", "30px")
+                                .style("z-index", "10")
+                                .style("opacity", 0);
+                            hovertext.html(d.data.prescription)
+                                .style("left", "150px")
+                                .style("top", "750px")
+                                .transition()
+                                .duration(200)
+                                .style("opacity", .9);
+                            hovertext.append("p")
+                                .append("a")
+                                .html("go to the page")
+                                .attr("href", "doctor.php");
+
+                        })
+
+                        .on("mouseout", (event, d) => {
+                            d3.select(".hovertext").remove()
+                            d3.select(event.currentTarget)
+                                .attr("stroke", "white")
+                                .style("stroke-width", "2px")
+
+                        })
+
+
+
+
+                    svg1.selectAll("allPolylines")
+                        .data(filteredPieData)
+                        .join("polyline")
+                        .attr("stroke", "#474747")
+                        .style("fill", "none")
+                        .attr("stroke-width", 1)
+                        .attr("points", function(d) {
+                            const firstPos = arc.centroid(d)
+                            const secondPos = outerArc.centroid(d)
+                            const thirdPos = outerArc.centroid(d);
+                            const midangle = d.startAngle + (d.endAngle - d
+                                .startAngle) / 2
+                            thirdPos[0] = radius * 0.95 * (midangle < Math.PI ? 1 : -1);
+                            return [firstPos, secondPos, thirdPos]
+                        })
+
+                    svg1.selectAll("allLabels")
+                        .data(filteredPieData)
+                        .join("text")
+                        .text(d => d.data.prescription)
+                        .attr("transform", function(d) {
+                            const pos = outerArc.centroid(d);
+                            const midangle = d.startAngle + (d.endAngle - d
+                                .startAngle) / 2
+                            pos[0] = radius * 0.99 * (midangle < Math.PI ? 1 : -1);
+                            return `translate(${pos})`;
+                        })
+                        .style('text-anchor', function(d) {
+                            const midangle = d.startAngle + (d.endAngle - d
+                                .startAngle) / 2
+                            return (midangle < Math.PI ? 'start' : 'end')
+                        })
+
+                    // svg1.selectAll("smallPie")
+                    //     .data(hoveredPieData)
+                    //     .on("mouseover", (event, d) => {
+                    //         console.log("mouseover")
+                    //         const hovertext = d3.select("#diagnosisviz").append("div")
+                    //             .attr("class", "hovertext")
+                    //             .style("position", "absolute")
+                    //             .style("background", "black")
+                    //             .style("padding", "5px")
+                    //             .style("border", "1px solid #d3d3d3")
+                    //             .style("border-radius", "5px")
+                    //             .style("pointer-events", "none")
+                    //             .style("z-index", "10")
+                    //             .style("opacity", 0);
+                    //         hovertext.html(d => d.data.diagnosis)
+                    //             .style("left", event.pageX + "px")
+                    //             .style("top", event.pageX + "px")
+                    //             .transition()
+                    //             .duration(200)
+                    //             .style("opacity", .9);
+
+                    //     })
+                    //     .on("mouseout", (event, d) => {
+                    //         d3.select(event.currentTarget)
+
+                    //     })
+                })
+
+            });
+            </script>
+    </body>
 
 </html>
