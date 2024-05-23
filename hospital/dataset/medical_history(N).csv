@@ -1,71 +1,71 @@
 pNo,mhID,treatment,diagnosis,date,prescription
-157710,86591,"ECG,Holter Monitor",Atrial Fibrillation,2019/6/15,Warfarin
-157711,86592,"MRI,Physical Therapy",Multiple Sclerosis,2017/3/10,Interferon Beta
-157712,86593,"X-ray,Physical Therapy",Osteoarthritis,2021/8/20,Acetaminophen
-157713,86594,"CT Scan,Colonoscopy",Diverticulitis,2020/5/22,Antibiotics
-157714,86595,"Blood Test,Ultrasound",Hypothyroidism,2018/11/30,Levothyroxine
-157715,86596,"EEG,Neurological Exam",Migraine,2016/9/12,Sumatriptan
-157716,86597,"Endoscopy,Biopsy",Celiac Disease,2019/4/17,Gluten-Free Diet
-157717,86598,"Liver Function Test,Ultrasound",Fatty Liver Disease,2021/2/9,Lifestyle Changes
-157718,86599,"Pulmonary Function Test,Bronchoscopy",Chronic Bronchitis,2017/7/25,Inhaled Steroids
-157719,86600,"EKG,Stress Test",Coronary Artery Disease,2020/3/3,Atorvastatin
-157700,86581,"ECG,Echocardiogram",Arrhythmia,2021/5/15,Amiodarone
-157701,86582,"X-ray,CT Scan",Pneumonia,2020/11/23,Azithromycin
-157702,86583,"MRI,Physical Therapy",Herniated Disc,2019/8/5,Ibuprofen
-157703,86584,"Blood Test,Ultrasound",Diabetes,2017/2/14,Metformin
-157704,86585,"EKG,Stress Test",Hypertension,2016/4/10,Lisinopril
-157705,86586,"Colonoscopy,Biopsy",Colorectal Cancer,2018/10/22,Chemotherapy
-157706,86587,"EEG,Neurological Exam",Epilepsy,2019/1/30,Valproate
-157707,86588,"Endoscopy,Biopsy",Gastritis,2020/7/18,Omeprazole
-157708,86589,"Liver Function Test,Ultrasound",Hepatitis,2021/12/4,Interferon
-157709,86590,"Pulmonary Function Test,Spirometry",Asthma,2018/9/28,Salbutamol
-157699,86580,"ECG,Echocardiogram",Arrhythmia,2018/3/2,Amiorone
-234179,85768,"Echocardiogram,Cardiac MRI",Congestive heart failure,2023/2/23,Digoxin Lanoxin
-100125,86943,Gastroscopy,Gastric spasm,2014/10/8,Atropine Sulfate
-116823,82167,"Pulmonary function tests,Bronchodilator test",Bronchial asthma,2004/11/14,Ephedrine
-192894,98318,Blood tests,Scurvy,2009/12/22,Vit C Vitacicol
-187147,83057,"Skin prick tests,Blood allergy tests",Allergy,2016/5/6,Dexamethasone
-114369,88277,Blood tests,Hypertension,2018/6/26,SR-lsoptin
-146457,84696,"Esophagogastroduodenoscopy(EGD),pH monitoring",Gastroesophageal reflux disease (GERD),2000/9/2,Nexium
-263408,85061,"Throat swab test,Chest X-ray",Respiratory tract infection,2014/10/1,Cravit
-168616,85203,"Psychological assessment,Mental status examination",Schizophrenia,1981/2/7,Novamin
-201653,89346,"Throat swab test,Chest X-ray",Respiratory tract infection,2006/8/4,Cravit
-110727,83095,"ECG,Echocardiogram",Atrial fibrillation,2022/1/18,Digoxin Lanoxin
-169716,93930,Blood tests,Hypertension,2009/4/2,SR-lsoptin
-136657,97422,Blood tests,Hypertension,1994/1/19,Lasix Rasitol
-115098,97388,"Oral examination,Periodontal disease assessment",Gingival bleeding,1997/7/9,Vit C Vitacicol
-118442,98411,"Gastroscopy,Blood tests",Vomiting,2020/5/22,Primperan
-176008,89791,"Blood tests,Urine tests",Diabetic ketoacidosis (DKA),2022/11/7,KCL
-252582,94486,"Brain imaging studies,Blood tests",Cerebral circulatory insufficiency,2018/9/14,Trental
-203766,91058,"Esophagogastroduodenoscopy( EGD),pH monitorin",Gastroesophageal reflux disease (GERD),1987/1/9,Nexium
-135865,98499,Blood tests,Hypertension,2004/6/15,SR-lsoptin
-189497,87819,Abdominal ultrasound,Loss of appetite,2017/3/6,Primperan
-260109,82557,"Oral examination,Periodontal disease assessment",Gingival bleeding,2021/6/27,Vit C Vitacicol
-290722,99981,"Brain imaging studies,Blood tests",Stroke syndrome,2016/8/4,Trental
-102867,88390,"Vaginal discharge examination,Cervical smear test",Trichomoniasis,2001/11/26,SATA
-149133,80786,"Brain imaging studies,Blood tests",Stroke syndrome,2000/1/7,Trental
-157699,79433,Thyroid function testing,Low blood pressure,2014/7/20,Levophed
-234179,75184,Chest X-ray,Asthma,2023/3/29,Asiphylline
-100125,79989,Electrocardiogram (ECG),Acute coronary artery blockage,2016/3/17,Actilyse r-TPA
-116823,74883,Chest X-ray,Asthma,1975/10/30,Asiphylline
-192894,72036,"Blood pressure measurement,Thyroid function testing",Low blood pressure,1989/7/2,Levophed
-187147,72005,Gastrointestinal endoscopy,Gastroenteritis,2005/7/17,Rotarix
-114369,76884,Electrocardiogram (ECG),High blood pressure,2019/5/12,Behyd
-146457,77060,Allergen-specific IgE testing,Allergy,1982/4/28,Vena-Ca-B6
-263408,77700,Chest X-ray,Asthma,2008/11/8,Asiphylline
-168616,71780,Allergen-specific IgE testing,Allergy,1982/6/11,Vena-Ca-B6
-201653,70988,Electrocardiogram (ECG),Acute coronary artery blockage,2007/10/1,Actilyse r-TPA
-110727,73507,Gastrointestinal endoscopy,Gastroenteritis,1969/3/1,Rotarix
-169716,77018,Urinalysis,Urinary tract infection,2000/5/31,Baktar
-136657,77528,Blood pressure measurement,Low blood pressure,2001/10/20,Levophed
-115098,75320,Urinalysis,Urinary tract infection,2003/8/22,Baktar
-118442,71901,Allergen-specific IgE testing,Allergy,2019/10/18,Vena-Ca-B6
-176008,72903,"Chest X-ray,Pulmonary function tests",Asthma,2000/12/9,Asiphylline
-252582,72184,"Blood pressure measurement,Thyroid function testing",Low blood pressure,2009/12/14,Levophed
-203766,77595,Gastrointestinal endoscopy,Gastroenteritis,2004/8/7,Rotarix
-135865,79454,"Chest X-ray,Pulmonary function tests",Asthma,2021/10/5,Asiphylline
-189497,78606,Electrocardiogram (ECG),High blood pressure,2018/1/30,Behyd
-260109,79625,Thyroid function testing,Low blood pressure,2024/1/1,Levophed
-290722,71424,Urinalysis,Urinary tract infection,2020/5/27,Baktar
-102867,70204,Gastrointestinal endoscopy,Gastroenteritis,2020/6/1,Rotarix
-149133,71371,Thyroid function testing,Low blood pressure,2000/1/11,Levophed
+157710,86591,"Pericardial fluid culture (Aer & Anaerobic), Air allergens - Panel 1",Atrial Fibrillation,2019/6/15,Warfarin
+157711,86592,"Blood gas analysis, Prostate Health Index",Multiple Sclerosis,2017/3/10,Interferon Beta
+157712,86593,"Glucose (urine) 24hr, Coproporphyrin",Osteoarthritis,2021/8/20,Acetaminophen
+157713,86594,"Urine Protein electrophoresis, Total-Protein (urine) Random",Diverticulitis,2020/5/22,Antibiotics
+157714,86595,"Protein electrophoresis(CSF), Air allergens - Panel 1",Hypothyroidism,2018/11/30,Levothyroxine
+157715,86596,"Egg white, Peanut, Shrimp, Crab, Food allergens - Panel 2",Migraine,2016/9/12,Sumatriptan
+157716,86597,"Egg white, Peanut, Milk, Fish, Food allergens - Panel 2",Celiac Disease,2019/4/17,Gluten-Free Diet
+157717,86598,"Shrimp, Fish, Crab, Cat dander, Mosquito, Food allergens - Panel 2",Fatty Liver Disease,2021/2/9,Lifestyle Changes
+157718,86599,"Egg white, Egg yolk, Mango, Cotton, Cat dander, Food allergens - Panel 2",Chronic Bronchitis,2017/7/25,Inhaled Steroids
+157719,86600,"Myeloma MRD (Blood), Microalbumin (Nephelometry)",Coronary Artery Disease,2020/3/3,Atorvastatin
+157700,86581,"Plasma Cell Dyscrasia(Blood), Cyclosporine-A",Arrhythmia,2021/5/15,Amiodarone
+157701,86582,"Acute Leukemia of Ambiguous Lineage (Blood), Cholesterol (CHO)",Pneumonia,2020/11/23,Azithromycin
+157702,86583,"Acute Leukemia of Ambiguous Lineage (B.M.), Cholesterol (CHO)",Herniated Disc,2019/8/5,Ibuprofen
+157703,86584,"Chronic Lymphoid Leukemia (Blood), Cholesterol (CHO)",Diabetes,2017/2/14,Metformin
+157704,86585,"Chronic Lymphoid Leukemia (B.M.), Creatine-kinase (CK)",Hypertension,2016/4/10,Lisinopril
+157705,86586,"B-cell Chronic LymphoProliferative, Creatine-kinase (CK) Disorders(Blood)",Colorectal Cancer,2018/10/22,Chemotherapy
+157706,86587,"Systemic Sclerosis Abs,screening, Creatine-kinase (CK)",Epilepsy,2019/1/30,Valproate
+157707,86588,"Myositis specific Ab, Vitamin B1, Vitamin B6, Vitamin B2",Gastritis,2020/7/18,Omeprazole
+157708,86589,"Autoimmune Liver disease antibodies, Vitamin B1, Vitamin B6, Vitamin B2",Hepatitis,2021/12/4,Interferon
+157709,86590,"Erythropoietin(EPO), Vitamin E, Arsenic (As)",Asthma,2018/9/28,Salbutamol
+157699,86580,"Plasma free Ca++, Arsenic (As), Chromium(Cr)",Arrhythmia,2018/3/2,Amiorone
+234179,85768,"Acetylcholine Receptor Ab, Fabry family screening test",Congestive heart failure,2023/2/23,Digoxin Lanoxin
+100125,86943,"HTLV-1 antibody, Fabry family screening test, Amoebic Antibody",Gastric spasm,2014/10/8,Atropine Sulfate
+116823,82167,"Anti-Glomerular Basement Membrane Antibodies (Anti-GBM Ab), Fabry family screening test",Bronchial asthma,2004/11/14,Ephedrine
+192894,98318,"Apolipoprotein A1 (Nephelometry), Fabry family screening test",Scurvy,2009/12/22,Vit C Vitacicol
+187147,83057,"Insulin, Amoebic Antibody, Test for inborn errors of metabolism",Allergy,2016/5/6,Dexamethasone
+114369,88277,"Widal & Weil-Felix test, Amoebic Antibody, Test for inborn errors of metabolism",Hypertension,2018/6/26,SR-lsoptin
+146457,84696,"HBsAg EIA Division of Gastroenterology (Quantitative), Acetone",Gastroesophageal reflux disease (GERD),2000/9/2,Nexium
+263408,85061,"CMv Ab-IgM, Test for inborn errors of metabolism",Respiratory tract infection,2014/10/1,Cravit
+168616,85203,"HBeAg EIA, Test for inborn errors of metabolism",Schizophrenia,1981/2/7,Novamin
+201653,89346,"CMv Ab-IgG, Glycated Albumin (GA)",Respiratory tract infection,2006/8/4,Cravit
+110727,83095,"Rheumatoid factor test Nephelometry, Glycated Albumin (GA)",Atrial fibrillation,2022/1/18,Digoxin Lanoxin
+169716,93930,"Anti-TPO Ab, Glycated Albumin (GA)",Hypertension,2009/4/2,SR-lsoptin
+136657,97422,"Iron stain(B.M.), DNA qualitative amplification test",Hypertension,1994/1/19,Lasix Rasitol
+115098,97388,"WBC differential count, DNA qualitative amplification test",Gingival bleeding,1997/7/9,Vit C Vitacicol
+118442,98411,"E.S.R., DNA qualitative amplification test",Vomiting,2020/5/22,Primperan
+176008,89791,"Fatty acid stain, DNA qualitative amplification test",Diabetic ketoacidosis (DKA),2022/11/7,KCL
+252582,94486,"Parasite ova direct smear, DNA qualitative amplification test",Cerebral circulatory insufficiency,2018/9/14,Trental
+203766,91058,"PH, Atypical lymphocyte/lymphoma Screen(Blood)",Gastroesophageal reflux disease (GERD),1987/1/9,Nexium
+135865,98499,"Parasite ova onc., Air allergens - Panel 1, Atypical lymphocyte/lymphoma Screen(Blood)",Hypertension,2004/6/15,SR-lsoptin
+189497,87819,"Perianal swab for pinwarm, Air allergens - Panel 1, BCR-ABL1",Loss of appetite,2017/3/6,Primperan
+260109,82557,"Hematocrit-Pleural, Air allergens - Panel 1, BCR-ABL1",Gingival bleeding,2021/6/27,Vit C Vitacicol
+290722,99981,"APT test, Air allergens - Panel 1, BCR-ABL1",Stroke syndrome,2016/8/4,Trental
+102867,88390,"RSV screening test, BCR-ABL1",Trichomoniasis,2001/11/26,SATA
+149133,80786,"Pneumococcus Ag (urine), Acute Myeloid Leukemia characterizatiom (B.M.)",Stroke syndrome,2000/1/7,Trental
+157699,79433,"FilmArray Respiratory Panel (RP), Acute Myeloid Leukemia characterizatiom (B.M.)",Low blood pressure,2014/7/20,Levophed
+234179,75184,"FilmArray Gastrointestinal (GI), FTA-ABS",Asthma,2023/3/29,Asiphylline
+100125,79989,"Stool Occult Blood(EIA/LIA), FTA-ABS",Acute coronary artery blockage,2016/3/17,Actilyse r-TPA
+116823,74883,"Ascitic fluid, Anti-Glomerular Basement Membrane Antibodies (Anti-GBM Ab)",Asthma,1975/10/30,Asiphylline
+192894,72036,"Pleural fluid, Anti-Glomerular Basement Membrane Antibodies (Anti-GBM Ab)",Low blood pressure,1989/7/2,Levophed
+187147,72005,"Influenza A Ag, HLA-AB-high resolution",Gastroenteritis,2005/7/17,Rotarix
+114369,76884,"FilmArray Pneumonia Panel (PN), HLA-AB-high resolution",High blood pressure,2019/5/12,Behyd
+146457,77060,"Synovial fluid analysis, Milk, Dog dander, Cat dander, Fish, Crab, Food allergens - Panel 2",Allergy,1982/4/28,Vena-Ca-B6
+263408,77700,"Helicobactor pylori stool antigen (HpSA) test, Penicillium notatum, Milk, Oyster, Peanut, Egg yolk, Food allergens - Panel 2",Asthma,2008/11/8,Asiphylline
+168616,71780,"Urine RBC morphology, Penicillium notatum, Milk, Oyster, Peanut, Egg yolk, Food allergens - Panel 2",Allergy,1982/6/11,Vena-Ca-B6
+201653,70988,"Electrocardiography(E.K.G.), Egg white, Peanut, Shrimp, Crab",Acute coronary artery blockage,2007/10/1,Actilyse r-TPA
+110727,73507,"Starch stain, Egg white, Peanut, Shrimp, Crab",Gastroenteritis,1969/3/1,Rotarix
+169716,77018,"Reducing substances, Egg white, Peanut, Shrimp, Crab",Urinary tract infection,2000/5/31,Baktar
+136657,77528,"Pregnancy test EIA, Egg white, Egg yolk, Mango, Cotton, Cat dander, Food allergens - Panel 2",Low blood pressure,2001/10/20,Levophed
+115098,75320,"Penicillium notatum, Milk, Oyster, Peanut, Egg yolk, Food allergens - Panel 2",Urinary tract infection,2003/8/22,Baktar
+118442,71901,"Milk, Dog dander, Cat dander, Fish, Crab, Food allergens - Panel 2",Allergy,2019/10/18,Vena-Ca-B6
+176008,72903,5 alternative common & 2 special allergens -Panel 4,Asthma,2000/12/9,Asiphylline
+252582,72184,10 alternative common allergens-Panel3,Low blood pressure,2009/12/14,Levophed
+203766,77595,Food allergens - Panel 2,Gastroenteritis,2004/8/7,Rotarix
+135865,79454,Air allergens - Panel 1,Asthma,2021/10/5,Asiphylline
+189497,78606,Air Screen,High blood pressure,2018/1/30,Behyd
+260109,79625,"Food Screen, Egg white, Egg yolk, Mango, Cotton, Cat dander, Food allergens - Panel 2",Low blood pressure,2024/1/1,Levophed
+290722,71424,"Haptoglobin Nephelometry, Egg white, Egg yolk, Mango, Cotton, Cat dander, Food allergens - Panel 2",Urinary tract infection,2020/5/27,Baktar
+102867,70204,"Myoglobin(Urine), Egg white, Egg yolk, Mango, Cotton, Cat dander, Food allergens - Panel 2",Gastroenteritis,2020/6/1,Rotarix
+149133,71371,"Sensorineural Hearing Loss, Egg white, Egg yolk, Mango, Cotton, Cat dander, Food allergens - Panel 2",Low blood pressure,2000/1/11,Levophed
