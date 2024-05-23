@@ -75,8 +75,10 @@ include('config.php');
             $sort = "SELECT t.tID, t.tName, t.tType, COUNT(m.treatment) AS treatment_count
                     FROM treatment AS t
                     LEFT JOIN medical_history AS m ON m.treatment LIKE CONCAT('%', t.tName, '%')
-                    GROUP BY t.tID, t.tName, t.tType
-                    ORDER BY treatment_count DESC";
+                    GROUP BY t.tID
+                    ORDER BY treatment_count DESC
+;
+            ";
             break;
         case 'highest_price':
             $sort = "SELECT tID, tName, tType, price

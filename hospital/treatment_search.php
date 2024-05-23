@@ -53,7 +53,7 @@
             <input type="submit" value="Search" class="treatment-search-button">
 
             <div class="search-checkbox">
-                <label><input type="checkbox" name="fields[]" value="chargeID" checked> chargeID</label>
+                <label><input type="checkbox" name="fields[]" value="tID" checked> tID</label>
                 <label><input type="checkbox" name="fields[]" value="tName" checked> tName</label>
                 <label><input type="checkbox" name="fields[]" value="tType" checked> tType</label>
             </div>
@@ -62,7 +62,7 @@
         <div class="treatment-body-list">
             <table class="treatment-table">
                 <tr>
-                    <th>chargeID</th>
+                    <th>tID</th>
                     <th>tName</th>
                     <th>tType</th>
                 </tr>
@@ -87,13 +87,11 @@
                     ?>
                 <tr>
                     <td><a href="
-                treatment_view.php?chargeID=<?php echo $row['chargeID']; ?>"><?php echo $row['chargeID']; ?></a>
+                treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a>
                     </td>
-                    <td><a
-                            href="treatment_view.php?chargeID=<?php echo $row['chargeID']; ?>"><?php echo $row['tName']; ?></a>
+                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tName']; ?></a>
                     </td>
-                    <td><a
-                            href="treatment_view.php?chargeID=<?php echo $row['chargeID']; ?>"><?php echo $row['tType']; ?></a>
+                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tType']; ?></a>
                     </td>
                 </tr>
                 <?php
