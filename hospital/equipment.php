@@ -1,36 +1,29 @@
 <?php
-session_start();
+// session_start();
 
-// 檢查用戶是否已登入，否則重定向到登入頁面
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: login.php");
-    exit;
-}
+// if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+//     header("Location: login.php");
+//     exit;
+// }
 
-// 從會話中取得 userID
-$userID = isset($_SESSION['userID']) ? $_SESSION['userID'] : '';
+// $userID = isset($_SESSION['userID']) ? $_SESSION['userID'] : '';
 
-// 檢查查詢字符串中的 dID 是否已設置且匹配會話中的 userID
-if (!isset($_GET['dID']) || $_GET['dID'] !== $userID) {
-    // 重定向到相同頁面並附加正確的 dID
-    header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($userID));
-    exit;
-}
+// if (!isset($_GET['dID']) || $_GET['dID'] !== $userID) {
+//     header("Location: " . $_SERVER['PHP_SELF'] . "?dID=" . urlencode($userID));
+//     exit;
+// }
 
-// 獲取 URL 中的 dID 參數
-$dID = $_GET['dID'];
+
+// $dID = $_GET['dID'];
 
 include('config.php');
 
-// 獲取設備信息的 SQL 查詢
 $sql = "SELECT * FROM equipment JOIN users WHERE userID = ?";
 $stmt = mysqli_prepare($link, $sql);
 mysqli_stmt_bind_param($stmt, "s", $dID);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,36 +34,13 @@ $result = mysqli_stmt_get_result($stmt);
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/4bfa319983.js" crossorigin="anonymous"></script>
     <title>Local hospital</title>
-
 </head>
 
 <body>
     <div class="container-fluid">
-        <!-- <div id="login">
-            <form method="post" action="doctor.php">
-                User:
-                <input type="text" name="username">
-                Password:
-                <input type="password" name="password">
-                <input type="submit" value="Login" name="submit">
-                <a href="register.php">Register now</a>
-                <?php
-                // if(isset($error_message)) { echo "<p class='error'>$error_message</p>"; }
-                ?>
-            </form>
-        </div> -->
-
-        <!-- 其他內容 -->
+        
     </div>
     <div class="container-fluid3">
-        <!--<div id="login">
-            <form method="post" action="login.php">User:
-                <input type="text" name="username">Password:
-                <input type="text" name="password">
-                <input type="submit" value="login" name="submit">
-                <a href="register.php">register now</a>
-            </form>
-        </div>-->
         <div id="side-nav" class="sidenav">
             <a href="medicine.php" id="home">Medicine</a>
             <a href="doctor.php" id="doctors">Staffs</a>
@@ -78,73 +48,110 @@ $result = mysqli_stmt_get_result($stmt);
             <a href="treatment.php" id="treatments">Treatments</a>
         </div>
         <h1>Equipments List</h1>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="equipment-search-button">Sort in</button>
+            <div id="myDropdown" class="dropdown-content">
+                <p onclick="sort('most_used')">The most used</p>
+                <p onclick="sort('default')">Default</p>
+            </div>
+        </div>
+        <form id="sortForm" method="GET" action="">
+            <input type="hidden" name="sort" id="sortInput">
+        </form>
         <form action="equipment_search.php">
             <label for="search"></label>
-            <input type="submit" value="Search" class="treatment-search-button">
+            <input type="submit" value="Search" class="equipment-search-button">
         </form>
+
         <?php
-        $query = "SELECT * FROM Equipment";
-        $result = mysqli_query($link, $query);
+        $Option = isset($_GET['sort']);
+
+        switch($Option) {
+            case 'most_used':
+                $sort = "SELECT e.eID, e.eName, e.purchaseDate, e.manufacturer, e.useStatus, 
+                        COUNT(t.usedEquip) AS usedEquip_count
+                        FROM equipment AS e
+                        LEFT JOIN treatment AS t ON e.eName = t.usedEquip
+                        GROUP BY e.eID, e.eName, e.purchaseDate, e.manufacturer, e.useStatus
+                        ORDER BY usedEquip_count DESC";
+                break;
+            case 'default':
+                $sort = "SELECT *
+                        FROM treatment";
+            default:
+                $sort = "SELECT * 
+                        FROM equipment";
+                break;
+        }
+
+        $result = mysqli_query($link, $sort);
         ?>
+
         <table class="equipment-table">
-            <th>eID</th>
-            <th>eName</th>
-            <th>purchase date</th>
-            <th>Status</th>
-            <th>manufacturer</th>
-            <th>Reservation</th>
-            <div class="equipment-table-list">
+            <thead>
+                <tr>
+                    <th>eID</th>
+                    <th>eName</th>
+                    <th>purchase date</th>
+                    <th>Status</th>
+                    <th>manufacturer</th>
+                    <th>Reservation</th>
+                    <?php if ($Option == 'most_used'): ?>
+                    <th>Number of Treatment Used</th>
+                    <?php endif; ?>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
                 if (mysqli_num_rows($result) > 0) {
-                    foreach ($result as $row) {
+                    while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                <tr>
-                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eID']; ?></a></td>
-                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eName']; ?></a>
-                    </td>
-                    <td><a
-                            href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['purchaseDate']; ?></a>
-                    </td>
-                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['useStatus']; ?></a>
-                    </td>
-                    <td><a
-                            href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a>
-                    </td>
-                    <td><a
-                            href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a>
-                    </td>
-
-                </tr>
-                <?php
+                        <tr>
+                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eID']; ?></a></td>
+                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eName']; ?></a></td>
+                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['purchaseDate']; ?></a></td>
+                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['useStatus']; ?></a></td>
+                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a></td>
+                            <td><a href = "equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a></td>
+                            <?php if ($Option == 'most_used'): ?>
+                            <td><?php echo $row['usedEquip_count']; ?></td>
+                            <?php endif; ?>
+                        </tr>
+                        <?php
                     }
                 }
                 ?>
-            </div>
+            </tbody>
         </table>
-    </div>
-
-    <div id="visualize" class="tabcontent">
-        <div id="list_body">
-            <h1>Visualization</h1>
-            <div id="statusviz"></div>
-        </div>
-    </div>
 </body>
+
 <script>
-const margin = {
-    top: 40,
-    right: 20,
-    bottom: 40,
-    left: 90
-};
-const width = 500 - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
-const svg = d3.select("#statusviz")
-    .append("svg")
-    .attr("width", 500)
-    .attr("height", 425)
-    .append("g")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function sort(value) {
+    // Set the value of the hidden input field
+    document.getElementById("sortInput").value = value;
+    // Submit the form
+    document.getElementById("sortForm").submit();
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.equipment-search-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
 </script>
 
 </html>
