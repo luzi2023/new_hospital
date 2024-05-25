@@ -1,6 +1,6 @@
 # new_hospital
 5/25 02:56pm 更新doctor.php, medicine.php, treatment.php 檔案
-    03:04pm 更新equipment.php (改掉了default不會改變的問題)
+03:04pm 更新equipment.php (改掉了default不會改變的問題)
 
 config.php是用來連接資料庫的 在之後要需要連資料庫的時候只要在輸入php語法 include('config.php')便可以連線
 doctor.php是醫生頁面的首頁 會列出所有醫生的資料
