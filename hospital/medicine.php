@@ -21,8 +21,8 @@
         </div>
     </div>
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'medicine')">Medicine List</button>
         <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
+        <button class="tablinks" onclick="openCity(event, 'medicine')">Medicine List</button>
     </div>
 
     <div id="medicine" class="tabcontent">
@@ -69,7 +69,6 @@
             <h1>Visualization</h1>
             <p>Medicine Type</p>
             <button onclick="update('desc')">Descending</button>
-            <button onclick="update('asc')">Ascending</button>
             <div id="typeviz"></div>
             <p>Heatmap Between Pregnancy Grade and Medicine Type</p>
             <div id="heatmapviz"></div>

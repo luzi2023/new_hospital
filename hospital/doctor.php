@@ -16,7 +16,7 @@
 
 <body>
 
-    <body onload="openCity(event, 'doctor')">
+    <body onload="openCity(event, 'visualize')">
         <div class="container-fluid">
             <!--<div id="login">
             <form method="post" action="doctor.php">
@@ -48,9 +48,9 @@
             </div>
             <!-- Tab links -->
             <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
                 <button class="tablinks" onclick="openCity(event, 'doctor')">Doctor List</button>
                 <button class="tablinks" onclick="openCity(event, 'nurse')">Nurse List</button>
-                <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
             </div>
             <div id="doctor" class="tabcontent">
                 <div id="list_body">
@@ -297,14 +297,35 @@
 
                         const bar = svg.selectAll("mybar")
                             .data(ageCountsArray, d => d.key)
-                            .join("rect")
-                            .attr("x", d => x(d.key))
-                            .attr("y", d => y(d.value))
+                            .enter()
+                            .append("rect")
+                            .attr("x", function(d) {
+                                return x(d.key);
+                            })
+                            .attr("y", function(d) {
+                                return y(0);
+                            })
                             .style("fill", "#3a7da7")
                             // .transition()
                             // .duration(1000)
                             .attr("width", x.bandwidth())
-                            .attr("height", d => height - y(d.value));
+                            .attr("height", function(d) {
+                                return height - y(0);
+                            });
+
+                        svg.selectAll("rect")
+                            .transition()
+                            .duration(800)
+                            .attr("y", function(d) {
+                                return y(d.value)
+                            })
+                            .attr("height", function(d) {
+                                return height - y(d.value);
+                            })
+                            .delay(function(d, i) {
+                                console.log(i);
+                                return (i * 100)
+                            })
 
                         // Create the brush behavior.
                         // .on("start brush end", ...) 是指定當刷選開始、進行中和結束時要執行的回調函式
