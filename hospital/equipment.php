@@ -38,7 +38,7 @@ $result = mysqli_stmt_get_result($stmt);
 
 <body>
     <div class="container-fluid">
-        
+
     </div>
     <div class="container-fluid3">
         <div id="side-nav" class="sidenav">
@@ -64,11 +64,11 @@ $result = mysqli_stmt_get_result($stmt);
         </form>
 
         <?php
-        $Option = isset($_GET['sort']);
+        $Option = isset($_GET['sort']) ? $_GET['sort'] : 'default';
 
         switch($Option) {
             case 'most_used':
-                $sort = "SELECT e.eID, e.eName, e.purchaseDate, e.manufacturer, e.useStatus, 
+                $sort = "SELECT e.eID, e.eName, e.purchaseDate, e.manufacturer, e.useStatus,
                         COUNT(t.usedEquip) AS usedEquip_count
                         FROM equipment AS e
                         LEFT JOIN treatment AS t ON e.eName = t.usedEquip
@@ -79,7 +79,7 @@ $result = mysqli_stmt_get_result($stmt);
                 $sort = "SELECT *
                         FROM treatment";
             default:
-                $sort = "SELECT * 
+                $sort = "SELECT *
                         FROM equipment";
                 break;
         }
@@ -106,18 +106,26 @@ $result = mysqli_stmt_get_result($stmt);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
-                        <tr>
-                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eID']; ?></a></td>
-                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eName']; ?></a></td>
-                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['purchaseDate']; ?></a></td>
-                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['useStatus']; ?></a></td>
-                            <td><a href = "equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a></td>
-                            <td><a href = "equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a></td>
-                            <?php if ($Option == 'most_used'): ?>
-                            <td><?php echo $row['usedEquip_count']; ?></td>
-                            <?php endif; ?>
-                        </tr>
-                        <?php
+                <tr>
+                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eID']; ?></a></td>
+                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eName']; ?></a>
+                    </td>
+                    <td><a
+                            href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['purchaseDate']; ?></a>
+                    </td>
+                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['useStatus']; ?></a>
+                    </td>
+                    <td><a
+                            href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a>
+                    </td>
+                    <td><a
+                            href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a>
+                    </td>
+                    <?php if ($Option == 'most_used'): ?>
+                    <td><?php echo $row['usedEquip_count']; ?></td>
+                    <?php endif; ?>
+                </tr>
+                <?php
                     }
                 }
                 ?>
