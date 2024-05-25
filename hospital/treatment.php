@@ -52,7 +52,6 @@ include('config.php');
             <button onclick="myFunction()" class="treatment-search-button">Sort in</button>
             <div id="myDropdown" class="dropdown-content">
                 <p onclick="sort('most_used')">The most used</p>
-                <p onclick="sort('highest_price')">Highest Price</p>
                 <p onclick="sort('default')">Default</p>
             </div>
         </div>
@@ -66,76 +65,62 @@ include('config.php');
 
         <!-- option list -->
         <?php
-        // Get sorting option from GET request
-        $Option = isset($_GET['sort']);
+        $Option = isset($_GET['sort']) ? $_GET['sort'] : 'default';
 
-        // Build SQL query based on sorting option
         switch($Option) {
         case 'most_used':
             $sort = "SELECT t.tID, t.tName, t.tType, COUNT(m.treatment) AS treatment_count
-                    FROM treatment AS t
-                    LEFT JOIN medical_history AS m ON m.treatment LIKE CONCAT('%', t.tName, '%')
-                    GROUP BY t.tID
-                    ORDER BY treatment_count DESC
-;
-            ";
-            break;
-        case 'highest_price':
-            $sort = "SELECT tID, tName, tType, price
-                    FROM treatment
-                    ORDER BY price DESC";
+        FROM treatment AS t
+        LEFT JOIN medical_history AS m ON BINARY m.treatment LIKE CONCAT('%', t.tName, '%')
+        GROUP BY t.tID
+        ORDER BY treatment_count DESC";
             break;
         case 'default':
-            $sort = "SELECT *
-                    FROM treatment";
+            $sort = "SELECT * FROM treatment";
             break;
         default:
-            $sort = "SELECT *
-                    FROM treatment";
+            $sort = "SELECT * FROM treatment";
             break;
         }
 
         // Execute the query
         $result = mysqli_query($link, $sort);
         ?>
+
         <table class="treatment-table">
-            <tr>
-                <th>tID</th>
-                <th>tName</th>
-                <th>tType</th>
-                <?php if ($Option == 'most_used'): ?>
-                <th>Number of Patients Used</th>
-                <?php elseif ($Option == 'highest_price'): ?>
-                <th>Price</th>
-                <?php endif; ?>
-            </tr>
-            <div class="treatment-body-list">
+            <thead>
+                <tr>
+                    <th>tID</th>
+                    <th>tName</th>
+                    <th>tType</th>
+                    <?php if ($Option == 'most_used'): ?>
+                    <th>Number of Patients Used</th>
+                    <?php endif; ?>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
                 if (mysqli_num_rows($result) > 0) {
                     foreach ($result as $row) {
                         ?>
                 <tr>
-                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a>
-                    </td>
+                    <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tID']; ?></a></td>
                     <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tName']; ?></a>
                     </td>
                     <td><a href="treatment_view.php?tID=<?php echo $row['tID']; ?>"><?php echo $row['tType']; ?></a>
                     </td>
                     <?php if ($Option == 'most_used'): ?>
                     <td><?php echo $row['treatment_count']; ?></td>
-                    <?php elseif ($Option == 'highest_price'): ?>
-                    <td><?php echo $row['price']; ?></td>
                     <?php endif; ?>
-
                 </tr>
                 <?php
-            }
-        } else {
-            echo "<tr><td colspan='4'>No results found.</td></tr>";
-        }
-        ?>
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>No results found.</td></tr>";
+                }
+                ?>
+            </tbody>
         </table>
-    </div>
     </div>
 </body>
 <script>
