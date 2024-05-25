@@ -143,7 +143,9 @@
                     <h1>Visualization</h1>
                     <p>Statistic of Patients</p>
                     <select id="patientselectButton"></select>
-                    <div id="patientviz"></div>
+                    <div id="patientviz">
+                        <div class="drag-text"></div>
+                    </div>
                     <p>Statistic of Diagnosis</p>
                     <!-- <button onclick="update(data1)">Data 1</button>
                     <button onclick="update(data2)">Data 2</button> -->
@@ -199,14 +201,14 @@
                 const yAxis = svg.append("g");
 
                 function ageGrouping(age) {
-                    if (age <= 10) return "0-10";
-                    else if (age <= 20) return "10-20";
-                    else if (age <= 30) return "20-30";
-                    else if (age <= 40) return "30-40";
-                    else if (age <= 50) return "40-50";
-                    else if (age <= 60) return "50-60";
-                    else if (age <= 70) return "60-70";
-                    else if (age <= 80) return "70-80";
+                    if (age < 10) return "0-10";
+                    else if (age < 20) return "10-20";
+                    else if (age < 30) return "20-30";
+                    else if (age < 40) return "30-40";
+                    else if (age < 50) return "40-50";
+                    else if (age < 60) return "50-60";
+                    else if (age < 70) return "60-70";
+                    else if (age < 80) return "70-80";
                     else return "80+";
                 }
 
@@ -255,19 +257,18 @@
                 }]
 
                 data.forEach(d => {
-                    if (d.age < 10) ageGroups[0].patients.push(d.pName);
-                    else if (d.age >= 10 && d.age < 20) ageGroups[1].patients.push(d.pName);
-                    else if (d.age >= 20 && d.age < 30) ageGroups[2].patients.push(d.pName);
-                    else if (d.age >= 30 && d.age < 40) ageGroups[3].patients.push(d.pName);
-                    else if (d.age >= 40 && d.age < 50) ageGroups[4].patients.push(d.pName);
-                    else if (d.age >= 50 && d.age < 60) ageGroups[5].patients.push(d.pName);
-                    else if (d.age >= 60 && d.age < 70) ageGroups[6].patients.push(d.pName);
-                    else if (d.age >= 70 && d.age < 80) ageGroups[7].patients.push(d.pName);
-                    else if (d.age >= 80) ageGroups[8].patients.push(d.pName);
-                    if (d.gender == "M") genderGroups[0].patients.push(d.pName);
-                    else if (d.gender == "F") genderGroups[1].patients.push(d.pName);
+                    if (d.age < 10) ageGroups[0].patients.push(d.pNo);
+                    else if (d.age >= 10 && d.age < 20) ageGroups[1].patients.push(d.pNo);
+                    else if (d.age >= 20 && d.age < 30) ageGroups[2].patients.push(d.pNo);
+                    else if (d.age >= 30 && d.age < 40) ageGroups[3].patients.push(d.pNo);
+                    else if (d.age >= 40 && d.age < 50) ageGroups[4].patients.push(d.pNo);
+                    else if (d.age >= 50 && d.age < 60) ageGroups[5].patients.push(d.pNo);
+                    else if (d.age >= 60 && d.age < 70) ageGroups[6].patients.push(d.pNo);
+                    else if (d.age >= 70 && d.age < 80) ageGroups[7].patients.push(d.pNo);
+                    else if (d.age >= 80) ageGroups[8].patients.push(d.pNo);
+                    if (d.gender == "M") genderGroups[0].patients.push(d.pNo);
+                    else if (d.gender == "F") genderGroups[1].patients.push(d.pNo);
                 });
-
 
                 function genderGrouping(gender) {
                     if (gender == 'M') return "Male";
@@ -288,7 +289,7 @@
                         x.domain(['0-10', '10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80',
                             '80+'
                         ]);
-                        y.domain([0, 10]);
+                        y.domain([0, 11]);
 
                         xAxis.transition().duration(1000).call(d3.axisBottom(x));
 
@@ -300,53 +301,99 @@
                             .attr("x", d => x(d.key))
                             .attr("y", d => y(d.value))
                             .style("fill", "#3a7da7")
-                            .transition()
-                            .duration(1000)
+                            // .transition()
+                            // .duration(1000)
                             .attr("width", x.bandwidth())
                             .attr("height", d => height - y(d.value));
 
-                        svg.selectAll("rect")
-                            .data(ageGroups)
-                            .on("mouseover", (event, d) => {
-                                const tooltip = d3.select("body").append("div")
-                                    .attr("class", "tooltip")
-                                    .style("position", "absolute")
-                                    .style("background", "white")
-                                    .style("padding", "5px")
-                                    .style("border", "1px solid #d3d3d3")
-                                    .style("border-radius", "5px")
-                                    .style("pointer-events", "none")
-                                    .style("z-index", "10")
-                                    .style("opacity", 0);
+                        // Create the brush behavior.
+                        // .on("start brush end", ...) 是指定當刷選開始、進行中和結束時要執行的回調函式
+                        svg.call(d3.brush().on("start brush end", ({
+                            selection
+                        }) => {
+                            // 創建一個空陣列 value，用於存儲刷選器選擇的數據
+                            let value = [];
+                            // if (selection) { ... }: 檢查是否有選擇區域
+                            if (selection) {
+                                const [
+                                    [x0, y0],
+                                    [x1, y1]
+                                ] = selection;
+                                // value = bar ...: 選擇所有 .bar 元素，並根據刷選區域過濾出符合條件的元素。
+                                //      對於符合條件的元素，將其顏色設置為橙色，並將其數據添加到 value 陣列中。
+                                value = bar
+                                    .style("fill", "#3a7da7")
+                                    .filter(ageCountsArray => x(ageCountsArray.key) + x
+                                        .bandwidth() >= x0 &&
+                                        x(ageCountsArray.key) <= x0 + (x1 - x0) &&
+                                        y(ageCountsArray.value) + (height - y(ageCountsArray
+                                            .value)) >= y0 &&
+                                        y(ageCountsArray.value) <= y0 + (y1 - y0))
+                                    .style("fill", "orange")
+                                    .data();
 
-                                tooltip.html(d.patients.join(", "))
-                                    .style("left", (event.pageX + 5) + "px")
-                                    .style("top", (event.pageY - 28) + "px")
-                                    .transition()
-                                    .duration(200)
-                                    .style("opacity", .9);
-                            })
-                            .on("mousemove", function(event) {
-                                d3.select(".tooltip")
-                                    .style("left", (event.pageX + 5) + "px")
-                                    .style("top", (event.pageY - 28) + "px");
-                            })
-                            .on("mouseout", function() {
-                                d3.select(".tooltip").remove();
-                            });
+
+                                // 清空之前的tooltip
+                                d3.select("#patientviz").selectAll(".drag-text").remove();
+
+                                let selectedPatients = [];
+                                value.forEach(v => {
+                                    const patientGroup = ageGroups.find(group => group
+                                        .range === v.key);
+                                    if (patientGroup) {
+                                        selectedPatients = selectedPatients.concat(
+                                            patientGroup.patients);
+                                    }
+
+                                });
+
+                                const selectedPatientsInfo = data.filter(patient => selectedPatients
+                                    .includes(patient.pNo));
+                                const dragtext = d3.select("#patientviz").append("div")
+                                    .attr("class", "dragpatient-container");
+
+                                // 显示选定的病患信息
+                                selectedPatientsInfo.forEach((patient, index) => {
+                                    dragtext
+                                        .append("p")
+                                        .attr("class", "drag-text")
+                                        .style("position", "absolute")
+                                        .style("left", "800px")
+                                        .style("top",
+                                            `${200 + index * 55}px`) // 每个<p>元素垂直位置错开
+                                        .style("background", "white")
+                                        .style("padding", "5px")
+                                        .style("border", "1px solid #d3d3d3")
+                                        .style("border-radius", "5px")
+                                        .style("color", "black")
+                                        .style("pointer-events", "none")
+                                        .style("z-index", "10")
+                                        .style("opacity", 0.9)
+                                        .style("margin-top", "5px")
+                                        .html(
+                                            `Patient No: ${patient.pNo}<br>Patient Age: ${patient.age}`
+                                        );
+                                });
+
+
+                            }
+                        }));
+
+
 
                     } else if (selectedGroup === "Gender") {
 
                         svg.selectAll("rect").remove();
 
-                        const genderCounts = d3.rollup(data, v => v.length, d => genderGrouping(d.gender));
+                        const genderCounts = d3.rollup(data, v => v.length, d => genderGrouping(d
+                            .gender));
                         const genderCountsArray = Array.from(genderCounts, ([key, value]) => ({
                             key,
                             value
                         }));
 
                         x.domain(['Male', 'Female']);
-                        y.domain([0, 20]);
+                        y.domain([0, 28]);
 
                         xAxis.transition().duration(1000).call(d3.axisBottom(x));
 
@@ -407,8 +454,11 @@
 
                     const radius = Math.max(width, height) / 2 - margin.top;
 
-                    const prescriptCounts = d3.rollup(data, v => v.length, d => d.prescription);
-                    const aggregatedData = Array.from(prescriptCounts, ([prescription, count]) => ({
+                    const prescriptCounts = d3.rollup(data, v => v.length, d => d
+                        .prescription);
+                    const aggregatedData = Array.from(prescriptCounts, ([prescription,
+                        count
+                    ]) => ({
                         prescription,
                         count
                     }));
@@ -448,7 +498,8 @@
                             d3.select(event.currentTarget)
                                 .attr("stroke", d => color(d.data.prescription))
                                 .attr("stroke-width", "200px");
-                            const hovertext = d3.select("#prescriptionviz").append("div")
+                            const hovertext = d3.select("#prescriptionviz").append(
+                                    "div")
                                 .attr("class", "hovertext")
                                 .style("position", "absolute")
                                 .style("background", "white")
@@ -473,7 +524,8 @@
                         })
 
                         .on("click", (event, d) => {
-                            const hovertext = d3.select("#prescriptionviz").append("div")
+                            const hovertext = d3.select("#prescriptionviz").append(
+                                    "div")
                                 .attr("class", "hovertext")
                                 .style("position", "absolute")
                                 .style("background", "white")
@@ -555,35 +607,7 @@
                                 .startAngle) / 2
                             return (midangle < Math.PI ? 'start' : 'end')
                         })
-
-                    // svg1.selectAll("smallPie")
-                    //     .data(hoveredPieData)
-                    //     .on("mouseover", (event, d) => {
-                    //         console.log("mouseover")
-                    //         const hovertext = d3.select("#diagnosisviz").append("div")
-                    //             .attr("class", "hovertext")
-                    //             .style("position", "absolute")
-                    //             .style("background", "black")
-                    //             .style("padding", "5px")
-                    //             .style("border", "1px solid #d3d3d3")
-                    //             .style("border-radius", "5px")
-                    //             .style("pointer-events", "none")
-                    //             .style("z-index", "10")
-                    //             .style("opacity", 0);
-                    //         hovertext.html(d => d.data.diagnosis)
-                    //             .style("left", event.pageX + "px")
-                    //             .style("top", event.pageX + "px")
-                    //             .transition()
-                    //             .duration(200)
-                    //             .style("opacity", .9);
-
-                    //     })
-                    //     .on("mouseout", (event, d) => {
-                    //         d3.select(event.currentTarget)
-
-                    //     })
                 })
-
             });
             </script>
     </body>
