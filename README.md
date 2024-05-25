@@ -1,4 +1,6 @@
 # new_hospital
+5/25 02:56PM 更新doctor.php, medicine.php, treatment.php 檔案
+
 config.php是用來連接資料庫的 在之後要需要連資料庫的時候只要在輸入php語法 include('config.php')便可以連線
 doctor.php是醫生頁面的首頁 會列出所有醫生的資料
     edit_doctor.php跟update_doctor.php分別是編輯醫生資料的前後端網頁
