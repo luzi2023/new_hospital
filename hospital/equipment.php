@@ -52,6 +52,7 @@ $result = mysqli_stmt_get_result($stmt);
             <button onclick="myFunction()" class="equipment-search-button">Sort in</button>
             <div id="myDropdown" class="dropdown-content">
                 <p onclick="sort('most_used')">The most used</p>
+                <p onclick="sort('common_combination')">The most used combination</p>
                 <p onclick="sort('default')">Default</p>
             </div>
         </div>
@@ -75,6 +76,17 @@ $result = mysqli_stmt_get_result($stmt);
                         GROUP BY e.eID, e.eName, e.purchaseDate, e.manufacturer, e.useStatus
                         ORDER BY usedEquip_count DESC";
                 break;
+            case 'common_combination':
+                $sort = "SELECT e.eName, t.tName, m.mName,
+                        COUNT(*) AS used_count 
+                        FROM medical_history AS mh
+                        JOIN treatment AS t ON mh.treatment = t.tName 
+                        JOIN medication AS m ON mh.prescription = m.mName
+                        JOIN equipment AS e ON t.usedEquip = e.eName
+                        GROUP BY e.eName, t.tName, m.mName
+                        ORDER BY used_count DESC
+                        LIMIT 10";
+                break;
             case 'default':
                 $sort = "SELECT *
                         FROM treatment";
@@ -87,50 +99,61 @@ $result = mysqli_stmt_get_result($stmt);
         $result = mysqli_query($link, $sort);
         ?>
 
-        <table class="equipment-table">
-            <thead>
-                <tr>
-                    <th>eID</th>
-                    <th>eName</th>
-                    <th>purchase date</th>
-                    <th>Status</th>
-                    <th>manufacturer</th>
-                    <th>Reservation</th>
-                    <?php if ($Option == 'most_used'): ?>
-                    <th>Number of Treatment Used</th>
-                    <?php endif; ?>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        ?>
-                <tr>
-                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eID']; ?></a></td>
-                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eName']; ?></a>
-                    </td>
-                    <td><a
-                            href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['purchaseDate']; ?></a>
-                    </td>
-                    <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['useStatus']; ?></a>
-                    </td>
-                    <td><a
-                            href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a>
-                    </td>
-                    <td><a
-                            href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a>
-                    </td>
-                    <?php if ($Option == 'most_used'): ?>
-                    <td><?php echo $row['usedEquip_count']; ?></td>
-                    <?php endif; ?>
-                </tr>
-                <?php
-                    }
+<table class="equipment-table">
+    <thead>
+        <tr>
+            <?php if ($Option == 'common_combination'): ?>
+                <th>Equipment Name</th>
+                <th>Treatment Name</th>
+                <th>Medicine Name</th>
+                <th>Number of combination Used</th>
+            <?php else: ?>
+                <th>eID</th>
+                <th>eName</th>
+                <th>purchase date</th>
+                <th>Status</th>
+                <th>manufacturer</th>
+                <th>Reservation</th>
+                <?php if ($Option == 'most_used'): ?>
+                <th>Number of Treatment Used</th>
+                <?php endif; ?>
+            <?php endif; ?>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                if ($Option == 'common_combination') {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['eName']; ?></td>
+                        <td><?php echo $row['tName']; ?></td>
+                        <td><?php echo $row['mName']; ?></td>
+                        <td><?php echo $row['used_count']; ?></td>
+                    </tr>
+                    <?php
+                } else {
+                    ?>
+                    <tr>
+                        <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eID']; ?></a></td>
+                        <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['eName']; ?></a></td>
+                        <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['purchaseDate']; ?></a></td>
+                        <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['useStatus']; ?></a></td>
+                        <td><a href="equipment_view.php?eID=<?php echo $row['eID']; ?>"><?php echo $row['manufacturer']; ?></a></td>
+                        <td><a href="equipment_reserve.php?eID=<?php echo $row['eID']; ?>&dID=<?php echo $dID; ?>">Reserve</a></td>
+                        <?php if ($Option == 'most_used'): ?>
+                        <td><?php echo $row['usedEquip_count']; ?></td>
+                        <?php endif; ?>
+                    </tr>
+                    <?php
                 }
-                ?>
-            </tbody>
-        </table>
+            }
+        }
+        ?>
+    </tbody>
+</table>
+
 </body>
 
 <script>

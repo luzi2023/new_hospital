@@ -684,7 +684,8 @@ tr:nth-of-type(even) td {
 }
 
 .treatment-search-button,
-.equipment-search-button {
+.equipment-search-button,
+.medicine-search-button {
     height: 2.5vw;
     background-color: #3a7da7;
     border: none;
@@ -784,7 +785,8 @@ tr:nth-of-type(even) td {
     box-shadow: 5px 5px 5px #B6B6B6;
 }
 
-.button-delete {
+.button-delete,
+.button-submit {
     margin-left: 35px;
     margin-right: 35px;
     background-color: #3a7da7;
@@ -797,7 +799,8 @@ tr:nth-of-type(even) td {
     border-radius: 5px;
 }
 
-.button-delete:hover {
+.button-delete:hover,
+.button-submit:hover{
     background-color: #1f88c9;
     box-shadow: 5px 5px 5px #B6B6B6;
 }
