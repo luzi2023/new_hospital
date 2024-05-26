@@ -872,3 +872,11 @@ tr:nth-of-type(even) td {
     font-size: 15px;
     width: 250px;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+#patient-heading{
+    color: #3a7da7;
+}
