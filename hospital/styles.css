@@ -1000,4 +1000,26 @@ a{
     margin-bottom: 50px;
     margin-top: 16px;
 }
+#addbtn{
+    position: absolute;
+    top:80px;
+    right:10px;
+    font-size:20px
+
+}
+#addbtn:hover{
+    position: absolute;
+    top:80px;
+    right:10px;
+    color:blue;
+    text-decoration: underline;
+    font-size:20px
+
+}
+#akibtn:hover{
+    color:blue;
+    text-decoration: underline;
+}
+
+
 

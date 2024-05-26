@@ -34,7 +34,7 @@ include('config.php');
     <div class="tab">
         <a href="index.php"><button class="tablinks">Home</button></a>
     </div>
-    <div class = "tab_fix"></div>
+    <div class="tab_fix"></div>
     <div class="container-fluid3">
         <!--<div id="login">
             <form method="post" action="login.php">User:
@@ -51,6 +51,7 @@ include('config.php');
             <a href="treatment.php" id="treatments">Treatments</a>
         </div>
         <h1>Treatment Option</h1>
+        <a id='addbtn'href="add_treatment.php"></i>Add treatment</a>
         <!-- search front, back end -->
         <div class="dropdown">
             <button onclick="myFunction()" class="treatment-search-button">Sort in</button>
