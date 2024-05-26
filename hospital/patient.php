@@ -83,6 +83,7 @@ if (isset($_GET['pNo'])) {
             echo "<p>Treatment: " . $row["treatment"] . "</p>";
             echo "<p>Diagnosis: " . $row["diagnosis"] . "</p>";
             echo "<p>Prescription: " . $row["prescription"] . "</p>";
+            echo '<button onclick="window.location.href=\'edit_mh.php?mhID=' . $row["mhID"] . '\'">Edit</button>';
             echo "</li>";
         }
         echo "</ul>";
@@ -91,7 +92,8 @@ if (isset($_GET['pNo'])) {
     } else {
         echo "<p>No medical history available</p>";
     }
-    ?>
+?>
+
 </div>
 </body>
 </html>
