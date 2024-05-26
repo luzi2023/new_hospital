@@ -45,7 +45,7 @@ if (isset($_POST['add_reservation'])) {
         }
         mysqli_stmt_bind_param($stmt, "ssss", $dID, $equipment_id, $date, $time);
         if (mysqli_stmt_execute($stmt)) {
-            echo "Reservation added successfully.";
+            // echo "Reservation added successfully.";
         } else {
             echo "Error adding reservation: " . mysqli_stmt_error($stmt);
         }
@@ -64,7 +64,7 @@ if (isset($_POST['delete_reservation'])) {
     }
     mysqli_stmt_bind_param($stmt, "ss", $reservation_id, $dID);
     if (mysqli_stmt_execute($stmt)) {
-        echo "Reservation deleted successfully.";
+        // echo "Reservation deleted successfully.";
     } else {
         echo "Error deleting reservation: " . mysqli_stmt_error($stmt);
     }
@@ -97,7 +97,7 @@ if (isset($_POST['update_reservation'])) {
         }
         mysqli_stmt_bind_param($stmt, "ssss", $date, $time, $reservation_id, $dID);
         if (mysqli_stmt_execute($stmt)) {
-            echo "Reservation updated successfully.";
+            // echo "Reservation updated successfully.";
         } else {
             echo "Error updating reservation: " . mysqli_stmt_error($stmt);
         }
