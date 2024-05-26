@@ -200,6 +200,7 @@ body {
 
 input {
     margin: 1.5vw;
+    margin-left: 0px;
 }
 
 .print_doc {
@@ -880,3 +881,123 @@ a{
 #patient-heading{
     color: #3a7da7;
 }
+
+.equip_Dbtn{
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+.equip_Dbtn:hover{
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.equip_Ebtn{
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.equip_Ebtn:hover{
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.equip_Abtn{
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 30px;
+    margin-top: 8px;
+    float: right;
+}
+
+.equip_Abtn:hover{
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.equip_detail{
+    position: absolute;
+    left: 35%;
+    top: 15%;
+}
+
+.changing-formEquip input[type="text"],
+.changing-formEquip select {
+    display: block;
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 40px;
+    margin-right: 6px;
+    margin-top: 18px;
+    outline: 0 none;
+    padding: 4px 3px 3px 5px;
+    width: calc(40% - 10px); /* Adjust width to fit within the form */
+    font-size: 14px;
+    line-height: 14px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.changing-formEquip span {
+    float: left;
+    width: 15%;
+    text-align: left;
+    padding-right: 20px;
+    margin-top: 20px;
+    color: #888;
+}
+
+.changing-formEquip label {
+    margin-bottom: 30px;
+}
+
+.changing-formEquip .button {
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.changing-formEquip .button:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
+
+.changing-formEquip p{
+    color: #888;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+.pDate{
+    margin: 0px;
+    margin-bottom: 50px;
+    margin-top: 16px;
+}
+
