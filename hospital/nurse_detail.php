@@ -24,6 +24,7 @@
             <div class="D">
                 <a class="hometitle">Nurse</a>
                 <?php
+                session_start();
                 include('config.php');
 
                 if (isset($_GET['dID'])) {
@@ -37,11 +38,14 @@
                     if ($result) {
                         if (mysqli_num_rows($result) > 0) {
                             $doctor = mysqli_fetch_assoc($result);
-                            ?>
-                            <a href="edit_nurse.php?dID=<?php echo $doctor['dID']; ?>"><i class="fa-solid fa-pencil"></i>Edit Nurse</a>
-                            <?php
+                            // 检查当前登录用户是否有权限编辑该医生的资料
+                            if (isset($_SESSION['username']) && $_SESSION['username'] === $doctor['dID']) {
+                                ?>
+                                <a href="edit_nurse.php?dID=<?php echo $doctor['dID']; ?>"><i class="fa-solid fa-pencil"></i>Edit Nurse</a>
+                                <?php
+                            }
                         } else {
-                            echo "Nurse not found.";
+                            echo "Doctor not found.";
                         }
                         mysqli_free_result($result);
                     } else {
@@ -49,7 +53,7 @@
                     }
                     mysqli_stmt_close($stmt);
                 } else {
-                    echo "Nurse ID not provided.";
+                    echo "Doctor ID not provided.";
                 }
                 ?>
             </div>
