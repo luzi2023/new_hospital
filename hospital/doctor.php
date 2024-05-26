@@ -48,10 +48,12 @@
             </div>
             <!-- Tab links -->
             <div class="tab">
+                <a href="index.php"><button class="tablinks">Home</button></a>
                 <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
                 <button class="tablinks" onclick="openCity(event, 'doctor')">Doctor List</button>
                 <button class="tablinks" onclick="openCity(event, 'nurse')">Nurse List</button>
             </div>
+            <div class = "tab_fix"></div>
             <div id="doctor" class="tabcontent">
                 <div id="list_body">
                     <h1>Doctor List</h1>

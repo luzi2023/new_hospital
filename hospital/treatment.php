@@ -31,6 +31,10 @@ include('config.php');
 
         <!-- 其他內容 -->
     </div>
+    <div class="tab">
+        <a href="index.php"><button class="tablinks">Home</button></a>
+    </div>
+    <div class = "tab_fix"></div>
     <div class="container-fluid3">
         <!--<div id="login">
             <form method="post" action="login.php">User:

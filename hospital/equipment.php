@@ -40,6 +40,10 @@ $result = mysqli_stmt_get_result($stmt);
     <div class="container-fluid">
 
     </div>
+    <div class="tab">
+        <a href="index.php"><button class="tablinks">Home</button></a>
+    </div>
+    <div class = "tab_fix"></div>
     <div class="container-fluid3">
         <div id="side-nav" class="sidenav">
             <a href="medicine.php" id="home">Medicine</a>
