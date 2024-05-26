@@ -119,12 +119,12 @@
     <div class="schedule-info">
     <h2>Schedule</h2>
     <?php
-try {
-    $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    try {
+        $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // 取得 URL 中的 dID 參數
-    $doctorID = isset($_GET['dID']) ? $_GET['dID'] : '';
+        // 取得 URL 中的 dID 參數
+        $doctorID = isset($_GET['dID']) ? $_GET['dID'] : '';
 
     if ($doctorID) {
         // 查詢對應醫生的排班信息

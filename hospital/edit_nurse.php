@@ -30,47 +30,62 @@
         </div>
 
         <div id="body">
+            <?php
+            include('config.php');
 
-        <?php
-include('config.php');
+            if (isset($_GET['dID'])) {
+                $doctor_id = $_GET['dID'];
+                $query = "SELECT * FROM staff JOIN nurse WHERE staff.dID = nurse.dID AND nurse.dID = ?";
+                $stmt = mysqli_prepare($link, $query);
+                mysqli_stmt_bind_param($stmt, "s", $doctor_id);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
 
-if (isset($_GET['dID'])) {
-    // 将 dID 参数转换为整数
-    $doctor_id = $_GET['dID'];
+                if ($result) {
+                    if (mysqli_num_rows($result) > 0) {
+                        $doctor = mysqli_fetch_assoc($result);
+                    } else {
+                        echo "Nurse not found.";
+                    }
+                    mysqli_free_result($result);
+                } else {
+                    echo "Error: " . mysqli_error($link);
+                }
+                mysqli_stmt_close($stmt);
+            }
 
-    // 使用 prepared statement 来避免 SQL 注入攻击
-    $query = "SELECT * FROM staff JOIN nurse WHERE staff.dID = nurse.dID AND nurse.dID = ?";
+            function isScheduleOverlap($link, $doctor_id, $day, $time){
+                $query = "SELECT COUNT(*) AS count FROM schedule WHERE dID = ? AND day = ? AND time = ?";
+                $stmt = mysqli_prepare($link, $query);
+                if ($stmt) {
+                    mysqli_stmt_bind_param($stmt, "sss", $doctor_id, $day, $time);
+                    mysqli_stmt_execute($stmt);
+                    mysqli_stmt_bind_result($stmt, $count);
+                    mysqli_stmt_fetch($stmt);
+                    mysqli_stmt_close($stmt);
+                    return $count > 0;
+                } else {
+                    die("Failed to prepare statement: " . mysqli_error($link));
+                }
+            }
 
-    // 准备 SQL 查询
-    $stmt = mysqli_prepare($link, $query);
+            if (isset($_POST['update_schedule'])) {
+                $schedule_id = $_POST['schedule_id'];
+                $day = $_POST['day'];
+                $time = $_POST['time'];
 
-    // 绑定参数
-    mysqli_stmt_bind_param($stmt, "s", $doctor_id);
-
-    // 执行查询
-    mysqli_stmt_execute($stmt);
-
-    // 获取结果
-    $result = mysqli_stmt_get_result($stmt);
-
-    if ($result) {
-        if (mysqli_num_rows($result) > 0) {
-            $doctor = mysqli_fetch_assoc($result);
-            // 在这里输出编辑表单，使用 $doctor 中的信息
-        } else {
-            echo "Doctor not found.";
-        }
-        mysqli_free_result($result);
-    } else {
-        echo "Error:" . mysqli_error($link);
-    }
-
-    // 关闭 prepared statement
-    mysqli_stmt_close($stmt);
-}
-
-
-?>
+                if (!isScheduleOverlap($link, $doctor_id, $day, $time)) {
+                    $update_query = "UPDATE schedule SET day=?, time=? WHERE sID=?";
+                    $update_stmt = mysqli_prepare($link, $update_query);
+                    mysqli_stmt_bind_param($update_stmt, "sss", $day, $time, $schedule_id);
+                    mysqli_stmt_execute($update_stmt);
+                    mysqli_stmt_close($update_stmt);
+                }
+                // Redirect to edit_nurse.php regardless of success or failure
+                header("Location: edit_nurse.php?dID=" . $doctor_id);
+                exit();
+            }
+            ?>
 
 
 
@@ -136,28 +151,38 @@ if (isset($_GET['dID'])) {
                 </label>
             </form>
 
-            <h2 id="inline-delete2" class="form-title">Schedule Management</h2>
             <?php
-            // 获取医生排班信息
-            $query = "SELECT sID, dID, day, time FROM schedule WHERE dID = ? ORDER BY day, time";
+            $query = "SELECT sID, dID, day, time, patient FROM schedule WHERE dID = ? ORDER BY day, time";
             $stmt = mysqli_prepare($link, $query);
-            if (!$stmt) {
-                die("Failed to prepare statement: " . mysqli_error($link));
-            }
             mysqli_stmt_bind_param($stmt, "s", $doctor_id);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
             if ($result && mysqli_num_rows($result) > 0) {
+                echo "<form method='post'>";
                 echo "<table border='1'>";
-                echo "<tr><th>sID</th><th>Day</th><th>Time</th><th>Action</th></tr>";
+                echo "<tr><th>sID</th><th>Day</th><th>Time</th><th>Actions</th></tr>";
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
                     echo "<td>" . htmlspecialchars($row["sID"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($row["day"]) . "</td>";
-                    echo "<td>" . htmlspecialchars($row["time"]) . "</td>";
                     echo "<td>
-                            <form method='post' action='delete_Nschedule.php'>
+                            <input type='hidden' name='schedule_id' value='" . htmlspecialchars($row["sID"]) . "'>
+                            <select name='day'>";
+                    for ($i = 1; $i <= 7; $i++) {
+                        echo "<option value='$i'" . ($row["day"] == $i ? ' selected' : '') . ">$i</option>";
+                    }
+                    echo "      </select>
+                          </td>";
+                    echo "<td>
+                            <select name='time'>
+                                <option value='morning'" . ($row["time"] == 'morning' ? ' selected' : '') . ">morning</option>
+                                <option value='afternoon'" . ($row["time"] == 'afternoon' ? ' selected' : '') . ">afternoon</option>
+                                <option value='evening'" . ($row["time"] == 'evening' ? ' selected' : '') . ">evening</option>
+                            </select>
+                          </td>";
+                    echo "<td>
+                            <input type='submit' name='update_schedule' value='Update' class='button-submit'>
+                            <form method='post' action='delete_Nschedule.php' style='display:inline;'>
                                 <input type='hidden' name='schedule_id' value='" . htmlspecialchars($row['sID']) . "'>
                                 <input type='hidden' name='doctor_id' value='" . htmlspecialchars($doctor_id) . "'>
                                 <input type='submit' value='Delete' class='button-delete'>
@@ -166,20 +191,22 @@ if (isset($_GET['dID'])) {
                     echo "</tr>";
                 }
                 echo "</table>";
+                echo "</form>";
             } else {
                 echo "No schedule information available.";
             }
             mysqli_free_result($result);
             mysqli_stmt_close($stmt);
+            mysqli_close($link);
             ?>
 
             <h2 class="form-title">Add Schedule</h2>
             <form action="add_Nschedule.php" method="post" enctype="multipart/form-data" class="changing-form2">
-        
-                <input type="hidden" name="doctor_id" value="<?php echo htmlspecialchars($doctor_id); ?>">
+                <!-- Add a hidden input field to pass the doctor_id -->
+                <input type="hidden" name="doctor_id" value="<?php echo $doctor_id; ?>">
                 <label>
                     <span>sID:</span>
-                    <input type="text" name="sID" class="input-column" required>
+                    <input type="text" name="sID" class="input-column">
                 </label>
                 <label>
                     <span>Day:</span>
@@ -205,9 +232,5 @@ if (isset($_GET['dID'])) {
             </form>
         </div>
     </div>
-        </div>
-    </div>
-       
 </body>
-
 </html>
