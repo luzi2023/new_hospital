@@ -77,7 +77,7 @@ if (isset($_GET['pNo'])) {
         echo "<ul>";
         while($row = $result->fetch_assoc()) {
             echo "<li>";
-            echo '<button onclick="window.location.href=\'delete_mh.php\'">Delete</button>';
+            // echo '<button onclick="window.location.href=\'delete_mh.php\'">Delete</button>';
             echo "<p>Medical History ID: " . $row["mhID"] . "</p>";
             echo "<p>Patient ID: " . $row["pNo"] . "</p>";
             echo "<p>Date: " . $row["date"] . "</p>";
