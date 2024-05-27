@@ -30,6 +30,7 @@
                 if ($result->num_rows > 0) {
                     $treatment = $result->fetch_assoc();
                     ?>
+                    
                     <h1><?php echo htmlspecialchars($treatment['tName']); ?> </h1>
                     <p>ID: <?php echo htmlspecialchars($treatment['tID']); ?></p>
                     <p>Type: <?php echo htmlspecialchars($treatment['tType']); ?></p>
@@ -37,8 +38,10 @@
                     <a id='akibtn'href="edit_treatment.php?tID=<?php echo $treatment['tID']; ?>" class="edit-btn">Edit</a>
                     <form action="delete_treatment.php" method="POST" style="display: inline;">
                         <input type="hidden" name="tID" value="<?php echo htmlspecialchars($treatment['tID']); ?>">
-                        <button type="submit" class="delete-btn">Delete</button>
+                        <button id='btbtn'type="submit" >Delete</button>
                     </form>
+                   
+                    
             <?php
                 } else {
                     echo "<p>No treatment found with that ID.</p>";

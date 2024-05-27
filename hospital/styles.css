@@ -1001,25 +1001,44 @@ a{
     margin-top: 16px;
 }
 #addbtn{
-    position: absolute;
-    top:80px;
-    right:10px;
-    font-size:20px
-
-}
-#addbtn:hover{
-    position: absolute;
-    top:80px;
-    right:10px;
-    color:blue;
-    text-decoration: underline;
-    font-size:20px
-
-}
-#akibtn:hover{
-    color:blue;
-    text-decoration: underline;
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    right: 30px;
+    top: 80px;
+    position:absolute;
+    
 }
 
+#akibtn{
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#btbtn {
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left:20px;
+    
+    
+}
 
 
