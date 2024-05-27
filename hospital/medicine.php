@@ -28,6 +28,7 @@
     <div id="medicine" class="tabcontent">
         <div id="list_body">
             <h1>Medicine List</h1>
+            <a id='addbtn'href="add_medicine.php">Add Medicine</a>
             <div class="search">
                 <form action="search_medicine.php" method="get">
                     <input type="text" id="search" name="query" placeholder="Search something?">

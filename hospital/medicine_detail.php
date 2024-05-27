@@ -12,6 +12,7 @@
 <body>
     <div class="container">
         <h1>Medication Detail</h1>
+        
 
         <?php
         // 连接数据库
@@ -34,6 +35,7 @@
                 $medication = $result->fetch_assoc();
         ?>
                 <div class="medication-details">
+                
                     <img src="th.jpg" alt="Medication Image" class="medication-image">
                     <p><strong>Medication Name:</strong> <?php echo $medication['mName']; ?></p>
                     <p><strong>Medication Type:</strong> <?php echo $medication['mType']; ?></p>
@@ -43,6 +45,7 @@
                     <p><strong>Ingredient:</strong> <?php echo $medication['ingredient']; ?></p>
                     <p><strong>Dosage:</strong> <?php echo $medication['dosage']; ?></p>
                     <p><strong>Pregnancy Grade:</strong> <?php echo $medication['pregnancy_grade']; ?></p>
+                    <a id='aki' href="edit_medicine.php?mID=<?php echo $medication['mID']; ?>">Edit</a>
                 </div>
         <?php
             } else {

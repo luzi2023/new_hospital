@@ -52,3 +52,15 @@ h1 {
 .back-to-list a:hover {
     background-color: #0056b3;
 }
+#aki{
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right:10px;
+
+}
