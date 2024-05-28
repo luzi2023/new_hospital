@@ -1,0 +1,264 @@
+body {
+    /* padding-left: 200px; */
+    /* 為導覽列留出空間 */
+    position: relative;
+    margin: 0px;
+}
+
+#list_body {
+    padding-left: 22vw;
+}
+
+#list_body h1 {
+    color: #3a7da7;
+}
+
+#side-nav a {
+    position: fixed;
+    /* Position them relative to the browser window */
+    left: -15vw;
+    /* Position them outside of the screen */
+    transition: 0.3s;
+    /* Add transition on hover */
+    padding: 15px;
+    /* 15px padding */
+    padding-left: 4.5vw;
+    width: 18vw;
+    /* Set a specific width */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 20px;
+    /* Increase font size */
+    color: white;
+    /* White text color */
+    border-radius: 0 5px 5px 0;
+    /* Rounded corners on the top right and bottom right side */
+}
+
+#side-nav a:hover {
+    left: 0;
+    /* On mouse-over, make the elements appear as they should */
+}
+
+
+.search {
+    position: absolute;
+    top: 20px;
+    /* 距離頂部的距離 */
+    right: 20px;
+    /* 距離右側的距離 */
+}
+
+#home {
+    top: 15vw;
+    background-color: #04AA6D;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+#doctors {
+    top: 22vw;
+    background-color: #2196F3;
+    /* Blue */
+    opacity: 0.7;
+    z-index: 1;
+
+}
+
+#equipments {
+    top: 29vw;
+    background-color: #f44336;
+    /* Red */
+    opacity: 0.7;
+    z-index: 1;
+
+}
+
+#treatments {
+    top: 36vw;
+    background-color: #555;
+    /* Light Black */
+    opacity: 0.7;
+    z-index: 1;
+
+}
+
+
+
+
+.hospital-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 三個一排 */
+    gap: 20px;
+    /* 設定元素間的間距 */
+}
+
+.hospital {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.hospital a {
+    text-decoration: none;
+    color: #244d66;
+}
+
+.hospital img {
+    width: 100px;
+    /* 調整圖片大小 */
+    height: 100px;
+}
+
+.search {
+    position: absolute;
+    top: 6px;
+    /* 增加上边距 */
+    right: 20px;
+    /* 增加右边距 */
+    text-align: center;
+    /* 居中对齐 */
+}
+
+#search {
+    border: 1px solid #ccc;
+    /* 添加边框 */
+    border-radius: 5px;
+    /* 圆角边框 */
+    padding: 10px;
+    /* 增加内边距 */
+    width: 200px;
+    /* 设置输入框宽度 */
+}
+
+#btn {
+    background-color: #389ddc;
+    /* 设置按钮背景色 */
+    color: white;
+    /* 设置文字颜色 */
+    border: none;
+    /* 移除按钮边框 */
+    padding: 10px 20px;
+    /* 增加内边距 */
+    margin-left: 5px;
+    /* 设置左边距 */
+    cursor: pointer;
+    /* 添加指针样式 */
+    border-radius: 5px;
+    /* 圆角按钮 */
+}
+
+#btn:hover {
+    background-color: #389ddc;
+    /* 鼠标悬停时的背景色 */
+    opacity: 0.7;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#addbtn {
+    background-color: #3a7da7;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+    right: 30px;
+    top: 80px;
+    position: absolute;
+    text-decoration: none;
+}
+
+.medicine-sort-button b {
+    border-color: #FFF #3a7da7 #3a7da7;
+    border-style: solid;
+    border-width: 5px;
+    position: absolute;
+    top: 15px;
+    left: 70px;
+}
+
+.medicine-sort-button {
+    background-color: #3a7da7;
+    margin-bottom: 13px;
+    height: 2.5vw;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
