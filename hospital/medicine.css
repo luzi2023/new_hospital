@@ -216,6 +216,10 @@ body {
     position: absolute;
     text-decoration: none;
 }
+#addbtn:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+}
 
 .medicine-sort-button b {
     border-color: #FFF #3a7da7 #3a7da7;
@@ -237,6 +241,11 @@ body {
     text-shadow: 1px 1px 1px #83bee2;
     cursor: pointer;
     border-radius: 5px;
+
+}
+.medicine-sort-button:hover {
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
 
 }
 

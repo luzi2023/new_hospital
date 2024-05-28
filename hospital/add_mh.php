@@ -3,7 +3,7 @@ include('config.php');
 
 // 生成唯一的Medical History ID
 do {
-    $mhID = mt_rand(100000, 999999); // 生成一個六位數的隨機數字
+    $mhID = mt_rand(70001, 99999); // 生成一個六位數的隨機數字
     // 檢查新生成的ID是否已存在於資料庫中
     $sql_check = "SELECT mhID FROM medical_history WHERE mhID = '$mhID'";
     $result_check = $link->query($sql_check);

@@ -297,6 +297,7 @@ d3.csv("./dataset/medicine.csv").then(function(data) {
 
     const myGroups = Array.from(new Set(heatMapData.map(d => d.pregnancy_grade)));
     const myVars = Array.from(new Set(heatMapData.map(d => d.mType)));
+    console.log(myGroups)
 
     const x = d3.scaleBand()
         .range([0, width])

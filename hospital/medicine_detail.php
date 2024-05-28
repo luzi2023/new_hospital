@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medication Detail</title>
     <link rel="stylesheet" href="medicine_detail.css" />
-    <a href="medicine.php" class="back-to-home">Back to Medication List</a>
+    <a href="medicine.php"><button class="back-to-home">Back to Medication List</button></a>
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                     <p><strong>Ingredient:</strong> <?php echo $medication['ingredient']; ?></p>
                     <p><strong>Dosage:</strong> <?php echo $medication['dosage']; ?></p>
                     <p><strong>Pregnancy Grade:</strong> <?php echo $medication['pregnancy_grade']; ?></p>
-                    <a id='aki' href="edit_medicine.php?mID=<?php echo $medication['mID']; ?>">Edit</a>
+                    <a href="edit_medicine.php?mID=<?php echo $medication['mID']; ?>"><button class="aki">Edit</button></a>
                 </div>
         <?php
             } else {

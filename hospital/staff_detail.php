@@ -198,7 +198,7 @@ if (isset($_GET['dID'])) {
                     $doctor_data = mysqli_fetch_assoc($doctor_result);
                     // 如果当前登录用户是该患者的医生，则显示链接
                     if ($loggedInUser === $doctor_data['doctorID']) {
-                        echo "<li><a href='patient.php?pNo={$patient_row['pNo']}'>{$patient_row['pname']}</a></li>";
+                        echo "<li><strong><a href='patient.php?pNo={$patient_row['pNo']}'>{$patient_row['pname']}</a></strong></li>";
                     } else {
                         echo "<li>{$patient_row['pname']}</li>"; // 如果不是该患者的医生，则只显示患者姓名，无法点击链接
                     }

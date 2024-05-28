@@ -1014,6 +1014,11 @@ a{
     position:absolute;
     
 }
+#addbtn:hover{
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
+
+}
 
 #akibtn{
     background-color: #3a7da7;
@@ -1025,6 +1030,10 @@ a{
     cursor: pointer;
     border-radius: 5px;
     margin-right: 10px;
+}
+#akibtn:hover{
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
 }
 
 #btbtn {
@@ -1039,6 +1048,10 @@ a{
     margin-left:20px;
     
     
+}
+#btbtn:hover{
+    background-color: #1f88c9;
+    box-shadow: 5px 5px 5px #B6B6B6;
 }
 
 
