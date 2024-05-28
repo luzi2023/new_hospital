@@ -54,7 +54,7 @@ include('config.php');
         <a id='addbtn'href="add_treatment.php"></i>Add treatment</a>
         <!-- search front, back end -->
         <div class="dropdown">
-            <button onclick="myFunction()" class="treatment-search-button">Sort in</button>
+            <button onclick="myFunction()" class="treatment-search-button">Sort in ▼</button>
             <div id="myDropdown" class="dropdown-content">
                 <p onclick="sort('most_used')">The most used</p>
                 <p onclick="sort('default')">Default</p>
