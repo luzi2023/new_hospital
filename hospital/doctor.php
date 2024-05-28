@@ -547,14 +547,14 @@
                         })
 
                         .on("click", (event, d) => {
-                            const existingClicktext = d3.select(".clicktext");
-                            if (!existingClicktext.empty()) {
-                                existingClicktext.remove();
+                            const existingHovertext = d3.select(".hovertext");
+                            if (!existingHovertext.empty()) {
+                                existingHovertext.remove();
                             } else {
 
-                                const clicktext = d3.select("#prescriptionviz").append(
+                                const hovertext = d3.select("#prescriptionviz").append(
                                         "div")
-                                    .attr("class", "clicktext")
+                                    .attr("class", "hovertext")
                                     .style("position", "absolute")
                                     .style("background", "white")
                                     .style("padding", "10px")
@@ -565,7 +565,7 @@
                                     .style("z-index", "20")
                                     .style("opacity", 0);
 
-                                clicktext.html(d.data.prescription)
+                                hovertext.html(d.data.prescription)
                                     .style("left", "150px")
                                     .style("top", "750px")
                                     .transition()
@@ -574,13 +574,14 @@
 
                                 const link = e.find(e => e.mName === d.data.prescription);
                                 const total_link = "medicine_detail.php?mID=" + link.mID;
-                                clicktext.append("p")
+                                console.log(link.mID)
+                                hovertext.append("p")
                                     .attr("class", "moreinformation")
                                     .html(`Medicine ID: ${link.mID}<br>`)
-                                clicktext.append("p")
+                                hovertext.append("p")
                                     .attr("class", "moreinformation")
                                     .html(`Side Effect: ${link.side_effect}<br>`)
-                                clicktext.append("a")
+                                hovertext.append("a")
                                     .html("go to the page →")
                                     .attr("href", total_link)
                                     .style("font-size", "15px")

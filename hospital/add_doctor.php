@@ -61,7 +61,7 @@
                         if (mysqli_query($link, $query_doctor)) {
                             // 成功添加医生，显示医生信息
 
-                            header("Location: doctor.php");
+                            header("Location: staff_detail.php?dID=$doctor_id");
                             exit();
                             ?>
                             <div class="doctor-info">
@@ -127,11 +127,11 @@
                     <input type="submit" value="Add Doctor" class="button">
                 </label>
             </form>
-            <script>
+            <!-- <script>
             function confirmAdd() {
                 return confirm("Do you want to create a doctor?");
             }
-            </script>
+            </script> -->
         </div>
     </div>
 </body>

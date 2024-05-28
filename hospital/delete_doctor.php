@@ -15,9 +15,7 @@
 </head>
 
 <body>
-    <?php
-    header("Refresh: 3; url=doctor.php");
-    ?>
+    
     <div class="redirect-message">
         <!-- <div id="login">
             <form method="post" action="login.php">User:
@@ -36,36 +34,45 @@
 
         <div class="redirect-message">
         <?php
+            
+       
 
+        if (isset($_POST['doctor_id'])) {
+            $doctor_id = $_POST['doctor_id'];
 
-if (isset($_POST['doctor_id'])) {
-    $doctor_id = $_POST['doctor_id'];
+            // First, set doctorID to NULL in all associated patients
+            $update_query = "UPDATE patient SET doctorID = NULL WHERE doctorID = '$doctor_id'";
+            $update_success = mysqli_query($link, $update_query);
 
-    // 使用外键约束删除医生信息和相关的员工信息
-    $delete_query = "DELETE doctor, staff FROM doctor 
-                    LEFT JOIN staff ON doctor.dID = staff.dID 
-                    WHERE doctor.dID = '$doctor_id'";
+            if ($update_success) {
+                // Now, delete the doctor from the doctor table
+                $delete_doctor_query = "DELETE FROM doctor WHERE dID = '$doctor_id'";
+                $delete_doctor_success = mysqli_query($link, $delete_doctor_query);
+                $delete_staff_query = "DELETE FROM staff WHERE dID = '$doctor_id'";
+                $delete_staff_success = mysqli_query($link, $delete_staff_query);
 
-    $delete_success = mysqli_query($link, $delete_query);
+                if ($delete_doctor_success) {
+                    // Finally, delete the doctor from the staff table
+                    if ($delete_staff_success) {
+                        echo "Doctor information and related staff information deleted successfully!<br><br>";
+                        header("Location: doctor.php");
+                        exit();
+                    } else {
+                        echo "Failed to delete related staff information.";
+                    }
+                } else {
+                    echo "Failed to delete doctor information.";
+                }
+            } else {
+                echo "Failed to update patient records.";
+            }
+        } else {
+            echo "No doctor ID provided for deletion.";
+        }
 
-    if ($delete_success) {
-        echo "Doctor information and related staff information deleted successfully!<br><br>";
-        echo "Redirecting back to doctor page in 3 seconds...";
-        // 最后进行页面重定向
-        header("Refresh: 3; url=doctor.php");
-        exit();
-    } else {
-        echo "Seems there's a problem when deleting...";
-    }
-} else {
-    echo "No doctor ID provided for deletion.";
-}
-
-mysqli_close($link);
-?>
-
+        mysqli_close($link);
+        ?>
         </div>
-
     </div>
 </body>
 
