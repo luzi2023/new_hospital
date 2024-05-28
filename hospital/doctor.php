@@ -18,11 +18,29 @@
 
     <body onload="openCity(event, 'visualize')">
         <div class="container-fluid">
-            
+            <!--<div id="login">
+            <form method="post" action="doctor.php">
+                User:
+                <input type="text" name="username">
+                Password:
+                <input type="password" name="password">
+                <input type="submit" value="Login" name="submit">
+                <a href="register.php">Register now</a>
+                <?php if(isset($error_message)) { echo "<p class='error'>$error_message</p>"; } ?>
+            </form>
+        </div>
+        -->
 
         </div>
         <div class="container-fluid">
-           
+            <!-- <div id="login">
+            <form method="post" action="login.php">User:
+                <input type="text" name="username">Password:
+                <input type="text" name="password">
+                <input type="submit" value="login" name="submit">
+                <a href="register.php">register now</a>
+            </form>
+        </div> -->
             <div id="side-nav" class="sidenav">
                 <a href="medicine.php" id="home">Medicine</a> <a href="doctor.php" id="doctors">Staffs</a>
                 <a href="equipment.php" id="equipments">Equipments</a>
@@ -34,9 +52,8 @@
                 <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
                 <button class="tablinks" onclick="openCity(event, 'doctor')">Doctor List</button>
                 <button class="tablinks" onclick="openCity(event, 'nurse')">Nurse List</button>
-                
             </div>
-            <div class = "tab_fix"></div>
+            <div class="tab_fix"></div>
             <div id="doctor" class="tabcontent">
                 <div id="list_body">
                     <h1>Doctor List</h1>
@@ -373,7 +390,7 @@
                                         .style("border-radius", "5px")
                                         .style("color", "black")
                                         .style("pointer-events", "none")
-                                        .style("z-index", "10")
+                                        .style("z-index", "0")
                                         .style("opacity", 0.9)
                                         .style("margin-top", "5px")
                                         .html(
@@ -559,7 +576,7 @@
                                 .attr("class", "moreinformation")
                                 .html(`Side Effect: ${link.side_effect}<br>`)
                             hovertext.append("a")
-                                .html("go to the page")
+                                .html("go to the page →")
                                 .attr("href", total_link)
                                 .style("font-size", "15px")
                                 .style("margin-top", "4px");
