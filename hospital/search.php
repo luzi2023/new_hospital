@@ -57,7 +57,7 @@
                 while ($doctor = mysqli_fetch_assoc($result)) {
                     // 构建医生的姓名
                     $name = $doctor['first_name'] . ", " . $doctor['last_name'];
-                    echo "<li><a href='edit_doctor.php?dID=" . $doctor['dID'] . "' class='search-and-edit'>" . $name . " - " . $doctor['speciality'] . "</a></li>";
+                    echo "<li><a href='staff_detail.php?dID=" . $doctor['dID'] . "' class='search-and-edit'>" . $name . " - " . $doctor['speciality'] . "</a></li>";
                 }
                 echo "</ul>";
             } else {
