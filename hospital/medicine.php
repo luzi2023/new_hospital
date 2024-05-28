@@ -11,7 +11,7 @@
     <title>Local hospital</title>
 </head>
 
-<body onload="openCity(event, 'visualize')">
+<body onload="openCity(event, 'medicine')">
     <div class="container-fluid">
         <div id="side-nav" class="sidenav">
             <a href="medicine.php" id="home">Medicine</a>
@@ -28,7 +28,18 @@
     <div id="medicine" class="tabcontent">
         <div id="list_body">
             <h1>Medicine List</h1>
-            <a id='addbtn'href="add_medicine.php">Add Medicine</a>
+            <a id='addbtn' href="add_medicine.php">Add Medicine</a>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="medicine-sort-button">Sort in ▼</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <p onclick="sort('most_used')">The most used</p>
+                    <p onclick="sort('default')">Default</p>
+                </div>
+            </div>
+            <form id="sortForm" method="GET" action="">
+                <input type="hidden" name="sort" id="sortInput">
+            </form>
+
             <div class="search">
                 <form action="search_medicine.php" method="get">
                     <input type="text" id="search" name="query" placeholder="Search something?">
@@ -38,20 +49,39 @@
 
             <?php
             include('config.php');
+            $Option = isset($_GET['sort']) ? $_GET['sort'] : 'default';
 
-            $query = "SELECT mID, mName, mType FROM medication";
-            $query_run = mysqli_query($link, $query);
+            switch ($Option) {
+                case 'most_used':
+                    $sort = "SELECT m.mID, m.mName, m.mType, COUNT(DISTINCT mh.pNo) AS patient_count
+                            FROM medication AS m
+                            JOIN medical_history AS mh ON m.mName = mh.prescription
+                            GROUP BY m.mID, m.mName, m.mType
+                            ORDER BY patient_count DESC;";
+                    break;
+                case 'default':
+                    $sort = "SELECT m.mID, m.mName, m.mType FROM medication AS m";
+                    break;
+                default:
+                    $sort = "SELECT m.mID, m.mName, m.mType FROM medication AS m";
+                    break;
+            }
 
-            if (mysqli_num_rows($query_run) > 0) {
+            $result = mysqli_query($link, $sort);
+
+            if (mysqli_num_rows($result) > 0) {
                 echo '<div class="hospital-list">'; // 新增外層 div
-                while ($row = mysqli_fetch_assoc($query_run)) {
-            ?>
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
             <div class="hospital">
                 <a href="medicine_detail.php?mID=<?php echo $row['mID']; ?>" class="medicine-link">
                     <img src="th.jpg" alt="Medication Image">
                     <div>
                         <p><strong>Medication Name:</strong> <?php echo $row['mName']; ?></p>
                         <p><strong>Type:</strong> <?php echo $row['mType']; ?></p>
+                        <?php if ($Option == 'most_used') { ?>
+                        <p><strong>Patient Count:</strong> <?php echo $row['patient_count']; ?></p>
+                        <?php } ?>
                     </div>
                 </a>
             </div>
@@ -69,13 +99,43 @@
         <div id="list_body">
             <h1>Visualization</h1>
             <p>Medicine Type</p>
-            <button onclick="update('desc')">Descending</button>
+            <button onclick="update('desc')" id="sortButtonAsc">Descending</button>
+            <button onclick="update('asc')" id="sortButtonDesc">Ascending</button>
             <div id="typeviz"></div>
             <p>Heatmap Between Pregnancy Grade and Medicine Type</p>
             <div id="heatmapviz"></div>
         </div>
     </div>
 </body>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function sort(value) {
+    // Set the value of the hidden input field
+    document.getElementById("sortInput").value = value;
+    // Submit the form
+    document.getElementById("sortForm").submit();
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.medicine-sort-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+</script>
+
 <script>
 const margin = {
     top: 40,
@@ -99,6 +159,8 @@ const svg1 = d3.select("#heatmapviz")
     .append("g")
     .attr("transform", `translate(110, 50)`);
 
+let originalData, currentOrder = 'original';
+
 
 d3.csv("./dataset/medicine.csv").then(function(data) {
     const typeCounts = d3.rollup(data, v => v.length, d => d.mType);
@@ -106,7 +168,7 @@ d3.csv("./dataset/medicine.csv").then(function(data) {
         key,
         value
     }));
-    const filted = typeCountsArray.filter(d => d.value >= 50)
+    originalData = typeCountsArray.filter(d => d.value >= 50)
 
     const x = d3.scaleLinear()
         .domain([0, 5050])
@@ -119,7 +181,7 @@ d3.csv("./dataset/medicine.csv").then(function(data) {
         .style("text-anchor", "end");
     const y = d3.scaleBand()
         .range([0, height])
-        .domain(filted.map(d => d.key))
+        .domain(originalData.map(d => d.key))
         .padding(.1);
 
     svg.append("g")
@@ -127,13 +189,13 @@ d3.csv("./dataset/medicine.csv").then(function(data) {
         .call(d3.axisLeft(y));
 
     bar = svg.selectAll("rect")
-        .data(filted)
+        .data(originalData)
         .join("rect")
         .attr("x", 0)
         .attr("y", d => y(d.key))
         .attr("width", 0)
         .attr("height", y.bandwidth())
-        .style("fill", "black");
+        .style("fill", "#3a7da7");
 
     svg.selectAll("rect")
         .transition()
@@ -143,7 +205,14 @@ d3.csv("./dataset/medicine.csv").then(function(data) {
         })
         .delay(function(d, i) {
             return (i * 100)
-        })
+        });
+
+    d3.select("#sortButtonAsc").on("click", function() {
+        update(currentOrder === 'asc' ? 'original' : 'asc');
+    });
+    d3.select("#sortButtonDesc").on("click", function() {
+        update(currentOrder === 'desc' ? 'original' : 'desc');
+    });
 })
 
 function update(order) {
@@ -153,7 +222,8 @@ function update(order) {
             key,
             value
         }));
-        const filted = typeCountsArray.filter(d => d.value >= 50)
+        const originalData = typeCountsArray.filter(d => d.value >= 50)
+        currentOrder = order;
 
         const x = d3.scaleLinear()
             .domain([0, 5050])
@@ -166,19 +236,21 @@ function update(order) {
             .style("text-anchor", "end");
         const y = d3.scaleBand()
             .range([0, height])
-            .padding(10);
+            .padding(.1);
 
-
-        filted.sort((a, b) => order === 'asc' ? a.value - b.value : b.value - a.value);
-        y.domain(filted.map(d => d.key));
-        console.log(filted)
+        if (order === 'desc') {
+            originalData.sort((a, b) => a.value - b.value);
+        } else if (order === 'asc') {
+            originalData.sort((a, b) => b.value - a.value);
+        }
+        y.domain(originalData.map(d => d.key));
 
         svg.select(".y-axis")
             .transition()
             .duration(1000)
             .call(d3.axisLeft(y));
 
-        bar.data(filted)
+        bar.data(originalData)
             .transition()
             .duration(1000)
             .attr("y", d => y(d.key))
@@ -186,7 +258,7 @@ function update(order) {
     })
 }
 
-d3.csv("./dataset/Medicine.csv").then(function(data) {
+d3.csv("./dataset/medicine.csv").then(function(data) {
     const typeCounts = d3.rollup(data, v => v.length, d => d.mType);
     const typeCountsArray = Array.from(typeCounts, ([key, value]) => ({
         key,
@@ -226,9 +298,6 @@ d3.csv("./dataset/Medicine.csv").then(function(data) {
     const myGroups = Array.from(new Set(heatMapData.map(d => d.pregnancy_grade)));
     const myVars = Array.from(new Set(heatMapData.map(d => d.mType)));
 
-    console.log(heatMapData)
-    // console.log(myVars)
-
     const x = d3.scaleBand()
         .range([0, width])
         .domain(myGroups)
@@ -246,7 +315,7 @@ d3.csv("./dataset/Medicine.csv").then(function(data) {
         .select(".domain").remove()
 
     const Color = d3.scaleSequential()
-        .interpolator(d3.interpolatePlasma)
+        .interpolator(d3.interpolateGnBu)
         .domain([0, d3.max(heatMapData, d => d.count)]);
 
     svg1.selectAll()
@@ -263,6 +332,41 @@ d3.csv("./dataset/Medicine.csv").then(function(data) {
         .style("stroke-width", 5)
         .style("stroke", "none")
         .attr("class", "cell")
+
+    const hovertext = d3.select("#heatmapviz")
+        .append("div")
+        .attr("class", "hovertext")
+        .style("opacity", 0)
+        .style("background-color", "white")
+        .style("border-width", "1px")
+        .style("border-radius", "5px")
+        .style("border", "solid")
+        .style("padding", "5px")
+        .style("pointer-events", "none")
+        .style("top", "500px")
+        .style("left", "500px")
+        .style("position", "absolute");
+
+    svg1.selectAll("rect")
+        .on("mouseover", (event, d) => {
+            hovertext.style("opacity", 1)
+            d3.select(event.currentTarget)
+                .style("stroke", "black")
+                .style("stroke-width", "2px")
+                .style("opacity", 1)
+        })
+        .on("mousemove", (event, d) => {
+            hovertext.html("The value of this cell:<br>Medicine Type: " + d.mType +
+                    "<br>Pregnancy Grade: " + d.pregnancy_grade + "<br>Counts: " + d.count)
+                .style("top", (event.pageY - 100) + "px")
+                .style("left", (event.pageX) + "px")
+        })
+        .on("mouseout", (event, d) => {
+            hovertext.style("opacity", 0)
+            d3.select(event.currentTarget)
+                .style("stroke", "none")
+                .style("opacity", 0.8)
+        })
 
 
 })

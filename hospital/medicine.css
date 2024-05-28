@@ -100,6 +100,11 @@ body {
     text-align: center;
 }
 
+.hospital a {
+    text-decoration: none;
+    color: #244d66;
+}
+
 .hospital img {
     width: 100px;
     /* 調整圖片大小 */
@@ -185,7 +190,8 @@ body {
     border: 1px solid #ccc;
     border-top: none;
 }
-#addbtn{
+
+#addbtn {
     background-color: #3a7da7;
     border: none;
     padding: 10px 25px 10px 25px;
@@ -196,6 +202,63 @@ body {
     border-radius: 5px;
     right: 30px;
     top: 80px;
-    position:absolute;
+    position: absolute;
+    text-decoration: none;
+}
 
+.medicine-sort-button b {
+    border-color: #FFF #3a7da7 #3a7da7;
+    border-style: solid;
+    border-width: 5px;
+    position: absolute;
+    top: 15px;
+    left: 70px;
+}
+
+.medicine-sort-button {
+    background-color: #3a7da7;
+    margin-bottom: 13px;
+    height: 2.5vw;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #83bee2;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
 }
