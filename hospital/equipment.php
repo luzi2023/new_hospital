@@ -33,7 +33,7 @@ $result = mysqli_stmt_get_result($stmt);
         </div>
         <h1>Equipments List <a href="add_equipment.php"><button class="equip_Abtn">Add Equipment</button></a></h1>
         <div class="dropdown">
-            <button onclick="myFunction()" class="equipment-search-button">Sort in</button>
+            <button onclick="myFunction()" class="equipment-search-button">Sort in ▼</button>
             <div id="myDropdown" class="dropdown-content">
                 <p onclick="sort('most_used')">The most used</p>
                 <p onclick="sort('common_combination')">The most used combination</p>
