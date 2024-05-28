@@ -547,40 +547,46 @@
                         })
 
                         .on("click", (event, d) => {
-                            const hovertext = d3.select("#prescriptionviz").append(
-                                    "div")
-                                .attr("class", "hovertext")
-                                .style("position", "absolute")
-                                .style("background", "white")
-                                .style("padding", "10px")
-                                .style("border", "1px solid black")
-                                .style("border-radius", "5px")
-                                // .style("pointer-events", "none")
-                                .style("font-size", "30px")
-                                .style("z-index", "20")
-                                .style("opacity", 0);
+                            const existingHovertext = d3.select(".hovertext");
+                            if (!existingHovertext.empty()) {
+                                existingHovertext.remove();
+                            } else {
 
-                            hovertext.html(d.data.prescription)
-                                .style("left", "150px")
-                                .style("top", "750px")
-                                .transition()
-                                .duration(200)
-                                .style("opacity", .9);
+                                const hovertext = d3.select("#prescriptionviz").append(
+                                        "div")
+                                    .attr("class", "hovertext")
+                                    .style("position", "absolute")
+                                    .style("background", "white")
+                                    .style("padding", "10px")
+                                    .style("border", "1px solid black")
+                                    .style("border-radius", "5px")
+                                    // .style("pointer-events", "none")
+                                    .style("font-size", "30px")
+                                    .style("z-index", "20")
+                                    .style("opacity", 0);
 
-                            const link = e.find(e => e.mName === d.data.prescription);
-                            const total_link = "medicine_detail.php?mID=" + link.mID;
-                            hovertext.append("p")
-                                .attr("class", "moreinformation")
-                                .html(`Medicine ID: ${link.mID}<br>`)
-                            hovertext.append("p")
-                                .attr("class", "moreinformation")
-                                .html(`Side Effect: ${link.side_effect}<br>`)
-                            hovertext.append("a")
-                                .html("go to the page →")
-                                .attr("href", total_link)
-                                .style("font-size", "15px")
-                                .style("margin-top", "4px");
+                                hovertext.html(d.data.prescription)
+                                    .style("left", "150px")
+                                    .style("top", "750px")
+                                    .transition()
+                                    .duration(200)
+                                    .style("opacity", .9);
 
+                                const link = e.find(e => e.mName === d.data.prescription);
+                                const total_link = "medicine_detail.php?mID=" + link.mID;
+                                console.log(link.mID)
+                                hovertext.append("p")
+                                    .attr("class", "moreinformation")
+                                    .html(`Medicine ID: ${link.mID}<br>`)
+                                hovertext.append("p")
+                                    .attr("class", "moreinformation")
+                                    .html(`Side Effect: ${link.side_effect}<br>`)
+                                hovertext.append("a")
+                                    .html("go to the page →")
+                                    .attr("href", total_link)
+                                    .style("font-size", "15px")
+                                    .style("margin-top", "4px");
+                            }
                         })
 
                         // .on("click", (event, d) => {
