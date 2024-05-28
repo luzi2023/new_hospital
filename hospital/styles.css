@@ -220,6 +220,10 @@ input {
 img {
     width: 150px;
 }
+img.baha{
+    max-width:200px;
+    max-height: 200px;
+}
 
 .current_list {
     width: 18vw;

@@ -79,7 +79,7 @@
                     <div class="all">
                         <div class="provider_info">
                             <div class="profile_picture">
-                                <img src="doc1.jpg" alt="doc1">
+                                <img class="baha" src="default.png" alt="doc1">
                             </div>
                             <div class="name_info">
                                 <h1><?php echo $row["first_name"]. "," . $row["last_name"]; ?></h1>
