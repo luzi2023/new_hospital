@@ -50,7 +50,7 @@
             <label for="search"></label>
             <input type="text" class="equipment-search-box" name="search"
                 value="<?php echo isset($_POST['search']) ? $_POST['search'] : ''; ?>">
-            <input type="submit" value="Search" class="equipment-search-button">
+            <input type="submit" value="Search" class="equipment-search-button-inpage">
 
             <div class="search-checkbox">
                 <label><input type="checkbox" name="fields[]" value="eID" checked> eID</label>
