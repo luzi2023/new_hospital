@@ -446,7 +446,7 @@
                                     .style("pointer-events", "none")
                                     .style("z-index", "10")
                                     .style("opacity", 0);
-                                tooltip.html(d.patients.join(", "))
+                                tooltip.html("Patient No: " + d.patients.join(", "))
                                     .style("left", (event.pageX + 5) + "px")
                                     .style("top", (event.pageY - 28) + "px")
                                     .transition()
