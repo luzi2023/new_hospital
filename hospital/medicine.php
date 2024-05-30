@@ -71,7 +71,7 @@
             $result = mysqli_query($link, $sort);
 
             if (mysqli_num_rows($result) > 0) {
-                echo '<div class="hospital-list">'; // 新增外層 div
+                echo '<div class="hospital-list">'; 
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
             <div class="hospital">
@@ -88,7 +88,7 @@
             </div>
             <?php
                 }
-                echo '</div>'; // 關閉外層 div
+                echo '</div>'; 
             } else {
                 echo "No hospitals found.";
             }
