@@ -41,26 +41,17 @@ p {
     color: #3a7da7
 }
 
-/* 样式表 search.css */
-
-/* .container 的样式 */
 .container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #389ddc;
-    /* 如果需要背景色，可以添加此样式 */
     z-index: 1000;
-    /* 设置 z-index 以确保容器始终位于顶层 */
     display: flex;
-    /* 使用 Flexbox 布局 */
     justify-content: space-between;
-    /* 左右对齐 */
     align-items: center;
-    /* 垂直居中 */
     padding: 10px;
-    /* 添加一些内边距 */
 }
 
 #fish {
@@ -80,7 +71,6 @@ p {
     box-shadow: 5px 5px 5px #B6B6B6;
 }
 
-/* #aki 的样式 */
 #aki {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
@@ -92,12 +82,10 @@ p {
     margin-right: 1.5vw;
 }
 
-/* #aki 悬停时的样式 */
 #aki:hover {
     background-color: #e0e0e0;
 }
 
-/* 输入框样式 */
 #aki input[type="text"] {
     border: none;
     outline: none;
@@ -105,7 +93,6 @@ p {
     font-size: 16px;
 }
 
-/* 按钮样式 */
 #aki button {
     margin-left: 10px;
     background-color: #3a7da7;
@@ -123,33 +110,22 @@ p {
     box-shadow: 5px 5px 5px #B6B6B6;
 }
 
-/* 按钮悬停时的样式 */
 #aki button:hover {
     background-color: #3a7da7;
 }
 
-/* 返回首页按钮的样式 */
 .back-to-home {
     text-decoration: none;
-    /* 去掉下划线 */
     color: #333;
-    /* 文字颜色 */
     font-size: 16px;
-    /* 字体大小 */
     padding: 8px 12px;
-    /* 内边距 */
     border: 1px solid #ccc;
-    /* 边框 */
     border-radius: 5px;
-    /* 圆角 */
     transition: all 0.3s ease;
-    /* 过渡效果 */
 }
 
-/* 返回首页按钮悬停时的样式 */
 .back-to-home:hover {
     background-color: #e0e0e0;
-    /* 悬停时的背景色 */
 }
 
 #fish {
