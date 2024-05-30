@@ -38,7 +38,6 @@
                     if ($result) {
                         if (mysqli_num_rows($result) > 0) {
                             $doctor = mysqli_fetch_assoc($result);
-                            // 检查当前登录用户是否有权限编辑该医生的资料
                             if (isset($_SESSION['username']) && $_SESSION['username'] === $doctor['dID']) {
                                 ?>
                                 <a href="edit_doctor.php?dID=<?php echo $doctor['dID']; ?>"><i class="fa-solid fa-pencil"></i>Edit Doctor</a>
@@ -123,11 +122,9 @@
         $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // 取得 URL 中的 dID 參數
         $doctorID = isset($_GET['dID']) ? $_GET['dID'] : '';
 
     if ($doctorID) {
-        // 查詢對應醫生的排班信息
         $sql = "SELECT schedule.*, staff.first_name, staff.last_name 
                 FROM schedule 
                 INNER JOIN staff ON staff.dID = schedule.dID 
@@ -138,7 +135,6 @@
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // 如果查詢結果不為空，則顯示排班表
         if (count($result) > 0) {
             echo "<table border='1'>";
             echo "<tr><th>Day</th><th>Time</th><th>Patient</th></tr>";
@@ -181,12 +177,9 @@ if (isset($_GET['dID'])) {
         echo "<h2 id='patient-heading'>My patients</h2>";
         echo "<ul id='patient-list'>";
         while($patient_row = mysqli_fetch_assoc($patients_result)) {
-            // 检查当前登录用户是否有权限查看该患者信息
             if (isset($_SESSION['username'])) {
-                // 获取当前登录用户的用户名
                 $loggedInUser = $_SESSION['username'];
                 
-                // 查询该患者的医生ID
                 $patient_id = $patient_row['pNo'];
                 $doctor_query = "SELECT doctorID FROM patient WHERE pNo = ?";
                 $stmt_doctor = mysqli_prepare($link, $doctor_query);
@@ -196,18 +189,17 @@ if (isset($_GET['dID'])) {
                 
                 if ($doctor_result && mysqli_num_rows($doctor_result) > 0) {
                     $doctor_data = mysqli_fetch_assoc($doctor_result);
-                    // 如果当前登录用户是该患者的医生，则显示链接
                     if ($loggedInUser === $doctor_data['doctorID']) {
                         echo "<li><strong><a href='patient.php?pNo={$patient_row['pNo']}'>{$patient_row['pname']}</a></strong></li>";
                     } else {
-                        echo "<li>{$patient_row['pname']}</li>"; // 如果不是该患者的医生，则只显示患者姓名，无法点击链接
+                        echo "<li>{$patient_row['pname']}</li>";
                     }
                 } else {
-                    echo "<li>{$patient_row['pname']}</li>"; // 如果无法获取医生ID，则只显示患者姓名，无法点击链接
+                    echo "<li>{$patient_row['pname']}</li>"; 
                 }
                 mysqli_stmt_close($stmt_doctor);
             } else {
-                echo "<li>{$patient_row['pname']}</li>"; // 如果用户未登录，则只显示患者姓名，无法点击链接
+                echo "<li>{$patient_row['pname']}</li>"; 
             }
         }
         echo "</ul>";
