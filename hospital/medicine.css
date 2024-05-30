@@ -1,6 +1,4 @@
 body {
-    /* padding-left: 200px; */
-    /* 為導覽列留出空間 */
     position: relative;
     margin: 0px;
 }
@@ -15,29 +13,19 @@ body {
 
 #side-nav a {
     position: fixed;
-    /* Position them relative to the browser window */
     left: -15vw;
-    /* Position them outside of the screen */
     transition: 0.3s;
-    /* Add transition on hover */
     padding: 15px;
-    /* 15px padding */
     padding-left: 4.5vw;
     width: 18vw;
-    /* Set a specific width */
     text-decoration: none;
-    /* Remove underline */
     font-size: 20px;
-    /* Increase font size */
     color: white;
-    /* White text color */
     border-radius: 0 5px 5px 0;
-    /* Rounded corners on the top right and bottom right side */
 }
 
 #side-nav a:hover {
     left: 0;
-    /* On mouse-over, make the elements appear as they should */
 }
 
 
@@ -60,7 +48,6 @@ body {
 #equipments {
     top: 29vw;
     background-color: #f44336;
-    /* Red */
     opacity: 0.7;
     z-index: 1;
 
@@ -83,7 +70,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     /* 三個一排 */
     gap: 20px;
-    /* 設定元素間的間距 */
 }
 
 .hospital {
@@ -99,7 +85,6 @@ body {
 
 .hospital img {
     width: 100px;
-    /* 調整圖片大小 */
     height: 100px;
 }
 
