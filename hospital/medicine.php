@@ -21,6 +21,7 @@
         </div>
     </div>
     <div class="tab">
+        <a href="index.php"><button class="tablinks">Home</button></a>
         <button class="tablinks" onclick="openCity(event, 'visualize')">Visualization</button>
         <button class="tablinks" onclick="openCity(event, 'medicine')">Medicine List</button>
     </div>
