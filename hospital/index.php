@@ -1,27 +1,22 @@
 <?php
 session_start();
 
-// 检查用户是否已登录，否则重定向到登录页面
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("Location: login.php");
     exit;
 }
 
-// 获取会话中的用户名和 dID
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 $dID = isset($_GET['userID']) ? $_GET['userID'] : '';
 
-// 如果 URL 中没有 dID 参数，使用会话中的 dID 参数
 /*if (!$dID && isset($_SESSION['userID'])) {
     $dID = $_SESSION['userID'];
     header("Location: index.php?dID=" . urlencode($dID));
     exit;
 }*/
 
-// 确保连接数据库
 include('config.php');
 
-// 从数据库获取医生信息
 try {
     $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
