@@ -1,11 +1,9 @@
 <?php
-// 包含資料庫連接設定
 include('config.php');
 
 if (isset($_GET['mhID'])) {
     $mhID = $_GET['mhID'];
 
-    // 取得當前病例資料
     $sql = "SELECT * FROM medical_history WHERE mhID=" . $mhID;
     $result = $link->query($sql);
 
@@ -26,12 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $diagnosis = $_POST["diagnosis"];
     $prescription = $_POST["prescription"];
 
-    // 更新病例資料
     $sql = "UPDATE medical_history SET date='$date', treatment='$treatment', diagnosis='$diagnosis', prescription='$prescription' WHERE mhID=" . $mhID;
 
     if ($link->query($sql) === TRUE) {
         echo "Record updated successfully";
-        // 可以選擇重新導向至其他頁面
          header("Location: patient.php?pNo=" . $row["pNo"]);
     } else {
         echo "Error updating record: " . $link->error;
