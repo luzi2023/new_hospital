@@ -15,24 +15,15 @@ body {
 /* Style the links inside the sidenav */
 #side-nav a {
     position: fixed;
-    /* Position them relative to the browser window */
     left: -15vw;
-    /* Position them outside of the screen */
     transition: 0.3s;
-    /* Add transition on hover */
     padding: 15px;
-    /* 15px padding */
     padding-left: 4.5vw;
     width: 18vw;
-    /* Set a specific width */
     text-decoration: none;
-    /* Remove underline */
     font-size: 20px;
-    /* Increase font size */
     color: white;
-    /* White text color */
     border-radius: 0 5px 5px 0;
-    /* Rounded corners on the top right and bottom right side */
 }
 
 #side-nav a:hover {
