@@ -10,19 +10,16 @@ do {
 } while ($result_check->num_rows > 0);
 
 if(isset($_POST['submit'])) {
-    // 獲取表單數據
     $pNo = $_POST['pNo'];
     $date = $_POST['date'];
     $treatment = $_POST['treatment'];
     $diagnosis = $_POST['diagnosis'];
     $prescription = $_POST['prescription'];
 
-    // 將數據插入到數據庫中
     $sql = "INSERT INTO medical_history (mhID, pNo, date, treatment, diagnosis, prescription) 
             VALUES ('$mhID', '$pNo', '$date', '$treatment', '$diagnosis', '$prescription')";
 
     if ($link->query($sql) === TRUE) {
-        // 新增成功，跳轉回患者詳細信息頁面
         header("Location: patient.php?pNo=$pNo");
         exit;
     } else {
