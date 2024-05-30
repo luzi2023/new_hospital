@@ -38,7 +38,6 @@
                     if ($result) {
                         if (mysqli_num_rows($result) > 0) {
                             $doctor = mysqli_fetch_assoc($result);
-                            // 检查当前登录用户是否有权限编辑该医生的资料
                             if (isset($_SESSION['username']) && $_SESSION['username'] === $doctor['dID']) {
                                 ?>
                                 <a href="edit_nurse.php?dID=<?php echo $doctor['dID']; ?>"><i class="fa-solid fa-pencil"></i>Edit Nurse</a>
@@ -118,11 +117,9 @@
             $db = new PDO("mysql:host=localhost;dbname=hospital;charset=utf8", "root", "");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // 取得 URL 中的 dID 參數
             $doctorID = isset($_GET['dID']) ? $_GET['dID'] : '';
 
             if ($doctorID) {
-                // 查詢排班資訊，包含醫生的相關資訊
                 $sql = "SELECT schedule.*, staff.first_name, staff.last_name 
                         FROM schedule 
                         INNER JOIN staff ON staff.dID = schedule.dID
@@ -134,7 +131,6 @@
                 $stmt->execute();
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                // 如果查詢結果不為空，則顯示排班表
                 if (count($result) > 0) {
                     echo "<table border='1'>";
                     echo "<tr><th>Day</th><th>Time</th><th>Patiemt</th></tr>";
