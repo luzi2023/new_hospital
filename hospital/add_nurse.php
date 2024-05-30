@@ -58,13 +58,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         move_uploaded_file($file_tmp, $image_path);
 
-        // 首先插入到 staff 表中
         $query_staff = "INSERT INTO staff (dID, first_name, last_name,contact, dImage) VALUES ('$nurse_id', '$first_name', '$last_name','$contact',  '$image_path')";
         if (mysqli_query($link, $query_staff)) {
-            // 插入成功后再插入到 nurse 表中
             $query_nurse = "INSERT INTO nurse (dID, period) VALUES ('$nurse_id', '$period')";
             if (mysqli_query($link, $query_nurse)) {
-                // 成功添加护士，显示医生信息
                 header("Location: doctor.php");
                 exit();
             } else {
