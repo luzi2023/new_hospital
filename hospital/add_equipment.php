@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_bind_param($insert_stmt, "issss", $eID, $eName, $purchaseDate, $useStatus, $manufacturer);
 
     if (mysqli_stmt_execute($insert_stmt)) {
-        header("Location: equipment.php"); // 重定向到设备列表页面或其他页面
+        header("Location: equipment.php"); 
         exit();
     } else {
         echo "Error: " . mysqli_error($link);
