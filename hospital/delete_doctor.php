@@ -40,7 +40,7 @@
         if (isset($_POST['doctor_id'])) {
             $doctor_id = $_POST['doctor_id'];
 
-            // First, set doctorID to NULL in all associated patients
+            //set doctorID to NULL in all associated patients
             $update_query = "UPDATE patient SET doctorID = NULL WHERE doctorID = '$doctor_id'";
             $update_success = mysqli_query($link, $update_query);
 
@@ -52,7 +52,7 @@
                 $delete_staff_success = mysqli_query($link, $delete_staff_query);
 
                 if ($delete_doctor_success) {
-                    // Finally, delete the doctor from the staff table
+                    //delete the doctor from the staff table
                     if ($delete_staff_success) {
                         echo "Doctor information and related staff information deleted successfully!<br><br>";
                         header("Location: doctor.php");
