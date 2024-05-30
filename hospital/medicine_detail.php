@@ -15,22 +15,17 @@
         
 
         <?php
-        // 连接数据库
         include('config.php');
 
-        // 检查是否存在药物ID参数
         if (isset($_GET['mID'])) {
-            // 获取药物ID
             $mID = $_GET['mID'];
 
-            // 查询药物详细信息
             $query = "SELECT * FROM medication WHERE mID = ?";
             $stmt = $link->prepare($query);
-            $stmt->bind_param("s", $mID); // 使用字符串类型 "s"
+            $stmt->bind_param("s", $mID); 
             $stmt->execute();
             $result = $stmt->get_result();
 
-            // 显示药物详细信息
             if ($result->num_rows > 0) {
                 $medication = $result->fetch_assoc();
         ?>
