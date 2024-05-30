@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_bind_param($insert_stmt, "ssssssssss", $mID, $mName, $mType, $mCode, $side_effect, $indication, $drug_warning, $ingredient, $dosage, $pregnancy_grade);
 
     if (mysqli_stmt_execute($insert_stmt)) {
-        header("Location: medicine.php"); // 重定向到设备列表页面或其他页面
+        header("Location: medicine.php"); 
         exit();
     } else {
         echo "Error: " . mysqli_error($link);
