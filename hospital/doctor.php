@@ -375,7 +375,7 @@
                                 const dragtext = d3.select("#patientviz").append("div")
                                     .attr("class", "dragpatient-container");
 
-                                // 显示选定的病患信息
+                                // 顯示指定的病患信息
                                 selectedPatientsInfo.forEach((patient, index) => {
                                     dragtext
                                         .append("p")
