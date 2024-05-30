@@ -59,7 +59,6 @@
                     if (mysqli_query($link, $query_staff)) {
                         $query_doctor = "INSERT INTO doctor (dID, speciality,About) VALUES ('$doctor_id', '$speciality','$About')";
                         if (mysqli_query($link, $query_doctor)) {
-                            // 成功添加医生，显示医生信息
 
                             header("Location: staff_detail.php?dID=$doctor_id");
                             exit();
