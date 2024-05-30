@@ -29,7 +29,6 @@ include('config.php');
             </form>
         </div> -->
 
-        <!-- 其他內容 -->
     </div>
     <div class="tab">
         <a href="index.php"><button class="tablinks">Home</button></a>
