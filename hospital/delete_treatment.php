@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tID'])) {
     mysqli_stmt_bind_param($stmt, "s", $tID);
 
     if (mysqli_stmt_execute($stmt)) {
-        // 确保没有任何输出发生
         ob_clean();
         header("Location: treatment.php");
         exit();
