@@ -22,7 +22,7 @@ h1 {
 .medication-details img.medication-image {
     display: block;
     margin: 0 auto 20px;
-    max-width: 200px; /* 調整照片的最大寬度 */
+    max-width: 200px; 
     height: auto;
 }
 
